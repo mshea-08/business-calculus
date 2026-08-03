@@ -1,0 +1,42 @@
+site_name: Linear Models and Differential Calculus
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: white
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.sections
+    - toc.integrate
+  language: en
+
+nav:
+  - Home: index.md
+  - 1. Linear Functions: linear-functions.md
+  - 2. Matrices: matrices.md
+  - 3. Polynomials and Rationals: polynomials-rationals.md
+  - 4. Exponents and Logarithms: exponents-logarithms.md
+  - 5. Derivative Basics: derivative-basics.md
+  - 6. Derivative Rules: derivative-rules.md
+  - 7. Optimization: optimization.md
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css
