@@ -371,6 +371,69 @@ The last derivative rule we need is the chain rule. The chain rule helps when we
 
         $$\frac{du}{dx} = 2x-3$$
 
+        and the outer function is, $y = u^6$ so 
+
+        $$\frac{dy}{du} = 6u^5$$
+
+        Thus 
+
+        $$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = 6 (x^2-3x)^5 \cdot (2x-3)$$
+
+        It is important to use parentheses correctly when expressing derivatives using the chain rule. 
+
+!!! example "Example 21"
+    Determine the derivative of the function $y = e^{x^2-1}$. 
+
+    ??? success "Solution"
+        We have $u = x^2-1$, therefore
+
+        $$\frac{du}{dx} = 2x$$ 
+
+        and $y = e^u$, so 
+
+        $$\frac{dy}{du} = e^u$$
+
+        Combining gives, 
+
+        $$y' = 2xe^{x^2-1}$$
+
+## 6.6 More Complicated Derivatives 
+
+You may face situations where computing the derivative involves applying multiple rules. In order to solve the problems, you should first identify the order the rules should be applied in--work from outside to inside. Carefully write down the steps to make sure you do not miss anything. 
+
+!!! example "Example 22"
+    Compute the derivative of the function 
+
+    $$y = \left(\frac{3x}{x+1}\right)^4$$
+
+    ??? success "Solution"
+        We first apply the **chain rule**, where the outer function is 
+
+        $$y = u^4$$
+
+        and the inner function is 
+
+        $$u = \frac{3x}{x+1}$$
+
+        To compute the derivative of the inner function, we need the **quotient rule**
+
+        $$\frac{du}{dx} = \frac{3(x+1)-3x}{(x+1)^2} = \frac{3}{(x+1)^2}$$
+
+        Now finishing the chain rule gives, 
+
+        $$y' = 4\left(\frac{3x}{x+1})^3 \cdot \frac{3}{(x+1)^2}$$
+
+!!! example "Example 23"
+    Find 
+
+    $$\frac{d}{dx}\left(x^3 \cdot \ln (2x+1)\right)$$
+
+    ??? success "Solution"
+        We first use the **product rule**, where the pieces are $x^3$ and $\ln(2x+1)$. For the second term we need to apply the **chain rule**. We get, 
+
+        $$3x^2\ln(2x+1) + x^3 \cdot \frac{1}{2x+1} \cdot 2$$
+
+
 
 ## Exercises 
 
@@ -535,3 +598,140 @@ For each of the following functions, compute its derivative
 **Problem 33.** The value in dollars of a piece of artwork after $t$ years is modeled by $V(t) = 5000e^t$. Find $V'(t)$ and determine the rate of appreciation at $t = 2$ years.
 
 **Problem 34.** The monthly profit in thousands of dollars from selling $x$ units of a product is modeled by $P(x) = 8\ln(x) - 3x + 50$. Find the marginal profit function and compute the marginal profit at $x = 4$ units.
+
+### 6.4 Exercises 
+
+Find the derivatives of the following functions, 
+
+<div class="grid cards" markdown>
+
+- **Problem 35.**
+
+    $y = xe^x$
+
+- **Problem 36.**
+
+    $f(x) = \dfrac{e^x}{1+e^x}$
+
+- **Problem 37.**
+
+    $g(t) = t^3(1+2t^2)$
+
+- **Problem 38.**
+
+    $h(x) = x^2 \ln(x)$
+
+- **Problem 39.**
+
+    $y = \dfrac{x^2 + 1}{x^3 - 2}$
+
+- **Problem 40.**
+
+    $y = (x^2 + 3)(x^3 - 5x)$
+
+- **Problem 41.**
+
+    $g(x) = \dfrac{\ln(x)}{x^2}$
+
+- **Problem 42.**
+
+    $h(x) = \dfrac{x^3 + 1}{e^x}$
+
+</div>
+
+**Problem 43.** A company's total cost of producing $x$ units is $C(x) = x^3 - 4x^2 + 20x + 100$. Compute the marginal average cost.
+
+**Problem 44.** A company's total revenue from selling $x$ units is $R(x) = 120x - 3x^2$. Compute the marginal average revenue.
+
+**Problem 45.** A company's total cost of producing $x$ units is $C(x) = 2x^2 + \sqrt{x} + 80$. Compute the marginal average cost.
+
+**Problem 46.** A company's total revenue from selling $x$ units is $R(x) = 200x - x^3$. Compute the marginal average revenue. At what production level is the marginal average revenue equal to zero?
+
+### 6.5 Exercises 
+
+Find the following derivatives using the chain rule,
+
+<div class="grid cards" markdown>
+
+- **Problem 47.**
+
+    $y=(x^2+3x-1)^4$
+
+- **Problem 48.**
+
+    $f(x) = \ln(3x+7)$
+
+- **Problem 49.**
+
+    $y = (4x^2 - 10x)^6$
+
+- **Problem 50.**
+
+    $h(t) = e^{3t^2+2}$
+
+- **Problem 51.**
+
+    $y = e^{1/x^2}$
+
+- **Problem 52.**
+
+    $y = \ln(e^x+x)$
+
+</div>
+
+### 6.6 Exercises
+
+Compute the derivative of each function.
+
+<div class="grid cards" markdown>
+
+- **Problem 53.**
+
+    $y = x^2 e^x$
+
+- **Problem 54.**
+
+    $y = e^x + \ln(x)$
+
+- **Problem 55.**
+
+    $f(x) = \dfrac{x^3 + 1}{x^2 - 1}$
+
+- **Problem 56.**
+
+    $y = (2x^3 - 1)(x^2 + 5)$
+
+- **Problem 57.**
+
+    $h(x) = \dfrac{\ln(x)}{x^3}$
+
+- **Problem 58.**
+
+    $f(t) = \dfrac{t^2 + 3t}{e^t}$
+
+- **Problem 59.**
+
+    $p(x) = \ln(x) \cdot e^x$
+
+- **Problem 60.**
+
+    $y = \dfrac{x^4 - 2x^2 + 1}{x^2}$
+
+- **Problem 61.**
+
+    $c(t) = t^3e^{t^2}$
+
+- **Problem 62.**
+
+    $g(x) = \dfrac{e^{3x}}{x^2 + 1}$
+
+- **Problem 63.**
+
+    $y = x^2 \ln(x^2 + 1)$
+
+- **Problem 64.**
+
+    $f(x) = \dfrac{\ln(x^3)}{e^{2x}}$
+
+</div>
+
