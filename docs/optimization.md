@@ -108,3 +108,13 @@ Implicitly, the domain is all allowed inputs to the function. For the function $
     Note that a global maximum is also a local maximum, but the reverse is not necessarily true. 
 
 Similarly, a **local minimum** is a point that is lower than all immediate neighbors and a **global minimum** is the lowest point across the entire domain. We use the term **extrema** to denote both maxima and minima. 
+
+!!! example "Example 4"
+    Assume the entire domain of the function is shown in the graph below. Denote all local and global extrema.
+    
+
+## 7.3 Applied Optimization
+
+## 7.4 Implicit Differentiation and Related Rates
+
+## Exercises

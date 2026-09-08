@@ -82,7 +82,7 @@ Note that the points you use do not matter, however it is important to have cons
     ??? success "Solution"
         Using the formula for slope, we can write
 
-        $$m = \frac{7 - 3}{5 - 1} = \frac{4}{2} = 2.$$
+        $$m = \frac{7 - 3}{5 - 1} = \frac{4}{4} = 1.$$
 
 !!! example "Example 5"
     What is the slope of the line given by the equation $2x + 3y = 1$. 
@@ -109,7 +109,7 @@ Note that the points you use do not matter, however it is important to have cons
         $$m = \frac{-\frac{1}{3} - \frac{1}{3}}{1-0} = \frac{-\frac{2}{3}}{1} = -\frac{2}{3}.$$
 
 !!! info "Slope of Horizontal and Vertical Lines"
-    A horizontal line has slope $m=0$. A vertical line has *undefined* slope. 
+    A horizontal line has slope $m=0$. A vertical line has *undefined* slope, this is because the slope formula would include division by 0.  
 
 ## 1.3 Determining the Equation of a Line 
 
@@ -135,10 +135,10 @@ $$y = mx + b$$
     Knowing a point on the line and the slope completely determine the line. The $y$-intercept is the point $(0,b)$. 
 
 !!! example "Example 7"
-    A line has slope $-3/4$ and $y$-intercept $(0,-2)$. What is the equation of the line?
+    A line has slope $-3/4$ and crosses through the point $(0,-2)$. What is the equation of the line?
 
     ??? success "Solution"
-        Using slope-intercept form we have $m = -3/4$ and $b = -2$, thus
+        By definition, the $y$-intercept of the line is $-2$. Using slope-intercept form we have $m = -3/4$ and $b = -2$, thus
 
         $$y = -\frac{3}{4}x - 2.$$
 
@@ -215,7 +215,7 @@ $$y = m(x-x_1) - y_1.$$
 
         $$y = -\frac{2}{3}(x-3)$$
 
-        which is Eric's answer. 
+        which is Eric's answer. Try putting both lines in slope-intercept form and you will get the *same* answer. 
 
 The last linear equation form we will introduce is **standard form**. The standard form of a line is, 
 
@@ -239,16 +239,20 @@ $$m = -\frac{A}{B}.$$
 
         $$2y + x = 2.$$
 
+Standard form can seem a bit silly when dealing with single variable functions, but it generalizes nicely in higher dimensional work. 
+
 
 ## 1.4 Applications
 
  Lines can be used to model real world relationships. In this section, we will introduce a couple examples of applications of lines.
 
+ When turning a real world problem into a mathematical function, one needs to define what the **input** and **output** of the function are. The input, or $x$ variable, is what we know about the system, while the output, or $y$ variable, is what results. For the systems descibed in the below example, first determine what the input and output are. 
+
 !!! example "Example 13"
     It cost $750 to manufacture 25 items and $1000 to manufacture 50 items. If we assume a linear relation holds, find the cost equation and use this equation to compute the cost of manufacturing 100 items. 
     
     ??? success "Solution"
-        Let $x =$ the number of items and $y =$ the cost of manufacturing. Thus the problem defines two points on the line, $(25,750)$ and $50,1000)$. We can compute the slope, 
+        Here we should think of the cost *as a function of* the number of items made. That means the number of items is the input and the cost is the output. Thus the problem defines two points on the line, $(25,750)$ and $(50,1000)$. We can compute the slope, 
 
         $$m = \frac{1000-750}{50-25} = \frac{250}{25} = 10.$$
 
@@ -264,17 +268,17 @@ $$m = -\frac{A}{B}.$$
 
         $$y = 10(100) + 500 = 1000+500 = 1500 \text{ dollars}.$$
 
-When dealing with applications of lines, it is good to remember that $x$ represents the **inpout**, e.g. the information given, and $y$ represents the **output**, e.g. what we want to infer. In the above problem we *want to know* the cost when we are *given* the number of items manufactured. 
-
 !!! example "Example 14"
     The freezing temperature of water is 0 degrees Celcius and 32 degrees Fahrenheit. The boiling temperature of water is 100 degrees Celcius and 212 degrees Fahrenheit. If Celcius and Fahrenheit are linearly related, write an equation that converts Celcius temperatures to Fahrenheit. 
 
     ??? success "Solution"
-        From the information we have, we know two points on the line: $(0,32)$ and $(100,212)$. Note that the Celcius temperature is the $x$ coordinate becase we are converting Celcius *to* Fahrenheit. Compute the slope
+        Here the input and output are defined by the goal of the problem, "write an equation that converts Celcius to Fahrenheit." This means the the input should be the Celcius temperature and the output should be the Fahrenheit temperature, aka what we want to convert *to*. 
+        
+        Thus the information gives two points on the line: $(0,32)$ and $(100,212)$. Note that the Celcius temperature is the $x$ coordinate. Compute the slope
 
         $$m = \frac{212-32}{100-0} = \frac{180}{100} = \frac{9}{5}.$$
 
-        Note that the point $(0,32)$ is the $y$-intercept of the line. So we can use slope-intercept form, 
+        Note that $32$ is the $y$-intercept of the line. So we can use slope-intercept form, 
 
         $$y = \frac{9}{5}x + 32.$$
 
@@ -316,26 +320,51 @@ Let's start by learning how to find the intersection point of two lines algebrai
 
         Thus, the lines intersect at $(2,5)$. 
 
-If both lines are presented as $y = \cdots$ then the above method is a great way of finding the intersection of two lines. Even if they are not written in this manner, we can rearrange them and then use the method above. 
+!!! note "Intersection of Lines"
+    Where the two lines intersect, they *must* have the same $x$ and $y$ value. This is why we set the two $y$ values equal to each other in the above example. We could also isolate for $x$ and set the $x$ values equal to each other for the same reason. 
 
-If the lines are not written in the form $y=\dots$ it is sometimes easier to use a method called **elimination** instead of rewriting the equation. The idea behind the elimination method is adding the equations together to eliminate one of the variables. 
-
-!!! warning "Elimination Method"
-    The elimination method is typically viewed as more challenging when first learned, however the technique becomes very valuable when we increase to systems of 3 or more variables/equations. It is thus good to learn it now. 
+If both lines are presented as $y = f(x)$ then the above method is a great way of finding the intersection of two lines. Even if they are not written in this manner, we can rearrange them to isolate for $x$ or $y$ and then solve.
 
 !!! example "Example 17"
+    Find the intersection of the lines $y = x-1$ and $2y - 4x = 1$. 
+
+    ??? success "Solution"
+        The second line is not written in the form $y = f(x)$, so we can't set the two $y$ values equal to each other. We can take the expression for $y$ in the first equation and plug it into the second. This is known as **substitution**. This gives, 
+
+        $$2(x-1) - 4x = 1$$
+
+        Now we can isolate and solve for $x$, 
+
+        $$x-2-4x = 1$$
+
+        $$-3x = -1$$
+
+        $$x = \frac{1}{3}.$$
+
+        Now we can take either line to solve for $y$. I will use the first one because it is a simpler expression,
+
+        $$y = \frac{1}{3} - = \frac{1}{3} - \frac{3}{3} = -\frac{2}{3}.$$
+
+        So the intersection point is $(1/3,-2/3)$.
+
+If neither line is written in the form $y=f(x)$ it is sometimes easier to use a method called **elimination** instead of rewriting the equation. The idea behind the elimination method is to add the equations together to eliminate one of the variables. 
+
+!!! warning "Elimination Method"
+    The elimination method is typically viewed as more challenging when first learned, however the technique becomes very valuable when we increase to systems of 3 or more variables/equations. Additionally, it simulates matrix operations, which we will learn next chapter.
+
+!!! example "Example 18"
     Find the intersection of the lines $2y + 3x = 6$ and $y - 3x=3$.
     ??? success "Solution"
         We add the equations together like so, 
 
-        $$\begin{array}
+        $$\begin{array}{ccc}
         2y & + 3x & =6 \\
         y & -3x & =3 \\
         \hline 
         3y & & =9
         \end{array}$$
 
-        So we get $y=3$. We can plug this into either of the equations to get the $x$ value. 
+        and the $x$ terms cancel. From what remains we get $y=3$. We can plug this into either of the equations to get the $x$ value. 
 
         $$2(3) + 3x = 6,$$
 
@@ -345,22 +374,25 @@ If the lines are not written in the form $y=\dots$ it is sometimes easier to use
 
         The point of intersection is $(0,3)$.
 
+!!! note "Sanity Check!"
+    Ever unsure about your work? Plug the answer you get back into **both** equations to check they are consistent with them. This should only take an extra minute or two and can confirm you are correct!
+
 In elimination, we can also multiply the equations by a constant to create the cancellation we desire. This is because multiplying a line by a constant does not change the line! For example, $x - y = 2$ is the same line as $2x - 2y = 4$. 
 
-!!! example "Example 18"
+!!! example "Example 19"
     Use elimination to find the intersection of the lines $x - 2y = 1$ and $2x -3y = 4$. 
     ??? success "Solution"
-        Let's multiply the first equation by $-2$, 
+        Adding together these lines does not immediately eliminate one of the variables. Let's multiply the first equation by $-2$, 
 
         $$-2x +4y = -2.$$
 
         Now we can add the two equations together, 
 
-        $$\begin{array}
+        $$\begin{array}{ccc}
         -2x & + 4y & = -2\\
         2x & -3y & =4 \\
         \hline 
-        y & & =2
+        & y & =2
         \end{array}$$
 
         Now plug $y=2$ into the original first equation, 
@@ -380,11 +412,11 @@ Notice that parallel lines look like train tracks, they always stay the same dis
 
 ### 1.5.1 Supply and Demand Curves
 
-A **supply curve** describes how many items can be made available at a given price. A **demand curve** describes the number of items consumers will buy at different unit prices. The *input* ($x$ value) of a supply and demand curve is the price, the *output* is the number of items. 
+A **supply curve** describes how many items can be made available at a given price. A **demand curve** describes the number of items consumers will buy at different unit prices. The *input* ($x$ value) of a supply and demand curve is the price, the *output* is the number of items. *This might feel backwards,* but remember that these curves are modeling the supply/demand for an item at a given price. 
 
-As the price of a product increases, generally supply will increase but demand will decrease. The **equilibrium price** is reached when supply and demand are equal. 
+As the price of a product increases, generally supply will increase but demand will decrease. The **equilibrium price** is reached when supply and demand are equal, in other words the equilibrium price is where the curves intersect. 
 
-!!! example "Example 19" 
+!!! example "Example 20" 
     The supply curve for a product is $y = 35x-140$ and the demand curve is $y=-25x+340$. 
 
     1. How many items can be supplied at a cost of $10 per item?
@@ -410,16 +442,21 @@ As the price of a product increases, generally supply will increase but demand w
 
         The equilibrium price is $\$8$. 
 
+Supply and demand curves are often not lines. We will see different examples throughout the chapters. 
+
 ### 1.5.2 Break-Even Point
 
-If a company sells an item for $P$ dollars, then the **revenue** is the price multiplied by the number of items sold, $R=Px$. The **production costs** are the sum of the variable and fixed costs. Typically written $C = mx+b$, where $x=$ the number of items manufactured. 
+If a company sells an item for $P$ dollars, then the **revenue** $R$ is the price multiplied by the number of items sold, $R=Px$. The **production costs** are the sum of the variable and fixed costs. Typically written $C = mx+b$, where $x=$ the number of items manufactured. 
 
 - The fixed cost is represented by $b$; it does not change no matter how much is produced. Think of the fixed cost as things such as manufacturing space and equipment. 
 - The variable cost is $mx$, which depends on the amount being produced. We call $m$ the marginal cost, e.g. the cost of producing an additional item. 
 
 **Profit** is $P = R-C$. We call the point when profit is 0 the **break-even** point. If costs are more than revenue, the company is operating at a loss. Geometrically, the break-even point is the point where the revenue and production costs lines intersect. 
 
-!!! example "Example 20"
+!!! note "Production Costs"
+    In earnest, production costs are usually not as simple as a line. For example, buying in bulk may modify the cost of materials per item as long as enough items are manufactured. This can muddle the ideas of variable and fixed costs. 
+
+!!! example "Example 21"
     If $R = 5x$ and $C = 3x+12$,
 
     1. What is the marginal cost? What is the fixed cost? 
@@ -445,7 +482,7 @@ If a company sells an item for $P$ dollars, then the **revenue** is the price mu
 
         $$R = 5 (6) = 30 \text{ dollars}.$$
 
-## Practice Problems
+## Exercises
 
 ### 1.1 Exercises
 
