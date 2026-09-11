@@ -567,31 +567,6 @@ Compute the slope of the line passing through the given points.
 
 ### 1.3 Exercises
 
-Determine the slope of the following lines.
-
-<div class="grid cards" markdown>
-
-- **Problem 13.**
-
-    $y = 3x-4$.
-
-
-- **Problem 14.**
-
-    $2y = x + 10$.
-
-
-- **Problem 15.**
-
-    $3x + 4y = 12$.
-
-
-- **Problem 16.**
-
-    $3x-y=1$.
-
-</div>
-
 Determine the equation of the line passing through the given points. Express the equation in slope-intercept form. 
 
 <div class="grid cards" markdown>

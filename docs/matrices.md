@@ -150,7 +150,12 @@ Multiplying matrices is more complicated. There are two types of matrix multipli
     \end{bmatrix}$$
 
     ??? success "Solution"
+        The notation $2A$ denotes scalar multiplication of $A$ by $2$. This means we multiply each entry of $A$ by $2$,
+
+
         $$2A = \begin{bmatrix} 2(3) & 2(-1) \\ 2(0) & 2(4) \end{bmatrix} = \begin{bmatrix} 6 & -2 \\ 0 & 8 \end{bmatrix}$$
+
+        To compute $-3B$ us the same method, 
 
         $$-3B = \begin{bmatrix} -3(2) & -3(-1) & -3(5) \\ -3(0) & -3(3) & -3(-2) \end{bmatrix} = \begin{bmatrix} -6 & 3 & -15 \\ 0 & -9 & 6 \end{bmatrix}$$
 
