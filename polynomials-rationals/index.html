@@ -1,0 +1,1143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../matrices/">
+      
+      
+        <link rel="next" href="../exponents-logarithms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>3. Polynomials and Rationals - Linear Models and Differential Calculus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-quadratics-polynomials-and-rational-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-header__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Models and Differential Calculus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Polynomials and Rationals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-nav__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Models and Differential Calculus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Linear Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-quandratic-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Quandratic Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-polynomial-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Polynomial Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-rational-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Rational Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponents-logarithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exponents and Logarithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-quadratics-polynomials-and-rational-functions">3. Quadratics, Polynomials, and Rational Functions</h1>
+<h2 id="31-quandratic-functions">3.1 Quandratic Functions</h2>
+<p>A <strong>quadratic</strong> is a function which has the form <span class="arithmatex">\(y = ax^2 + bx + c\)</span> where <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, and <span class="arithmatex">\(c\)</span> are constants and <span class="arithmatex">\(a \neq 0\)</span> (A quadratic must have an <span class="arithmatex">\(x^2\)</span> term, or else its just a line!). The shape of the graph of a quadratic is called a <strong>parabola</strong>. Below is a graph of the function <span class="arithmatex">\(y = x^2\)</span>, </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/1gfptpwfpv?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>Parabolas have a U-like shape. Depending on the <em>sign</em> of the coefficient <span class="arithmatex">\(a\)</span>, the U may face up (like above) or down. Below is a graph of the quadratic <span class="arithmatex">\(y = -2x^2 + 3\)</span>, which faces down since <span class="arithmatex">\(a = -2\)</span> is negative. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/4rbbypdlyz?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The <strong>vertex</strong> of a quadratic is the highest (if facing down) or lowest (if facing up) point on the graph. Let <span class="arithmatex">\((h,k)\)</span> denote the vertex. Then, </p>
+<div class="arithmatex">\[h = -\frac{b}{2a}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>Compute the vertex of the quadratic <span class="arithmatex">\(y = x^2 - 3x + 2\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Since <span class="arithmatex">\(a = 1\)</span> and <span class="arithmatex">\(b = -3\)</span>, the <span class="arithmatex">\(x\)</span>-coordinate of the vertex is given by </p>
+<div class="arithmatex">\[h = -\frac{-3}{2(1)} = \frac{3}{2}.\]</div>
+<p>To compute the <span class="arithmatex">\(y\)</span>-coordinate, we plug the above into the quadratic function </p>
+<div class="arithmatex">\[k = \left(\frac{3}{2}\right)^2 - 3\left(\frac{3}{2}\right) + 2 = \frac{9}{4} - \frac{9}{2} + 2 = -\frac{1}{4}.\]</div>
+<p>Thus the vertex is at <span class="arithmatex">\((3/2,-1/4)\)</span>. </p>
+</details>
+</div>
+<p>A quadratic function with vertex <span class="arithmatex">\((h,k)\)</span> is <strong>symmetric</strong> about the vertical line <span class="arithmatex">\(x=h\)</span>. This means I can flip the graph about this line and the picture is unchanged. </p>
+<p>The places where the parabola crosses the <span class="arithmatex">\(x\)</span>-axes are known as the <strong>zeros</strong> or roots of the function. A quadratic function may have 0, 1, or 2 zeros. The above graphs show examples of 1 and 2 zeros. Below we give an example where there are no zeros:</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/6hbrmdreua?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>To find the zeros of a quadratic function one can <em>factor</em> the expression or use the <em>quadratic formula</em>. </p>
+<p>Let's start by factoring when <span class="arithmatex">\(a = 1\)</span>. In this case, we are looking to rewrite the quadratic in the following way, </p>
+<div class="arithmatex">\[x^2 + bx + c = (x + p)(x + q)\]</div>
+<p>where <span class="arithmatex">\(-p\)</span> and <span class="arithmatex">\(-q\)</span> are the zeros of the function. For example, </p>
+<div class="arithmatex">\[x^2 + 4x + 3 = (x + 3)(x + 1)\]</div>
+<p>so the zeros of <span class="arithmatex">\(x^2 + 4x + 3\)</span> are <span class="arithmatex">\(-3\)</span> and <span class="arithmatex">\(-1\)</span>. We can check the sides above are equal by multiplying out the right side (Make sure you FOIL!),</p>
+<div class="arithmatex">\[(x + 3)(x + 1) = x(x+1) + 3(x+1) = x^2 + x + 3x + 3 = x^2 + 4x + 3. \;\checkmark\]</div>
+<p>When <span class="arithmatex">\(a = 1\)</span> and <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span> are <em>integers</em>, the following information will help us factor:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> are integers,</li>
+<li><span class="arithmatex">\(p q = c\)</span>,</li>
+<li><span class="arithmatex">\(p + q = b\)</span>.</li>
+</ul>
+<p>In this case, I like listing out the integer factors of <span class="arithmatex">\(c\)</span>, and then checking which satisfy the last condition. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>Find the zeros of the quadratic <span class="arithmatex">\(y = x^2 + 5x + 6\)</span> by factoring</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The integer factors of <span class="arithmatex">\(6\)</span> are: <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(6\)</span>, <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(3\)</span>. We want to choose the pair that adds up to <span class="arithmatex">\(5\)</span>, which is <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(3\)</span>. Thus,</p>
+<div class="arithmatex">\[x^2 + 5x + 6 = (x+2)(x+3)\]</div>
+<p>so the zeros are <span class="arithmatex">\(-2\)</span> and <span class="arithmatex">\(-3\)</span>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<p>Find the zeros of the quadratic <span class="arithmatex">\(y = x^2 - 4x - 45\)</span> by factoring</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The integer factors of 45 are: </p>
+<ul>
+<li>1, 45</li>
+<li>3, 15</li>
+<li>5, 9</li>
+</ul>
+<p>In this example we have to be careful about signs. Since <span class="arithmatex">\(c = -45\)</span>, one of the factors needs to come with a negative sign. We can check that <span class="arithmatex">\(5 - 9 = -4 = b\)</span>, so the correct factorization is</p>
+<div class="arithmatex">\[y = (x - 9)(x+5)\]</div>
+<p>and the zeros are <span class="arithmatex">\(x = 9, \, -5\)</span>. </p>
+</details>
+</div>
+<p>If <span class="arithmatex">\(a \neq 1\)</span>, factoring becomes a bit more complicated. In this case we need to write, </p>
+<div class="arithmatex">\[ax^2 + bx + c = (sx + p)(tx + q).\]</div>
+<p>In this case, the zeros are given by <span class="arithmatex">\(-p/s\)</span> and <span class="arithmatex">\(-q/t\)</span>. As long as <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, and <span class="arithmatex">\(c\)</span> are integers we use the following infomation to help us factor:</p>
+<ul>
+<li><span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(p\)</span>, and <span class="arithmatex">\(q\)</span> are all integers,</li>
+<li><span class="arithmatex">\(st = a\)</span>,</li>
+<li><span class="arithmatex">\(pq = c\)</span>,</li>
+<li>and <span class="arithmatex">\(sq + pt = b\)</span>. </li>
+</ul>
+<p>From this information we can make an educated guess at what the appropriate factoring is and then check if it works by FOIL-ing out the guess. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 4</p>
+<p>Factor the quadratic <span class="arithmatex">\(y = 3x^2 + 5x + 2\)</span> and solve for the zeros. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Since <span class="arithmatex">\(a = 3\)</span> only factors into 3 and 1 and <span class="arithmatex">\(c = 2\)</span> only factors into 2 and 1, there are only two possible factorizations, </p>
+<div class="arithmatex">\[(3x+1)(x+2) \text{ and } (3x+2)(x+1)\]</div>
+<p>By FOIL-ing we can deduce the latter is correct, </p>
+<div class="arithmatex">\[(3x+2)(x+1) = 3x(x+1) + 2(x+1) = 3x^2+3x+2x+2 = 3x^2+5x+2.\]</div>
+<p>The zeros are then <span class="arithmatex">\(x = -1,\, -2/3\)</span>. </p>
+</details>
+</div>
+<p>The <strong>quadratic formula</strong> states that the solution to <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> is, </p>
+<div class="arithmatex">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]</div>
+<p>The <span class="arithmatex">\(\pm\)</span> symbol indicates that one solution is given by using <span class="arithmatex">\(+\)</span> and another solution is given by using <span class="arithmatex">\(-\)</span>. If there are no roots of the equation the term under the square root, <span class="arithmatex">\(b^2 - 4ac\)</span>, will be negative. If there is a single root <span class="arithmatex">\(b^2 - 4ac = 0\)</span>. The term <span class="arithmatex">\(b^2-4ac\)</span> is sometimes referred to as the discriminant. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 5</p>
+<p>Use the quadratic formula to find the zeros of <span class="arithmatex">\(y = 3x^2 + 5x + 2\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The quadratic formula gives, </p>
+<div class="arithmatex">\[x = \frac{-5 \pm \sqrt{25 - 4(3)(2)}}{2(3)}.\]</div>
+<p>Simplifying we get, </p>
+<div class="arithmatex">\[x = \frac{-5 \pm \sqrt{25 - 24}}{6} = -\frac{5}{6} \pm \frac{1}{6}.\]</div>
+<p>So the roots are <span class="arithmatex">\(x = -1, \, -2/3\)</span>. </p>
+</details>
+</div>
+<p>If the quadratic has irrational roots factoring will not work, but the quadratic formula will </p>
+<div class="admonition example">
+<p class="admonition-title">Example 6</p>
+<p>Use the quadratic formula to compute the zeros of <span class="arithmatex">\(y = x^2 + 4x - 6\)</span>.</p>
+</div>
+<p>Quadratic functions show up in many applications. The seminal example is projectile motion, </p>
+<div class="admonition example">
+<p class="admonition-title">Example 7</p>
+<p>A ball is thrown upwards from the top of a 40 ft high building at a speed of 80 ft/s. The balls height above the ground can be modeled by the equation</p>
+<div class="arithmatex">\[h = -16t^2 + 80t +40\]</div>
+<p>where <span class="arithmatex">\(t\)</span> is the number of seconds after the ball is thrown. When does the ball hit the ground?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>We want to compute the zeros of the function <span class="arithmatex">\(h = -16t^2 + 80t +40\)</span> so let's use the quadratic formula, </p>
+<div class="arithmatex">\[t = \frac{-80 \pm \sqrt{6400 - 4(-16)(40)}}{2(-16)} = \frac{-80 \pm \sqrt{8960}}{-32}\]</div>
+<p>Since the square root does not simplify nicely, we can use a calculator to approximate the solution</p>
+<div class="arithmatex">\[t \approx 5.458, \; -0.458.\]</div>
+<p>Since it doesn't make sense to have negative time, the correct answer is <span class="arithmatex">\(5.458\)</span> seconds. </p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 8</p>
+<p>The weekly demand for a product is given by <span class="arithmatex">\(q = 300 - 5p\)</span>, where <span class="arithmatex">\(p\)</span> is the price in dollars and <span class="arithmatex">\(q\)</span> is the quantity demanded. Find the price that maximizes weekly revenue.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Revenue is price times quantity,</p>
+<div class="arithmatex">\[R = pq = p(300 - 5p) = 300p - 5p^2\]</div>
+<p>This is a downward-opening parabola, so the maximum occurs at the vertex,</p>
+<div class="arithmatex">\[p = -\frac{300}{2(-5)} = 30\]</div>
+<p>The maximum revenue is</p>
+<div class="arithmatex">\[R(30) = 300(30) - 5(30)^2 = 9000 - 4500 = 4500\]</div>
+<p>A price of <span class="arithmatex">\(\$30\)</span> per unit maximizes weekly revenue at <span class="arithmatex">\(\$4500\)</span>.</p>
+</details>
+</div>
+<h2 id="32-polynomial-functions">3.2 Polynomial Functions</h2>
+<p>A <strong>polynomial</strong> is a function that can be written as </p>
+<div class="arithmatex">\[y = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0\]</div>
+<p>where <span class="arithmatex">\(a_i\)</span> are coefficients. We assume <span class="arithmatex">\(a_n \neq 0\)</span>, but the other <span class="arithmatex">\(a_i\)</span> can be any real number. The <strong>degree</strong> of a polynomial is the highest power of <span class="arithmatex">\(x\)</span> appearing in the function. As written, the above polynomial has degree <span class="arithmatex">\(n\)</span>. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 9</p>
+<p>Determine the degree of the following polynomials:</p>
+<p>a) <span class="arithmatex">\(y = x^2 + x + 1\)</span></p>
+<p>b) <span class="arithmatex">\(y = 3x^3 + 2x^2 + 1\)</span></p>
+<p>c) <span class="arithmatex">\(y = x - 4x^5\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) <span class="arithmatex">\(y = x^2 + x + 1\)</span> has degree <span class="arithmatex">\(2\)</span>.</p>
+<p>b) <span class="arithmatex">\(y = 3x^3 + 2x^2 + 1\)</span> has degree <span class="arithmatex">\(3\)</span>.</p>
+<p>c) <span class="arithmatex">\(y = x - 4x^5\)</span> has degree <span class="arithmatex">\(5\)</span>.</p>
+</details>
+</div>
+<p>A line is a polynomial of degree 1 or 0 (a degree 0 polynomial is a horizontal line). A quadratic is a polynomial of degree 2. </p>
+<p>A polynomial of degree <span class="arithmatex">\(n\)</span> can cross the <span class="arithmatex">\(x\)</span> axis up to <span class="arithmatex">\(n\)</span> times. Like quadratics, we can factor polynomials. Factoring polynomials is typically a process of trial and error. There is no generalization of the quadratic formula for degree <span class="arithmatex">\(n\)</span> polynomials. </p>
+<div class="admonition note">
+<p class="admonition-title">Solving for Zeros in Higher Degrees</p>
+<p>There are formulas that solve for zeros of <a href="https://en.wikipedia.org/wiki/Cubic_equation">cubic</a> (degree 3) and <a href="https://en.wikipedia.org/wiki/Quartic_equation">quartic</a> (degree 4) polynomials. The <strong>Abel-Ruffini Theorem</strong> proves there is no closed expression for the zeros in degree 5 or above. </p>
+<p>In this class we will only care about routine factoring of higher order polynomials, for anything complicated I suggest using a computer :).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 10</p>
+<p>Factor <span class="arithmatex">\(y = 3x^4 - 12x^3 + 9x^2\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>First factor out the greatest common factor of <span class="arithmatex">\(3x^2\)</span>,</p>
+<div class="arithmatex">\[3x^4 - 12x^3 + 9x^2 = 3x^2(x^2 - 4x + 3)\]</div>
+<p>The remaining quadratic factors as,</p>
+<div class="arithmatex">\[3x^2(x^2 - 4x + 3) = 3x^2(x-1)(x-3)\]</div>
+<p>The zeros are <span class="arithmatex">\(x = 0\)</span>, <span class="arithmatex">\(x = 1\)</span>, and <span class="arithmatex">\(x = 3\)</span>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 11</p>
+<p>Factor <span class="arithmatex">\(y = x^3 + 2x^2 - 9x - 18\)</span>.</p>
+<p>This problem uses a method called <em>grouping</em> for more on gouping see <a href="https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/06%3A_Factoring_Polynomials/6.05%3A_Factoring_by_Grouping">this online resource</a>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Group the first two and last two terms,</p>
+<div class="arithmatex">\[x^3 + 2x^2 - 9x - 18 = (x^3 + 2x^2) + (-9x - 18)\]</div>
+<p>Factor out the common factor from each group,</p>
+<div class="arithmatex">\[= x^2(x + 2) - 9(x + 2)\]</div>
+<p>Now factor out <span class="arithmatex">\((x+2)\)</span>,</p>
+<div class="arithmatex">\[= (x + 2)(x^2 - 9)\]</div>
+<p>The quadratic <span class="arithmatex">\(x^2 - 9\)</span> is a difference of squares, so,</p>
+<div class="arithmatex">\[= (x+2)(x+3)(x-3)\]</div>
+<p>The zeros are <span class="arithmatex">\(x = -2\)</span>, <span class="arithmatex">\(x = -3\)</span>, and <span class="arithmatex">\(x = 3\)</span>.</p>
+</details>
+</div>
+<p>The <strong>tail behavior</strong> describes what happens to a graph as <span class="arithmatex">\(x \to \infty\)</span> and <span class="arithmatex">\(x \to -\infty\)</span>. The two tails can either go up or down. The tail behavior is determined by the highest degree term, <span class="arithmatex">\(a_nx^n\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><span class="arithmatex">\(n\)</span> is even</th>
+<th style="text-align: center;"><span class="arithmatex">\(n\)</span> is odd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(a_n &gt; 0\)</span></td>
+<td style="text-align: center;">up, up.</td>
+<td style="text-align: center;">down, up.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a_n &lt; 0\)</span></td>
+<td style="text-align: center;">down, down.</td>
+<td style="text-align: center;">up, down.</td>
+</tr>
+</tbody>
+</table>
+<p>In the above table we list the direction of the <span class="arithmatex">\(-\infty\)</span> tail then the <span class="arithmatex">\(\infty\)</span> tail (like you would read the graph from left to right).</p>
+<p>Given a factored polynomial, we can sketch a good picture by determining whether the function is above or below the <span class="arithmatex">\(x\)</span>-axis between the roots. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 12</p>
+<p>Sketch the polynomial <span class="arithmatex">\(y = 3x^4 - 12x^3 + 9x^2\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>We factored this polynomial in Example 10 and got, </p>
+<div class="arithmatex">\[y = 3x^2(x-1)(x-3)\]</div>
+<p>Let's put the zeros on a number line:</p>
+<p><center>
+<img alt="Number line showing roots at 0, 1, and 3" src="../images/numberline.png" width="500" />
+</center></p>
+<p>In between the zeros the polynomial will be entirely positive or entirely negative, so we just need to check a single point in each interval.</p>
+<p><span class="arithmatex">\(x &lt; 0\)</span>: Let's check <span class="arithmatex">\(x = -1\)</span>, </p>
+<div class="arithmatex">\[3(-1)^2(-1-1)(-1-3) = 3(1)(-2)(-4) = 24\]</div>
+<p>so the function is positive when <span class="arithmatex">\(x &lt; 0\)</span>. </p>
+<p><span class="arithmatex">\(0 &lt; x &lt; 1\)</span>: Let's check <span class="arithmatex">\(x = 1/2\)</span>,</p>
+<div class="arithmatex">\[3(1/2)^2(1/2-1)(1/2-3) = 3(1/4)(-1/2)(-5/2) = 15/16\]</div>
+<p>so the function is positive when <span class="arithmatex">\(0 &lt; x &lt; 1\)</span>. </p>
+<p><span class="arithmatex">\(1&lt;x&lt;3\)</span>: Let's check <span class="arithmatex">\(x=2\)</span>,</p>
+<div class="arithmatex">\[3(2)^2(2-1)(2-3) = 3(4)(1)(-1) = -12\]</div>
+<p>so the function is negative when <span class="arithmatex">\(1&lt;x&lt;3\)</span>.</p>
+<p><span class="arithmatex">\(x &gt; 3\)</span>: Let's check <span class="arithmatex">\(x = 4\)</span>, </p>
+<div class="arithmatex">\[3(4)^2(4-1)(4-3) = 3(16)(3)(1) = 144\]</div>
+<p>so the function is positive when <span class="arithmatex">\(x &gt; 3\)</span>.</p>
+<p>Notice the leading term of this polynomial is <span class="arithmatex">\(3x^4\)</span>, so the tail behavior checks out with what we determined above. From this information we get a nice sketch of the graph.  </p>
+<p><center>
+<img alt="Sketch of y = 3x^4 - 12x^3 + 9x^2" src="../images/poly_sketch.png" width="400" />
+</center></p>
+</details>
+</div>
+<h2 id="33-rational-functions">3.3 Rational Functions</h2>
+<p>If <span class="arithmatex">\(p(x)\)</span> and <span class="arithmatex">\(q(x)\)</span> are polynomial functions, then </p>
+<div class="arithmatex">\[y = \frac{p(x)}{q(x)}\]</div>
+<p>is a <strong>rational</strong> function. </p>
+<div class="admonition note">
+<p class="admonition-title">Function Notation</p>
+<p>It is common to use the notation <span class="arithmatex">\(f(x) = y\)</span> to denote that <span class="arithmatex">\(y\)</span> is a function of <span class="arithmatex">\(x\)</span>. The letter <span class="arithmatex">\(f\)</span> is typically used to mean function, however in some context it is common to use other letters. For example, <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> are commonly used to represent polynomials. If we write </p>
+<div class="arithmatex">\[f(x) = 3x + 1\]</div>
+<p>means the same as </p>
+<div class="arithmatex">\[y = 3x + 1.\]</div>
+<p>The left hand side above <em>does not</em> mean we are multiplying <span class="arithmatex">\(f\)</span> by <span class="arithmatex">\(x\)</span>. If we write, </p>
+<div class="arithmatex">\[f(1) = 4\]</div>
+<p>This means that when <span class="arithmatex">\(x = 1\)</span> we have <span class="arithmatex">\(y = 4\)</span>. </p>
+</div>
+<p>Rational functions may have <strong>vertical asymptotes</strong>. These are <span class="arithmatex">\(x\)</span>-values where the function tends to infinity. This means that near these points the function looks like a vertical line. Consider the graph of the function, </p>
+<div class="arithmatex">\[y = \frac{1}{x}\]</div>
+<p>Using Desmos we get, </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/dfhxt8nnmp?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>This graph has a vertical asymptote at <span class="arithmatex">\(x = 0\)</span>. Vertical asymptotes occur when the polynomial in the denominator is equal to 0, however not all zeros of the denominator result in vertical asymptotes. Let's consider the following function</p>
+<div class="arithmatex">\[y = \frac{x^2-1}{x^2+4x+3}\]</div>
+<p>factoring the denominator gives, </p>
+<div class="arithmatex">\[y = \frac{x^2-1}{(x+1)(x+3)}\]</div>
+<p>so there are potentially vertical asymptotes at <span class="arithmatex">\(x=-1\)</span> and <span class="arithmatex">\(x=-3\)</span>. When we graph the function using Desmos we get, </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/mhkbc1f7nm?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The above graph shows a vertical asymptote at <span class="arithmatex">\(x=-3\)</span> but <em>no</em> vertical asymptote at <span class="arithmatex">\(x=-1\)</span>. Desmos is correct, there is no vertical asymptote, however it is misleading. We call <span class="arithmatex">\(x=-1\)</span> a <strong>removable discontinuity</strong> or hole in the graph. This is because if we also factor the numerator we get</p>
+<div class="arithmatex">\[y = \frac{(x-1)(x+1)}{(x+1)(x+3)}\]</div>
+<p>and the <span class="arithmatex">\(x-1\)</span> terms in the numerator and denominator cancel each other out. In short, <span class="arithmatex">\(x=k\)</span> is </p>
+<ol>
+<li>a vertical asymptote if <span class="arithmatex">\(q(k) = 0\)</span> and it does not cancel out with terms from the numerator.</li>
+<li>a removable discontinuity if <span class="arithmatex">\(q(k) = 0\)</span> but the term cancels out with terms in the numerator. </li>
+</ol>
+<p>The numerator and denominator should be <em>fully factored</em> in order to determine what is a vertical asymptote and what is a removable discontinuity. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 13</p>
+<p>Determine whether the following function has any vertical asymptotes or removable discontinuities,</p>
+<div class="arithmatex">\[f(x) = \frac{x^2 - x - 6}{x^2 - x - 2}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>First factor the numerator and denominator,</p>
+<div class="arithmatex">\[f(x) = \frac{(x-3)(x+2)}{(x-2)(x+1)}\]</div>
+<p>The function has vertical asymptotes at <span class="arithmatex">\(x = 2\)</span> and <span class="arithmatex">\(x = -1\)</span>, and no removable discontinuities.</p>
+</details>
+</div>
+<p>The tails of a polynomial always go to <span class="arithmatex">\(\infty\)</span> or <span class="arithmatex">\(-\infty\)</span> as long as the degree of the polynomial is at least 1. For rational functions the tail, or <strong>asymptotic</strong>, behavior depends on the higest degree in the numerator and denominator of the function. If <span class="arithmatex">\(\deg p(x) \leq \deg q(x)\)</span> the function has a <strong>horizontal asymptote</strong>. A horizontal asymptote means that as <span class="arithmatex">\(x \to \pm \infty\)</span> the function begins to look like a horizontal line. Both of the Desmos graphs above have horizontal asymptotes. </p>
+<ol>
+<li>
+<p>If <span class="arithmatex">\(\deg p(x) &lt; \deg q(x)\)</span>, then the rational function has a horizontal asymptote at <span class="arithmatex">\(y = 0\)</span>. </p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\deg p(x) = \deg q(x)\)</span>, then the rational function has a horizontal asymptote that depends on the coefficients associated to the leading order terms. See the example below. </p>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example 14</p>
+<p>Determine whether the function </p>
+<div class="arithmatex">\[y = \frac{2x^2 - 3}{3x^2 + 2x - 1}\]</div>
+<p>has a horizontal asymptote. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The degree of the numerator and denominator is 2, so there is a horizontal asymptote. To compute its location, we take the ratio of the coefficients on the <span class="arithmatex">\(x^2\)</span> terms. Thus the horizontal asymptote is <span class="arithmatex">\(y = 2/3\)</span>. </p>
+</details>
+</div>
+<p>Rational function arise naturally in applications </p>
+<div class="admonition example">
+<p class="admonition-title">Example 15</p>
+<p>A large mixing tank currently contains 100 gallons of water, into which 5 pounds of sugar have been mixed. A tap will open pouring 10 gallons per minute of water into the tank at the same time sugar is poured into the tank at a rate of 1 pound per minute. Find the concentration (pounds per gallon) of sugar in the tank after <span class="arithmatex">\(t\)</span> minutes. Find the horizontal asymptote of this function and interpret its meaning in the context of the problem. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The concentration is amount of sugar divided by the amount of water. After <span class="arithmatex">\(t\)</span> seconds the amount of sugar and water in the tank are <span class="arithmatex">\(s = 5 + t\)</span> and <span class="arithmatex">\(w = 100 + 10t\)</span>, respectively. Thus the concentration is given by the rational function</p>
+<div class="arithmatex">\[c = \frac{5+t}{100+10t}\]</div>
+<p>The horizontal asymptote occurs at <span class="arithmatex">\(c = 1/10\)</span>. This means that over time, the concentration will eventually level off to <span class="arithmatex">\(1/10\)</span> lbs sugar per gallon. </p>
+</details>
+</div>
+<h2 id="exercises">Exercises</h2>
+<h3 id="31-exercises">3.1 Exercises</h3>
+<p>Compute the vertex of the following parabolas. State whether the parabola faces up or down. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 1.</strong></p>
+<p><span class="arithmatex">\(y = x^2 + 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 2.</strong></p>
+<p><span class="arithmatex">\(y = -2x^2 + 3x - 4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 3.</strong></p>
+<p><span class="arithmatex">\(y = 4 - x^2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 4.</strong></p>
+<p><span class="arithmatex">\(y = x^2 + x + 1\)</span> </p>
+</li>
+</ul>
+</div>
+<p>Find the zeros of the quadratic functions by factoring. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 5.</strong></p>
+<p><span class="arithmatex">\(y = x^2 + 8x + 12\)</span></p>
+</li>
+<li>
+<p><strong>Problem 6.</strong></p>
+<p><span class="arithmatex">\(y = x^2 - 4x + 4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 7.</strong></p>
+<p><span class="arithmatex">\(y = 6x^2 - x -2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 8.</strong></p>
+<p><span class="arithmatex">\(y = 4x^2 - 12x + 5\)</span></p>
+</li>
+</ul>
+</div>
+<p>For the following quadratic functions: (a) compute the vertex, (b) find the zeros by factoring or using the quadratic equation, and (c) sketch a graph of the parabola. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 9.</strong></p>
+<p><span class="arithmatex">\(y = x^2 - 4x + 3\)</span></p>
+</li>
+<li>
+<p><strong>Problem 10.</strong></p>
+<p><span class="arithmatex">\(y = x^2 + 2x - 8\)</span></p>
+</li>
+<li>
+<p><strong>Problem 11.</strong></p>
+<p><span class="arithmatex">\(y = -x^2 + 6x - 5\)</span></p>
+</li>
+<li>
+<p><strong>Problem 12.</strong></p>
+<p><span class="arithmatex">\(y = 2x^2 - 7x + 3\)</span></p>
+</li>
+<li>
+<p><strong>Problem 13.</strong></p>
+<p><span class="arithmatex">\(y = -3x^2 + 12x - 9\)</span></p>
+</li>
+<li>
+<p><strong>Problem 14.</strong></p>
+<p><span class="arithmatex">\(y = 4x^2 - 12x + 5\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 15.</strong> A company finds that if it prices its product at <span class="arithmatex">\(p\)</span> dollars, the weekly profit is given by</p>
+<pre><code>$$P(p) = -50p^2 + 400p - 300$$
+
+Find the price that maximizes weekly profit and state the maximum profit.
+</code></pre>
+<p><strong>Problem 16.</strong> A ball is thrown upward from the top of a 48 foot building with an initial velocity of 32 feet per second. The height of the ball in feet after <span class="arithmatex">\(t\)</span> seconds is given by</p>
+<div class="arithmatex">\[h = -16t^2 + 32t + 48\]</div>
+<p>(a) Find the maximum height of the ball and the time at which it occurs. (b) Find the time at which the ball hits the ground.</p>
+<p><strong>Problem 17.</strong> The monthly demand for a fitness tracker is given by <span class="arithmatex">\(q = 500 - 4p\)</span>, where <span class="arithmatex">\(p\)</span> is the price in dollars and <span class="arithmatex">\(q\)</span> is the quantity demanded. Find the price that maximizes monthly revenue and state the maximum revenue.</p>
+<h3 id="32-exercises">3.2 Exercises</h3>
+<p>Determine the degree and the tail behavior of the following polynomials.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 18.</strong></p>
+<p><span class="arithmatex">\(y = x^3 - 10x^2 - x + 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 19.</strong></p>
+<p><span class="arithmatex">\(y = -2x^4 + 3x^2 - 7\)</span></p>
+</li>
+<li>
+<p><strong>Problem 20.</strong></p>
+<p><span class="arithmatex">\(y = 5x^2 - x + 4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 21.</strong></p>
+<p><span class="arithmatex">\(y = x^5 + 4x^3 - x + 2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 22.</strong></p>
+<p><span class="arithmatex">\(y = 3x^6 - x^4 + 2x - 8\)</span></p>
+</li>
+<li>
+<p><strong>Problem 23.</strong></p>
+<p><span class="arithmatex">\(y = -4x^3 + x^2 + 9\)</span></p>
+</li>
+</ul>
+</div>
+<p>Factor the following polynomials as much as possible.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 24.</strong></p>
+<p><span class="arithmatex">\(y = 2x^3 - 8x^2 - 10x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 25.</strong></p>
+<p><span class="arithmatex">\(y = -3x^4 + 6x^3 + 24x^2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 26.</strong></p>
+<p><span class="arithmatex">\(y = x^3 - 5x^2 + 2x - 10\)</span></p>
+</li>
+<li>
+<p><strong>Problem 27.</strong></p>
+<p><span class="arithmatex">\(y = x^4 - 5x^2 + 4\)</span></p>
+</li>
+</ul>
+</div>
+<p>Sketch the graph of the following polynomials using the method described in Example 12. Do not use a graphing utility!</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 28.</strong></p>
+<p><span class="arithmatex">\(y = x(x-2)(x+3)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 29.</strong></p>
+<p><span class="arithmatex">\(y = -x^2(x-4)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 30.</strong></p>
+<p><span class="arithmatex">\(y = (x+1)(x-1)(x-3)(x+2)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 31.</strong></p>
+<p><span class="arithmatex">\(y = -2x(x-3)^2\)</span></p>
+</li>
+</ul>
+</div>
+<h3 id="33-exercises">3.3 Exercises</h3>
+<p>Determine whether the following rational functions have any vertical asymptotes, removable discontinuities, or horizontal asymptotes.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 32.</strong></p>
+<div class="arithmatex">\[f(x) = \frac{x+3}{x-5}\]</div>
+</li>
+<li>
+<p><strong>Problem 33.</strong></p>
+<div class="arithmatex">\[f(x) = \frac{x^2 - 4}{x - 6}\]</div>
+</li>
+<li>
+<p><strong>Problem 34.</strong></p>
+<div class="arithmatex">\[f(x) = \frac{3x^2 + 1}{x^2 - 9}\]</div>
+</li>
+<li>
+<p><strong>Problem 35.</strong></p>
+<div class="arithmatex">\[f(x) = \frac{x^2 - 5x + 6}{x^3 - 2x^2}\]</div>
+</li>
+</ul>
+</div>
+<p><strong>Problem 36.</strong> A tank initially contains 50 gallons of water with 2 pounds of salt dissolved in it. Water flows in at a rate of 5 gallons per minute and salt is added at a rate of 3 pounds per minute. Write a function for the concentration of salt (pounds per gallon) after <span class="arithmatex">\(t\)</span> minutes. Find the horizontal asymptote and interpret its meaning.</p>
+<p><strong>Problem 37.</strong> A new product launches with 500 total sales in its first month. Beginning in month 2, the company runs an advertising campaign that generates 80 new sales per month at a cost of $200 per month, while fixed operating costs are $1000 per month. Write a function for the average cost per sale after <span class="arithmatex">\(t\)</span> months of the campaign. Find the horizontal asymptote and interpret its meaning.</p>
+<p><strong>Problem 38.</strong> A polluted lake contains 1000 gallons of water with 40 pounds of pollutant. A river feeds into the lake at 10 gallons per minute carrying 0.5 pounds of pollutant per gallon, while a drain removes 10 gallons per minute of the mixed water. Write a function for the concentration of pollutant (pounds per gallon) after <span class="arithmatex">\(t\)</span> minutes. Find the horizontal asymptote and interpret its meaning.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This work is licensed under a  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
