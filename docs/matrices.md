@@ -1318,7 +1318,7 @@ State the dimensions of the following matrices.
 
 </div>
 
-Compute the following, if possible.
+Compute the following if possible or explain why it cannot be computed.
 
 <div class="grid cards" markdown>
 
@@ -1340,7 +1340,7 @@ Compute the following, if possible.
 
 </div>
 
-Compute the following scalar products.
+Compute the following.
 
 <div class="grid cards" markdown>
 
@@ -1384,7 +1384,7 @@ Determine whether the following matrix multiplications are allowed. If allowed, 
 
 </div>
 
-Compute the following matrix products.
+Compute the following matrix product (they are all possible).
 
 <div class="grid cards" markdown>
 
