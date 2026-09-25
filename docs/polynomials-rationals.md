@@ -495,9 +495,9 @@ For the following quadratic functions: (a) compute the vertex, (b) find the zero
 
 **Problem 15.** A company finds that if it prices its product at $p$ dollars, the weekly profit is given by
 
-    $$P(p) = -50p^2 + 400p - 300$$
+$$P(p) = -50p^2 + 400p - 300$$
 
-    Find the price that maximizes weekly profit and state the maximum profit.
+Find the price that maximizes weekly profit and state the maximum profit.
 
 **Problem 16.** A ball is thrown upward from the top of a 48 foot building with an initial velocity of 32 feet per second. The height of the ball in feet after $t$ seconds is given by
 
