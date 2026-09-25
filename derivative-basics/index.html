@@ -1,0 +1,1267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../exponents-logarithms/">
+      
+      
+        <link rel="next" href="../derivative-rules/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>5. Derivative Basics - Linear Models and Differential Calculus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#derivative-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-header__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Models and Differential Calculus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Derivative Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-nav__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Models and Differential Calculus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Linear Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomials-rationals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponents-logarithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exponents and Logarithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-derivative-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Derivative Ideas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-limits-and-continuity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Limits and Continuity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-derivative-at-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Derivative at a Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Derivative at a Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-application-of-the-derivative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.1 Application of the Derivative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-derivative-as-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Derivative as a Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="derivative-basics">Derivative Basics</h1>
+<h2 id="51-derivative-ideas">5.1 Derivative Ideas</h2>
+<p>We learned back in Chapter 1 that linear functions have constant <strong>slope</strong>, which describes the steepness of the line. Other functions we have learned about do not have constant steepness. Take for example the function <span class="arithmatex">\(f(x) = x^5-2x^4-x^3+2x^2-x\)</span>,</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/fnus02udos?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The "slope" of the function changes with <span class="arithmatex">\(x\)</span>. When <span class="arithmatex">\(x \approx 1/2\)</span> the slope negative and not very steep, but when <span class="arithmatex">\(x \approx 2\)</span> the slope is positive and pretty steep. </p>
+<p>One way to approximate the slope at a point is to use a <strong>secant line</strong> near the point. A secant line is a linear function that intersects a curve at two points. </p>
+<p>Let's consider the quadratic function <span class="arithmatex">\(f(x) = x^2/10\)</span>,</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/jh6zew4lht?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>We see that as <span class="arithmatex">\(x\)</span> increases, the slope of the graph becomes steeper. The below graph contains a secant line through the point <span class="arithmatex">\((2,f(2)) = (2,0.4)\)</span> and the blue point. You can toggle the blue point along the function to change the look of the secant line. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/pwv9n5ag8v?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>As the second point gets closer to <span class="arithmatex">\((2,0.4)\)</span>, the slope of the secant line more closely matches the slope of <span class="arithmatex">\(f(x)\)</span> at <span class="arithmatex">\(x=2\)</span>. What if we kept moving the second point closer and closer to <span class="arithmatex">\((2,0.4)\)</span> until it was essentially the same point? This give us what is known as the <strong>tangent line</strong>. We can't yet formally define the tangent line, but broadly it is a line that matches the function at the designated point and has the same slope at the function at that point. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/h5oagssj9e?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<h2 id="52-limits-and-continuity">5.2 Limits and Continuity</h2>
+<p>A <strong>limit</strong> is a way for us to mathematically what it means to get closer and closer to a point without truly be equal to it. We write, </p>
+<div class="arithmatex">\[\lim_{x \to a} f(x)\]</div>
+<p>to mean: What happens to the function <span class="arithmatex">\(f(x)\)</span> as <span class="arithmatex">\(x\)</span> gets arbitrarily close to, <em>but not equal to</em>, <span class="arithmatex">\(a\)</span>? 
+It's important to know that taking a limit is <em>not the same as</em> computing the value of the function at that point. In general,</p>
+<div class="arithmatex">\[\lim_{x\to a} f(x) \neq f(a).\]</div>
+<p>One reason limits are interesting is the function may be <strong>undefined</strong> at the point <span class="arithmatex">\(x=a\)</span>. Take for example the function </p>
+<div class="arithmatex">\[f(x) = \frac{x^2-1}{x-1}\]</div>
+<p>I cannot compute <span class="arithmatex">\(f(1)\)</span>, since the denominator becomes 0, but I can still compute </p>
+<div class="arithmatex">\[\lim_{x \to 1} \frac{x^2-1}{x-1} = 2.\]</div>
+<p>So as <span class="arithmatex">\(x \to 1\)</span>, the function gets close to the <span class="arithmatex">\(y\)</span>-value <span class="arithmatex">\(2\)</span>. Graphically this looks like, </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/pie3tby7gr?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>We use the open hole to signify that the function <span class="arithmatex">\(f(x)\)</span> does not exist when <span class="arithmatex">\(x=1\)</span>, but it does exist for values arbitrarily close, e.g. for <span class="arithmatex">\(x=0.9999999987\)</span>. Note that Desmos does not identify these <strong>removable discontinuities</strong> when you graph the function. </p>
+<p>Graphically, a limit tells us what happens to the <span class="arithmatex">\(y\)</span>-value of the graph as we approach the <span class="arithmatex">\(x\)</span>-value along the curve of the function. For a limit to exist, the value must be the same regardless of what direction on the line we approach the point from. This allows us to compute limits from the graph of the function.</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/hmqjrp8dmp?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>Consider the above graph of a function, <span class="arithmatex">\(f\)</span>. Based on the graph, <span class="arithmatex">\(f(1) = 0\)</span>, but it we use the red dot to toggle allong the line, we see that </p>
+<div class="arithmatex">\[\lim_{x\to 1} f(x) = 1.\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>Below is a graph of the function <span class="arithmatex">\(f(x)\)</span>. Compute </p>
+<p>a) <span class="arithmatex">\(\lim_{x\to 2} f(x)\)</span></p>
+<p>b) <span class="arithmatex">\(\lim_{x\to 1} f(x)\)</span></p>
+<p>c) <span class="arithmatex">\(\lim_{x\to 0} f(x)\)</span></p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/bqi7egfuqh?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) If we follow the line to near when <span class="arithmatex">\(x = 2\)</span>, we see that the <span class="arithmatex">\(y\)</span>-value is near the value <span class="arithmatex">\(2.5\)</span>. Therefore, </p>
+<div class="arithmatex">\[\lim_{x\to 2} f(x) = 2.5\]</div>
+<p>b) According to the graph, <span class="arithmatex">\(f(1) = 1\)</span>, however if we actually follow the curve of the graph we find that </p>
+<div class="arithmatex">\[\lim_{x\to 1} f(x) = 0.5\]</div>
+<p>The reality of limits is that we don't care about the value of <span class="arithmatex">\(f(1)\)</span>, we only care about values close to, <em>but not equal to</em> <span class="arithmatex">\(x=1\)</span>. </p>
+<p>c) If we follow the curve of the graph towards <span class="arithmatex">\(x = 0\)</span> from the left, the <span class="arithmatex">\(y\)</span>-value approaches 0. However, if we follow the curve of the graph towards <span class="arithmatex">\(x=0\)</span> from the right, the <span class="arithmatex">\(y\)</span>-value approaches <span class="arithmatex">\(1\)</span>. It doesn't matter that <span class="arithmatex">\(f(0) = 1\)</span>, since the <span class="arithmatex">\(y\)</span>-value differs when approaching from the left versus the right, the limit <strong>does not exist</strong>. </p>
+</details>
+</div>
+<p>If we can graph the function easily, then the graph serves as an excellent tool for computing limits. An alternative method for computing limits is to use a table of values. This method usually requires a calculator. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>Use a table of values to estimate <span class="arithmatex">\(\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Note that the function is undefined at <span class="arithmatex">\(x = 2\)</span> since the denominator is zero. We evaluate the function at values approaching <span class="arithmatex">\(2\)</span> from both sides,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(x\)</span></th>
+<th><span class="arithmatex">\(1.9\)</span></th>
+<th><span class="arithmatex">\(1.99\)</span></th>
+<th><span class="arithmatex">\(1.999\)</span></th>
+<th><span class="arithmatex">\(2\)</span></th>
+<th><span class="arithmatex">\(2.001\)</span></th>
+<th><span class="arithmatex">\(2.01\)</span></th>
+<th><span class="arithmatex">\(2.1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f(x)\)</span></td>
+<td><span class="arithmatex">\(3.9\)</span></td>
+<td><span class="arithmatex">\(3.99\)</span></td>
+<td><span class="arithmatex">\(3.999\)</span></td>
+<td>undefined</td>
+<td><span class="arithmatex">\(4.001\)</span></td>
+<td><span class="arithmatex">\(4.01\)</span></td>
+<td><span class="arithmatex">\(4.1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The values approach <span class="arithmatex">\(4\)</span> from both sides, so we estimate</p>
+<div class="arithmatex">\[\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 4\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<p>Use a table of values to estimate <span class="arithmatex">\(\displaystyle\lim_{x \to 0} \frac{e^x - 1}{x}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The function is undefined at <span class="arithmatex">\(x = 0\)</span>. We evaluate at values approaching <span class="arithmatex">\(0\)</span> from both sides,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(x\)</span></th>
+<th><span class="arithmatex">\(-0.1\)</span></th>
+<th><span class="arithmatex">\(-0.01\)</span></th>
+<th><span class="arithmatex">\(-0.001\)</span></th>
+<th><span class="arithmatex">\(0\)</span></th>
+<th><span class="arithmatex">\(0.001\)</span></th>
+<th><span class="arithmatex">\(0.01\)</span></th>
+<th><span class="arithmatex">\(0.1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f(x)\)</span></td>
+<td><span class="arithmatex">\(0.95163\)</span></td>
+<td><span class="arithmatex">\(0.99502\)</span></td>
+<td><span class="arithmatex">\(0.99950\)</span></td>
+<td>undefined</td>
+<td><span class="arithmatex">\(1.00050\)</span></td>
+<td><span class="arithmatex">\(1.00502\)</span></td>
+<td><span class="arithmatex">\(1.05171\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The values approach <span class="arithmatex">\(1\)</span> from both sides, so we estimate</p>
+<div class="arithmatex">\[\lim_{x \to 0} \frac{e^x - 1}{x} = 1\]</div>
+</details>
+</div>
+<p>In many cases, computing a limit is straightforward and we can simply substitute <span class="arithmatex">\(x = a\)</span> directly into the function. This works whenever the graph function is "well-behaved" at <span class="arithmatex">\(x = a\)</span>, meaning it is defined there and has no breaks, holes, or jumps nearby. For example,</p>
+<div class="arithmatex">\[\lim_{x \to 2} 2x - 1 = 2(2) - 1 = 3.\]</div>
+<p>Since <span class="arithmatex">\(f(x) = 2x-1\)</span> is just a line, we know it is well-behaved in the context given above. When direct substitution fails, e.g. when the function is undefined at the point, we need to use algebraic techniques to help simplify the expression. The examples below cover a few common algebraic methods. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 4</p>
+<p>Compute <span class="arithmatex">\(\displaystyle\lim_{x \to 3} \frac{x^2 - x - 6}{x - 3}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The function is undefined at <span class="arithmatex">\(x = 3\)</span>. We factor the numerator,</p>
+<div class="arithmatex">\[\lim_{x \to 3} \frac{x^2 - x - 6}{x - 3} = \lim_{x \to 3} \frac{(x-3)(x+2)}{x-3}\]</div>
+<p>Since <span class="arithmatex">\(x \to 3\)</span> but <span class="arithmatex">\(x \neq 3\)</span>, we can cancel the <span class="arithmatex">\((x-3)\)</span> factor,</p>
+<div class="arithmatex">\[= \lim_{x \to 3} (x + 2) = 5\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 5</p>
+<p>Compute <span class="arithmatex">\(\displaystyle\lim_{x \to 3} \frac{\frac{1}{x} - \frac{1}{3}}{x - 3}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The function is undefined at <span class="arithmatex">\(x = 3\)</span>. We simplify the numerator by finding a common denominator,</p>
+<div class="arithmatex">\[\frac{1}{x} - \frac{1}{3} = \frac{3}{3x} - \frac{x}{3x} = \frac{3 - x}{3x}\]</div>
+<p>Substituting back in,</p>
+<div class="arithmatex">\[\lim_{x \to 3} \frac{\frac{3-x}{3x}}{x-3} = \lim_{x \to 3} \frac{3-x}{3x(x-3)}\]</div>
+<p>Notice that <span class="arithmatex">\(3 - x = -(x-3)\)</span>, so we can cancel <span class="arithmatex">\((x-3)\)</span>,</p>
+<div class="arithmatex">\[= \lim_{x \to 3} \frac{-(x-3)}{3x(x-3)} = \lim_{x \to 3} \frac{-1}{3x} = \frac{-1}{3(3)} = -\frac{1}{9}\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 6</p>
+<p>Compute <span class="arithmatex">\(\displaystyle\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The function is undefined at <span class="arithmatex">\(x = 4\)</span>. We multiply the numerator and denominator by the conjugate of the numerator, <span class="arithmatex">\(\sqrt{x} + 2\)</span>,</p>
+<div class="arithmatex">\[\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4} \cdot \frac{\sqrt{x} + 2}{\sqrt{x} + 2} = \lim_{x \to 4} \frac{x - 4}{(x-4)(\sqrt{x} + 2)}\]</div>
+<p>Since <span class="arithmatex">\(x \neq 4\)</span> we can cancel <span class="arithmatex">\((x - 4)\)</span>,</p>
+<div class="arithmatex">\[= \lim_{x \to 4} \frac{1}{\sqrt{x} + 2} = \frac{1}{\sqrt{4} + 2} = \frac{1}{4}\]</div>
+</details>
+</div>
+<p>A function is "well-behaved" at <span class="arithmatex">\(x = a\)</span> if it is <strong>continuous</strong> at <span class="arithmatex">\(x = a\)</span>. A function is continuous if and only if <span class="arithmatex">\(\lim_{x\to a} f(x) = f(a)\)</span>. In layman's terms, a function is continuous (at <span class="arithmatex">\(a\)</span>) if I can draw the graph of the function without needing to lift up my pencil or pen. </p>
+<p>If <span class="arithmatex">\(\lim_{x \to a} f(x) \neq f(a)\)</span> or either is undefined, we say that <span class="arithmatex">\(f(x)\)</span> has a <strong>point of discontinuity</strong> or simply that <span class="arithmatex">\(f(x)\)</span> is <strong>not continuous</strong> at <span class="arithmatex">\(x = a\)</span>. In Chapter 3 we saw <strong>removable discontinuities</strong> (or holes) and <strong>vertical asymptotes</strong> when discussing rational functions. </p>
+<ul>
+<li>A removable discontinuity occurs when the the limit exists, but the value of the function is different or does not exist. </li>
+<li>A vertical asymptote occurs when the function value approaches either infinity around the point. </li>
+</ul>
+<p>Below is a depiction of a <strong>jump discontinuity</strong>,</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/5ikknjrhuy?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>A jump discontinuity occurs when the function approaches different values to the right and left of the point. In the above, when we approach <span class="arithmatex">\(x=0\)</span> from the left the <span class="arithmatex">\(y\)</span>-value apporach <span class="arithmatex">\(0\)</span>, but if we appraoch from the right the <span class="arithmatex">\(y\)</span>-value approaches 1. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 7</p>
+<p>Determine the points of discontinuity in the graph below, </p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/rh0nrfjhm1?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+<details class="success">
+<summary>Solution</summary>
+<p>The graph has removable discontinuities at <span class="arithmatex">\(x = 0\)</span> and <span class="arithmatex">\(x = 1\)</span>. The graph has a jump discontinuity at <span class="arithmatex">\(x = 2\)</span>. </p>
+</details>
+</div>
+<p>Polynomial, exponential, and logarithmic functions are continuous for all values in their domain. As we learned in Chapter 3, rational functions may have points of discontinuity. Any piecewise function can have points of discontinuity.  </p>
+<h2 id="53-derivative-at-a-point">5.3 Derivative at a Point</h2>
+<p>As we choose points closer and closer to our point of interest, the secant line approaches the tangent line at the point. </p>
+<center>
+<iframe src="/secant_slider.html" width="400" height="400" frameborder="0" scrolling="no"></iframe>
+</center>
+
+<p>The slope of the tangent line is known as the <strong>instantaneous rate of change</strong> or the <strong>derivative</strong> of <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(a\)</span>. The derivative is defined explicitly as a limit. We use the notation <span class="arithmatex">\(f'(a)\)</span> to denote the derivative of <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(a\)</span>. Note that this is just a number. </p>
+<div class="arithmatex">\[f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>Note that the quotient </p>
+<div class="arithmatex">\[\frac{f(a+h) - f(a)}{h}\]</div>
+<p>is just the slope of the secant line depicted in the applet above. Taking the limit as <span class="arithmatex">\(h \to 0\)</span> thus gives us the slope of the tangent line. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 8</p>
+<p>Compute the derivative of the function <span class="arithmatex">\(f(x) = x^2\)</span> at <span class="arithmatex">\(x = 1\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Using the limit we get, </p>
+<div class="arithmatex">\[f'(1) = \lim_{h\to 0} \frac{(1+h)^2 - 1^2}{h} = \lim_{h\to 0} \frac{1+2h+h^2 - 1}{h} = \lim_{h\to 0} \frac{2h+h^2}{h}\]</div>
+<p>Factor the numerator and cancel. </p>
+<div class="arithmatex">\[f'(1) = \lim_{h\to 0} \frac{h(2+h)}{h} = \lim_{h \to 0} 2+h = 2.\]</div>
+</details>
+</div>
+<p>Once we can compute the derivative at a point, we are able to compute the tangent line. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 9</p>
+<p>Compute the line tangent to the function <span class="arithmatex">\(f(x) = x^2\)</span> at <span class="arithmatex">\(x = 1\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>In the previous example we computed that <span class="arithmatex">\(f'(1) = 2\)</span>, this is the slope of the tangent line. We also know the tangent line must pass through the point <span class="arithmatex">\((1,f(1)) = (1,1)\)</span>. Using point-slope form we get, </p>
+<div class="arithmatex">\[y - 1 = 2(x-1).\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 10</p>
+<p>Compute the line tangent to the function <span class="arithmatex">\(g(x) = 1-x^2\)</span> at <span class="arithmatex">\(x = 3\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>We use the limit definition of the derivative to find the slope of the tangent line,</p>
+<div class="arithmatex">\[g'(3) = \lim_{h \to 0} \frac{g(3+h) - g(3)}{h}\]</div>
+<p>First compute <span class="arithmatex">\(g(3)\)</span> and <span class="arithmatex">\(g(3+h)\)</span>,</p>
+<div class="arithmatex">\[g(3) = 1 - 9 = -8\]</div>
+<div class="arithmatex">\[g(3+h) = 1-(3+h)^2 = 1 - (9 + 6h + h^2) = -8 - 6h - h^2\]</div>
+<p>Now substitute into the limit,</p>
+<div class="arithmatex">\[g'(3) = \lim_{h \to 0} \frac{(-8 - 6h - h^2) - (-8)}{h} = \lim_{h \to 0} \frac{-6h - h^2}{h} = \lim_{h \to 0} \frac{h(-6 - h)}{h}\]</div>
+<p>Cancel <span class="arithmatex">\(h\)</span>,</p>
+<div class="arithmatex">\[= \lim_{h \to 0} (-6 - h) = -6\]</div>
+<p>The slope of the tangent line at <span class="arithmatex">\(x = 3\)</span> is <span class="arithmatex">\(-6\)</span>. Using point-slope form with the point <span class="arithmatex">\((3, -8)\)</span>,</p>
+<div class="arithmatex">\[y + 8 = -6(x - 3)\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 11</p>
+<p>Compute the line tangent to the function <span class="arithmatex">\(f(x) = \sqrt{x}\)</span> at <span class="arithmatex">\(x = 4\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>We use the limit definition of the derivative to find the slope of the tangent line,</p>
+<div class="arithmatex">\[f'(4) = \lim_{h \to 0} \frac{f(4+h) - f(4)}{h} = \lim_{h \to 0} \frac{\sqrt{4+h} - 2}{h}\]</div>
+<p>We multiply the numerator and denominator by the conjugate <span class="arithmatex">\(\sqrt{4+h} + 2\)</span>,</p>
+<div class="arithmatex">\[= \lim_{h \to 0} \frac{\sqrt{4+h} - 2}{h} \cdot \frac{\sqrt{4+h} + 2}{\sqrt{4+h} + 2} = \lim_{h \to 0} \frac{(4+h) - 4}{h(\sqrt{4+h} + 2)} = \lim_{h \to 0} \frac{h}{h(\sqrt{4+h}+2)}\]</div>
+<p>Cancel <span class="arithmatex">\(h\)</span>,</p>
+<div class="arithmatex">\[= \lim_{h \to 0} \frac{1}{\sqrt{4+h}+2} = \frac{1}{\sqrt{4}+2} = \frac{1}{4}\]</div>
+<p>The slope of the tangent line at <span class="arithmatex">\(x = 4\)</span> is <span class="arithmatex">\(\frac{1}{4}\)</span>. Using point-slope form with the point <span class="arithmatex">\((4, 2)\)</span>,</p>
+<div class="arithmatex">\[y - 2 = \frac{1}{4}(x - 4)\]</div>
+</details>
+</div>
+<p>It's worth noting that the derivative does not always exist for a point along a function. In order for the derivative to exist at a point, the tangent line must be well defined. If the derivative exist at <span class="arithmatex">\(a\)</span>, we say that <span class="arithmatex">\(f\)</span> is <strong>differentiable</strong> at <span class="arithmatex">\(a\)</span>. </p>
+<p>The derivative of <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(a\)</span> does not exist if the the function <span class="arithmatex">\(f\)</span> is not continuous at <span class="arithmatex">\(a\)</span>. Even if a function is continous, it does not guarentee that it is differentiable. If a function has a <em>corner</em> or <em>cusp</em> it is not differentiable at those points. In these cases, the tangent line is not well defined. Two examples below (from left to right) are the function <span class="arithmatex">\(y = |x|\)</span> and <span class="arithmatex">\(y = x^{2/3}\)</span>. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/od2ftagt45?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/eddtrxs37e?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>If a function has a vertical tangent line at a point, then the derivative does not exist. An example of this is the cube root function, <span class="arithmatex">\(y = \sqrt[3]{x}\)</span>. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/potfajkgop?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<h3 id="531-application-of-the-derivative">5.3.1 Application of the Derivative</h3>
+<p>The derivative at a point has many practical applications. If <span class="arithmatex">\(s(t)\)</span> describes the (one dimensional)position of an object at time <span class="arithmatex">\(t\)</span>, then <span class="arithmatex">\(s'(t)\)</span> gives the <strong>instantaneous velocity</strong> at time <span class="arithmatex">\(t\)</span>. Consider a particle moving along a standard number line, where its position is given by <span class="arithmatex">\(s(t)\)</span>. If <span class="arithmatex">\(s'(t)\)</span> is positive, the particle is moving to the right and if <span class="arithmatex">\(s'(t)\)</span> is negative, the particle is moving to the left. </p>
+<p>In economics, if <span class="arithmatex">\(C(x)\)</span> is the total cost of producing <span class="arithmatex">\(x\)</span> units, then <span class="arithmatex">\(C'(x)\)</span> is called the <strong>marginal cost</strong>. The marginal cost is the approximate cost of producing one additional unit. There are alternative mathematical definitions of marginal cost, but they hold the same purpose and all yeild similar results. For example, the marginal cost may alternatively be computed as</p>
+<div class="arithmatex">\[MC(x) = C(x+1) - C(x).\]</div>
+<p>From the definition, we see that this is the <em>exact</em> cost of producing one additional unit.</p>
+<p>Similarly, if <span class="arithmatex">\(R(x)\)</span> is the total revenue, we define <span class="arithmatex">\(R'(x)\)</span> to be the <strong>marginal revenue</strong>. It is, approximately, the revenue added by selling one additional unit. </p>
+<p>In general, derivatives describe the instantaneous rate of change. So given any function, the derivative can be interpreted in this manner. For example if <span class="arithmatex">\(P(t)\)</span> describes the population of country in months, then <span class="arithmatex">\(P'(t)\)</span> describes the instantaneous change in population per year. The list of derivative interpretations goes on. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 12</p>
+<p>The position of a particle moving along a straight line is given by <span class="arithmatex">\(s(t) = t^2 + 3t\)</span> 
+feet, where <span class="arithmatex">\(t\)</span> is measured in seconds. Find the instantaneous velocity at <span class="arithmatex">\(t = 2\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The instantaneous velocity is <span class="arithmatex">\(s'(2)\)</span>,</p>
+<div class="arithmatex">\[s'(2) = \lim_{h \to 0} \frac{s(2+h) - s(2)}{h}\]</div>
+<p>Compute <span class="arithmatex">\(s(2)\)</span> and <span class="arithmatex">\(s(2+h)\)</span>,</p>
+<div class="arithmatex">\[s(2) = 4 + 6 = 10\]</div>
+<div class="arithmatex">\[s(2+h) = (2+h)^2 + 3(2+h) = 4 + 4h + h^2 + 6 + 3h = 10 + 7h + h^2\]</div>
+<p>Substitute into the limit,</p>
+<div class="arithmatex">\[s'(2) = \lim_{h \to 0} \frac{(10 + 7h + h^2) - 10}{h} = \lim_{h \to 0} \frac{7h + h^2}{h} = \lim_{h \to 0} \frac{h(7+h)}{h} = \lim_{h \to 0}(7 + h) = 7\]</div>
+<p>The instantaneous velocity at <span class="arithmatex">\(t = 2\)</span> seconds is <span class="arithmatex">\(7\)</span> feet per second.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 13</p>
+<p>A company's total cost of producing <span class="arithmatex">\(x\)</span> units is given by <span class="arithmatex">\(C(x) = 2x^2 + 10x + 50\)</span> 
+dollars. Find the marginal cost at <span class="arithmatex">\(x = 5\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The marginal cost is <span class="arithmatex">\(C'(5)\)</span>,</p>
+<div class="arithmatex">\[C'(5) = \lim_{h \to 0} \frac{C(5+h) - C(5)}{h}\]</div>
+<p>Compute <span class="arithmatex">\(C(5)\)</span> and <span class="arithmatex">\(C(5+h)\)</span>,</p>
+<div class="arithmatex">\[C(5) = 2(25) + 10(5) + 50 = 50 + 50 + 50 = 150\]</div>
+<div class="arithmatex">\[C(5+h) = 2(5+h)^2 + 10(5+h) + 50 = 2(25 + 10h + h^2) + 50 + 10h + 50\]</div>
+<div class="arithmatex">\[= 150 + 30h + 2h^2\]</div>
+<p>Substitute into the limit,</p>
+<div class="arithmatex">\[C'(5) = \lim_{h \to 0} \frac{(150 + 30h + 2h^2) - 150}{h} = \lim_{h \to 0} \frac{30h + 2h^2}{h} = \lim_{h \to 0}(30 + 2h) = 30\]</div>
+<p>The marginal cost at <span class="arithmatex">\(x = 5\)</span> units is <span class="arithmatex">\(\$30\)</span> per unit. This means that producing 
+one additional unit beyond 5 costs approximately <span class="arithmatex">\(\$30\)</span>.</p>
+</details>
+</div>
+<h2 id="54-derivative-as-a-function">5.4 Derivative as a Function</h2>
+<p>In the prior section, we computed the derivative at a particular point which gave us the slope of the tangent line, or the instantaneous rate of change. If we compute the derivative for any point, then we can think about the derivative as a function of <span class="arithmatex">\(x\)</span> itself. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 14</p>
+<p>Compute the derivative of the function <span class="arithmatex">\(f(x) = x^2\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The procedure is the same as before, but now we leave <span class="arithmatex">\(x\)</span> arebitrary. Write the derivative as, </p>
+<div class="arithmatex">\[f'(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h}\]</div>
+<p>We compute, </p>
+<div class="arithmatex">\[f(x+h) = (x+h)^2 = x^2 + 2xh + h^2\]</div>
+<div class="arithmatex">\[f(x+h) - f(x) = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\]</div>
+<p>Now plug the above into the derivative definition, </p>
+<div class="arithmatex">\[f'(x) = \lim_{h\to 0} \frac{2xh+h^2}{h} = \lim_{h\to 0} \frac{h(2x+h)}{h} = \lim_{h\to 0} 2x+h = 2x\]</div>
+<p>So, <span class="arithmatex">\(f'(x) = 2x\)</span>. </p>
+</details>
+</div>
+<p>For a function <span class="arithmatex">\(y=f(x)\)</span> the notation <span class="arithmatex">\(f'(x)\)</span>, <span class="arithmatex">\(y'\)</span>, <span class="arithmatex">\(\frac{df}{dx}\)</span>, or <span class="arithmatex">\(\frac{dy}{dx}\)</span> is used interchangably to denote the derivative of the function. The notation that looks like a fraction is called Leibniz notation. It can be useful, especially when dealing with functions containing parameters or multiple variables. </p>
+<p>If we graph a function and its derivative side by side, the points on the graph correspond. The <span class="arithmatex">\(y\)</span>-value on the graph of the derivative tells us the slope on the original graph. The following applet illustrates this for the function <span class="arithmatex">\(f(x) = x^2\)</span>. </p>
+<center>
+<iframe src="/derivative_applet.html" width="800" height="400" frameborder="0" scrolling="no"></iframe>
+</center>
+
+<div class="admonition example">
+<p class="admonition-title">Example 15</p>
+<p>Below is a graph of the function <span class="arithmatex">\(f(x)\)</span>. Indicate where on the graph <span class="arithmatex">\(f'(x)=0\)</span>.</p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/ktowpfhtpu?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+<details class="success">
+<summary>Solution</summary>
+<p>When <span class="arithmatex">\(f'(x) = 0\)</span> it means that the tangent line is <em>horizontal</em>. This occurs at the following three points, </p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/xu3lzre3lz?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 16</p>
+<p>Below is a graph of <span class="arithmatex">\(f'(x)\)</span>. For what value of <span class="arithmatex">\(x\)</span> is the slope of <span class="arithmatex">\(f(x)\)</span> the steepest?</p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/ua2uqcqilt?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+<details class="success">
+<summary>Solution</summary>
+<p>The graph of <span class="arithmatex">\(y = f(x)\)</span> is the steepest when <span class="arithmatex">\(f'(x)\)</span> has the greatest <span class="arithmatex">\(y\)</span>-value. This occurs when <span class="arithmatex">\(x=2\)</span> and <span class="arithmatex">\(f'(x) = 4\)</span>. </p>
+</details>
+</div>
+<h2 id="exercises">Exercises</h2>
+<h3 id="51-exercises">5.1 Exercises</h3>
+<p><strong>Problem 1.</strong> Find the equation of the secant line to <span class="arithmatex">\(f(x) = x^2 + 2x\)</span> through the points where <span class="arithmatex">\(x = 1\)</span> and <span class="arithmatex">\(x = 3\)</span>.</p>
+<p><strong>Problem 2.</strong> Find the equation of the secant line to <span class="arithmatex">\(f(x) = x^3 - 4x\)</span> through the points where <span class="arithmatex">\(x = -1\)</span> and <span class="arithmatex">\(x = 2\)</span>.</p>
+<p><strong>Problem 3.</strong> Match the slopes to the labeled points on the function: (i) 2, (ii) 0, (iii) -4, (iv) 6.</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/vp1bauwdyv?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p><strong>Problem 4.</strong> On the above graph sketch the tangent line at point C. </p>
+<h3 id="52-exercises">5.2 Exercises</h3>
+<p>For problems 5-8, use the following graph of <span class="arithmatex">\(f(x)\)</span> to determine whether the following statement about limits are true or false. Justify your answer. If the are false, state the correct answer. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/uh1smja6em?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 5.</strong></p>
+<div class="arithmatex">\[\lim_{x\to 2} f(x) = -1\]</div>
+</li>
+<li>
+<p><strong>Problem 6.</strong></p>
+<div class="arithmatex">\[\lim_{x \to 1} f(x) \text{ does not exist}\]</div>
+</li>
+<li>
+<p><strong>Problem 7.</strong></p>
+<div class="arithmatex">\[\lim_{x\to -1} f(x) = -1\]</div>
+</li>
+<li>
+<p><strong>Problem 8.</strong></p>
+<div class="arithmatex">\[\lim_{x\to -2} f(x) = -2\]</div>
+</li>
+</ul>
+</div>
+<p>Use a table of values to compute the following limits. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 9.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 1} \frac{x^3 - 1}{x - 1}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 10.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 0} \frac{e^{2x} - 1}{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 11.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 2} \frac{x^3 - 8}{x - 2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 12.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 0} \frac{(1+x)^3 - 1}{x}\)</span></p>
+</li>
+</ul>
+</div>
+<p>Compute the following limits algebraically.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 13.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 1} 2x^2 - 3x + 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 14.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 0} \frac{x^2 - x}{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 15.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 3} \frac{x^2-6x+9}{x-3}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 16.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 2} \frac{\sqrt{x+2}-2}{x-2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 17.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to -2} \frac{x^2 + 5x + 6}{x + 2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 18.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 0} \frac{\frac{1}{x+2} - \frac{1}{2}}{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 19.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 5} \frac{\sqrt{x-1}-2}{x-5}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 20.</strong></p>
+<p><span class="arithmatex">\(\displaystyle\lim_{x \to 4} \frac{x^2 - 3x - 4}{x - 4}\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 21.</strong> The graph of <span class="arithmatex">\(f(x)\)</span> is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/0ri41th2cs?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p><strong>Problem 22.</strong> The graph of <span class="arithmatex">\(f(x)\)</span> is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).</p>
+<center>
+<iframe src="https://www.desmos.com/calculator/nvyopbnsm3?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The <strong>absolute value</strong> of a number is the distance from that number to 0. For example, <span class="arithmatex">\(|3| = 3\)</span> and <span class="arithmatex">\(|-3| = 3\)</span>. Formally we write, </p>
+<div class="arithmatex">\[|x| = \begin{cases}
+x &amp; x \geq 0 \\
+-x &amp; x &lt; 0
+\end{cases}\]</div>
+<p>It helps to remember that the absolute value of any number is always positive. </p>
+<p><strong>Problem 23.</strong> Sketch the function <span class="arithmatex">\(f(x) = |x|/x\)</span> by using a table of values. State any points of discontinuity. </p>
+<p><strong>Problem 24.</strong> Determine whether the following statements are true or false. Briefly justify your answer:</p>
+<p>a) Polynomials are continuous for all values of <span class="arithmatex">\(x\)</span>. </p>
+<p>b) If <span class="arithmatex">\(f(x)\)</span> is not defined at <span class="arithmatex">\(x = a\)</span>, then <span class="arithmatex">\(f(x)\)</span> is discontinuous at <span class="arithmatex">\(x=a\)</span>. </p>
+<p>c) If <span class="arithmatex">\(f(x)\)</span> is discontinuous at <span class="arithmatex">\(x=a\)</span>, then <span class="arithmatex">\(f(x)\)</span> is not defined at <span class="arithmatex">\(x=a\)</span>. </p>
+<p>d) If <span class="arithmatex">\(\lim_{x\to a} f(x)\)</span> exists, then <span class="arithmatex">\(f(x)\)</span> is continuous at <span class="arithmatex">\(x=a\)</span>. </p>
+<h3 id="53-exercises">5.3 Exercises</h3>
+<p>Compute the derivative of each function at the given point using the limit definition.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 25.</strong></p>
+<p><span class="arithmatex">\(f(x) = x^2 - 3x\)</span>, at <span class="arithmatex">\(x = 2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 26.</strong></p>
+<p><span class="arithmatex">\(f(x) = 4x^2 + 1\)</span>, at <span class="arithmatex">\(x = 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 27.</strong></p>
+<p><span class="arithmatex">\(f(x) = x^3\)</span>, at <span class="arithmatex">\(x = 2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 28.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{1}{x}\)</span>, at <span class="arithmatex">\(x = 2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 29.</strong></p>
+<p><span class="arithmatex">\(f(x) = \sqrt{x+1}\)</span>, at <span class="arithmatex">\(x = 3\)</span></p>
+</li>
+<li>
+<p><strong>Problem 30.</strong></p>
+<p><span class="arithmatex">\(f(x) = \frac{1}{x-1}\)</span>, at <span class="arithmatex">\(x = -1\)</span></p>
+</li>
+</ul>
+</div>
+<p>Find the equation of the tangent line to each function at the given point.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 31.</strong></p>
+<p><span class="arithmatex">\(f(x) = x^2 + 1\)</span>, at <span class="arithmatex">\(x = 2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 32.</strong></p>
+<p><span class="arithmatex">\(f(x) = 3x^2 - x\)</span>, at <span class="arithmatex">\(x = 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 33.</strong></p>
+<p><span class="arithmatex">\(f(x) = \sqrt{x}\)</span>, at <span class="arithmatex">\(x = 9\)</span></p>
+</li>
+<li>
+<p><strong>Problem 34.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{1}{x}\)</span>, at <span class="arithmatex">\(x = 3\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 35.</strong> The position of a car along a straight road is given by <span class="arithmatex">\(s(t) = t^2 + 5t\)</span> feet, where <span class="arithmatex">\(t\)</span> is in seconds. Find the instantaneous velocity at <span class="arithmatex">\(t = 3\)</span> seconds. </p>
+<p><strong>Problem 36.</strong> A company's total cost of producing <span class="arithmatex">\(x\)</span> units is <span class="arithmatex">\(C(x) = 3x^2 + 20x + 100\)</span> dollars. Find the marginal cost at <span class="arithmatex">\(x = 4\)</span> units and interpret your answer.</p>
+<p><strong>Problem 37.</strong> The revenue from selling <span class="arithmatex">\(x\)</span> units is given by <span class="arithmatex">\(R(x) = 80x - 2x^2\)</span> dollars. Find the marginal revenue at <span class="arithmatex">\(x = 15\)</span> units and interpret your answer.</p>
+<p><strong>Problem 38.</strong> A ball is dropped from a height of <span class="arithmatex">\(200\)</span> feet and its height after <span class="arithmatex">\(t\)</span> seconds is given by <span class="arithmatex">\(h(t) = 200 - 16t^2\)</span> feet. Find the instantaneous velocity of the ball at <span class="arithmatex">\(t = 2\)</span> seconds.</p>
+<h3 id="54-exercises">5.4 Exercises</h3>
+<p>Compute the derivative of the following functions using the limit definition</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 39.</strong></p>
+<p><span class="arithmatex">\(f(x) = x^2 + 2x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 40.</strong></p>
+<p><span class="arithmatex">\(y = \sqrt{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 41.</strong></p>
+<p><span class="arithmatex">\(f(x) = \frac{1}{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 42.</strong></p>
+<p><span class="arithmatex">\(g(x) = x^3\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 43.</strong> A javelin is thrown into the air and its height in meters after <span class="arithmatex">\(t\)</span> seconds is modeled by the function <span class="arithmatex">\(h(t) = −4.9t^2+18t+2\)</span>. Take the derivative of the height function to compute the equation for the vertical velocity of the javelin. </p>
+<p><strong>Problem 44.</strong> A company's monthly revenue in thousands of dollars after spending <span class="arithmatex">\(t\)</span> thousand dollars on advertising is modeled by <span class="arithmatex">\(R(t) = -2t^2 + 24t + 50\)</span>. Take the derivative of the revenue function to find the equation for the marginal revenue with respect to advertising spend.</p>
+<p><strong>Problem 45.</strong> Match the graph of the function to the correct derivative.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th></th>
+<th>Derivative</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><iframe src="https://www.desmos.com/calculator/tccg44g1py?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+<td>1</td>
+<td><iframe src="https://www.desmos.com/calculator/hi7k4uriuq?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+</tr>
+<tr>
+<td>B</td>
+<td><iframe src="https://www.desmos.com/calculator/zfyvfwgtr8?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+<td>2</td>
+<td><iframe src="https://www.desmos.com/calculator/fmbiyr2eve?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+</tr>
+<tr>
+<td>C</td>
+<td><iframe src="https://www.desmos.com/calculator/ituxdok5pz?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+<td>3</td>
+<td><iframe src="https://www.desmos.com/calculator/gmvfpaunbb?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This work is licensed under a  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1350 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../derivative-basics/">
+      
+      
+        <link rel="next" href="../optimization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>6. Derivative Rules - Linear Models and Differential Calculus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#derivative-rules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-header__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Models and Differential Calculus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Derivative Rules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-nav__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Models and Differential Calculus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Linear Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomials-rationals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponents-logarithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exponents and Logarithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-basic-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Basic Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-power-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Power Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-derivatives-of-exponentials-and-logarithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Derivatives of Exponentials and Logarithms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-product-and-quotient-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Product and Quotient Rule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 Product and Quotient Rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641-marginal-average-cost-and-revenue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.1 Marginal Average Cost and Revenue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-chain-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Chain Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-more-complicated-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 More Complicated Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="derivative-rules">Derivative Rules</h1>
+<p>It is quite laborsome to use the limit definition of the derivative every time you want to compute a derivative. In this chapter, we state some rules that will allow us to quickly compute derivatives we are interested in. </p>
+<h2 id="61-basic-rules">6.1 Basic Rules</h2>
+<p>Let's use some examples to motivate some fundamental rules. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>Compute the derivative of the function <span class="arithmatex">\(f(x) = 5\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The function is a horizontal line, so the slope is always 0. Therefore, <span class="arithmatex">\(f'(x) = 0\)</span>. </p>
+</details>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Rule</p>
+<p>The derivative of a constant function is zero. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>Compute the derivative of the function <span class="arithmatex">\(f(x) = 2x + 4\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Any tangent line of a linear function is the same line! Therefore the slope of the tangent line, e.g. the derivative, <span class="arithmatex">\(f'(x) = 2\)</span>. </p>
+</details>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Rule</p>
+<p>Let <span class="arithmatex">\(f(x)\)</span> be a line with slope <span class="arithmatex">\(m\)</span>, then <span class="arithmatex">\(f'(x) = m\)</span>. </p>
+</div>
+<p>The derivative is known as a <strong>linear operator</strong>. This means it satisfies the following two useful properties:</p>
+<div class="admonition note">
+<p class="admonition-title">Constant Multiplication Rule</p>
+<p>Let <span class="arithmatex">\(f\)</span> be a function with derivative <span class="arithmatex">\(f'\)</span> and let <span class="arithmatex">\(k\)</span> be any constant. Then,</p>
+<div class="arithmatex">\[\frac{d}{dx}(kf) = kf'\]</div>
+</div>
+<p>In other words, if a function is multiplied by a constant, then the derivative of this new function is just the derivative of the old function multiplied by the same constant. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<p>The derivative of the function <span class="arithmatex">\(f(x) = x^3 - 2x\)</span> is <span class="arithmatex">\(f'(x) = 3x^2-2\)</span>. What is the derivative of <span class="arithmatex">\(g(x) = 3x^3-6x\)</span>?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Notice that </p>
+<div class="arithmatex">\[g(x) = 3x^3-6x = 3(x^3-2x) = 3f(x)\]</div>
+<p>So </p>
+<div class="arithmatex">\[g'(x) = 3f'(x) = 3(3x^2-2) = 9x^2 - 6.\]</div>
+</details>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Sum and Difference Rule</p>
+<p>Let <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> be functions with derivatives <span class="arithmatex">\(f'\)</span> and <span class="arithmatex">\(g'\)</span>, respectively. Then, </p>
+<div class="arithmatex">\[\frac{d}{dx}(f \pm g) = f' \pm g'.\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 4</p>
+<p>Find the derivative of each function in terms of the functions given using the sum/difference and constant multiplication rules.</p>
+<p>a) <span class="arithmatex">\(f(x) = 3g(x) - 5h(x)\)</span></p>
+<p>b) <span class="arithmatex">\(y = 4f(x) + 2g(x) - h(x)\)</span></p>
+<p>c) <span class="arithmatex">\(y = -6f(x)\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) <span class="arithmatex">\(f'(x) = 3g'(x) - 5h'(x)\)</span></p>
+<p>b) <span class="arithmatex">\(y' = 4f'(x) + 2g'(x) - h'(x)\)</span></p>
+<p>c) <span class="arithmatex">\(y' = -6f'(x)\)</span></p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 5</p>
+<p>Suppose <span class="arithmatex">\(f'(1) = 3\)</span>, <span class="arithmatex">\(g'(1) = -2\)</span>, and <span class="arithmatex">\(h'(1) = 5\)</span>. Find the derivative of each function at <span class="arithmatex">\(x = 1\)</span>.</p>
+<p>a) <span class="arithmatex">\(p(x) = 4f(x) + g(x)\)</span></p>
+<p>b) <span class="arithmatex">\(q(x) = 3g(x) - 2h(x)\)</span></p>
+<p>c) <span class="arithmatex">\(r(x) = f(x) + g(x) - 4h(x)\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) First use the sum/difference and constant multiplication rules, then plug in the point <span class="arithmatex">\(x=1\)</span>.</p>
+<div class="arithmatex">\[p'(1) = 4f'(1) + g'(1) = 4(3) + (-2) = 10\]</div>
+<p>b) <span class="arithmatex">\(q'(1) = 3g'(1) - 2h'(1) = 3(-2) - 2(5) = -6 - 10 = -16\)</span></p>
+<p>c) <span class="arithmatex">\(r'(1) = f'(1) + g'(1) - 4h'(1) = 3 + (-2) - 4(5) = 3 - 2 - 20 = -19\)</span></p>
+</details>
+</div>
+<h2 id="62-power-rule">6.2 Power Rule</h2>
+<div class="admonition note">
+<p class="admonition-title">Power Rule</p>
+<p>The derivative of <span class="arithmatex">\(f(x) = x^n\)</span> is <span class="arithmatex">\(f'(x) = nx^{n-1}\)</span>. </p>
+</div>
+<p>We can use the power rule to produce results identical to what we saw in Chapter 5. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 6</p>
+<p>Compute the derivative of <span class="arithmatex">\(y = x^2\)</span> using the power rule. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>According to the power rule, </p>
+<div class="arithmatex">\[y' = 2x^{2-1} = 2x.\]</div>
+</details>
+</div>
+<p>We can also use the power rule alongside the basic rules learned in Section 6.1 to compute the derivative of any polynomial.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 7</p>
+<p>Compute the derivative of <span class="arithmatex">\(f(x) = x^3 - 2x^2 + 5x - 1\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>First split up the derivative by sums and differences, </p>
+<div class="arithmatex">\[\frac{df}{dx} = \frac{d}{dx}(x^3 - 2x^2 + 5x - 1) = \frac{d}{dx}(x^3) - \frac{d}{dx}(2x^2) + \frac{d}{dx}(5x) - \frac{d}{dx}(1)\]</div>
+<p>Now take the derivative of each term, </p>
+<div class="arithmatex">\[\frac{d}{dx}(x^3) = 3x^{3-1} = 3x^2\]</div>
+<div class="arithmatex">\[\frac{d}{dx}(2x^2) = 2\frac{d}{dx}(x^2) = 2 \cdot 2x^{2-1} = 4x\]</div>
+<div class="arithmatex">\[\frac{d}{dx}(5x) = 5\]</div>
+<div class="arithmatex">\[\frac{d}{dx}(1) = 0\]</div>
+<p>and recombine, </p>
+<div class="arithmatex">\[\frac{df}{dx} = 3x^2 - 4x + 5.\]</div>
+</details>
+</div>
+<p>When first starting out, it is helpful to write out each step and clearly indicate which rule is being used. Once you are practiced, you only need to write down what you need. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 8</p>
+<p>Let <span class="arithmatex">\(g(x) = 30x^4 - 12x^3 - 10x + 16\)</span>. Compute <span class="arithmatex">\(g'(1)\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>To compute the derivative at <span class="arithmatex">\(x=1\)</span>, first compute the derivative as a function, then plug in the value. </p>
+<div class="arithmatex">\[g'(x) = 30 \cdot 4 x^3 - 12 \cdot 3 x^2 - 10 = 120x^3 - 36x^2 - 10\]</div>
+<div class="arithmatex">\[g'(1) = 120 - 36 - 10 = 74.\]</div>
+</details>
+</div>
+<p>Note that the power rule holds for <em>any</em> number <span class="arithmatex">\(n\)</span> (not just positive integers). So we can use the power rule to take derivatives of roots and negative exponents. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 9</p>
+<p>Compute the derivative of <span class="arithmatex">\(f(x) = \sqrt{x}\)</span> using the power rule.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>First rewrite <span class="arithmatex">\(\sqrt{x}\)</span> as a power of <span class="arithmatex">\(x\)</span>,</p>
+<div class="arithmatex">\[f(x) = x^{1/2}\]</div>
+<p>Now apply the power rule,</p>
+<div class="arithmatex">\[f'(x) = \frac{1}{2}x^{1/2 - 1} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 10</p>
+<p>Compute the derivative of <span class="arithmatex">\(y = \dfrac{1}{x^2}\)</span> using the power rule.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>First rewrite <span class="arithmatex">\(\dfrac{1}{x^2}\)</span> as a power of <span class="arithmatex">\(x\)</span>,</p>
+<div class="arithmatex">\[y = x^{-2}\]</div>
+<p>Now apply the power rule,</p>
+<div class="arithmatex">\[y' = -2x^{-2-1} = -2x^{-3} = -\frac{2}{x^3}\]</div>
+</details>
+</div>
+<p>When simplifying, it is okay leave negative exponents in complicated expressions however if the function is simple it is good practice to always rewrite in terms of positive exponents like is done in the above examples. </p>
+<h2 id="63-derivatives-of-exponentials-and-logarithms">6.3 Derivatives of Exponentials and Logarithms</h2>
+<p>For many important applications, we will need to know how to take derivatives of exponential and logarithmic functions. </p>
+<div class="admonition note">
+<p class="admonition-title">Exponential Derivative</p>
+<p>Let <span class="arithmatex">\(f(x) = e^x\)</span>, then <span class="arithmatex">\(f'(x) = e^x\)</span>. </p>
+<p>Let <span class="arithmatex">\(g(x) = b^x\)</span> for any <span class="arithmatex">\(b &gt; 0\)</span>, then <span class="arithmatex">\(g'(x) = \ln(b) \cdot b^x\)</span>.</p>
+</div>
+<p>We see another reason why <span class="arithmatex">\(e\)</span> is a special constant. The function <span class="arithmatex">\(f(x) = c e^x\)</span> (where <span class="arithmatex">\(c\)</span> is a constant) is the <em>only</em> function where <span class="arithmatex">\(f(x) = f'(x)\)</span>. </p>
+<div class="admonition note">
+<p class="admonition-title">Natural Logarithm Derivative</p>
+<p>Let <span class="arithmatex">\(f(x) = \ln x\)</span>, then <span class="arithmatex">\(f'(x) = \frac{1}{x}\)</span>.</p>
+</div>
+<p>From here on out, we will only be dealing with the natural logarithm function. We saw in Chapter 4, that all logarithms can be translated to whatever base we want and the derivative of the natural logarithm is the simplest to remember. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 11</p>
+<p>A population of bacteria grows according to the model <span class="arithmatex">\(P(t) = 1000e^t\)</span>, where <span class="arithmatex">\(t\)</span> is measured in hours. Find the rate of growth at <span class="arithmatex">\(t = 2\)</span> hours.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Taking the derivative using the rule <span class="arithmatex">\(\dfrac{d}{dx}e^x = e^x\)</span>,</p>
+<div class="arithmatex">\[P'(t) = 1000e^t\]</div>
+<p>At <span class="arithmatex">\(t = 2\)</span> hours,</p>
+<div class="arithmatex">\[P'(2) = 1000e^2 \approx 7{,}389 \text{ bacteria per hour}\]</div>
+<p>Notice that for the function <span class="arithmatex">\(e^t\)</span>, the rate of growth equals the population itself — this is the defining property of the exponential function.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 12</p>
+<p>A company finds that its revenue in thousands of dollars after running <span class="arithmatex">\(x\)</span> ads is modeled by <span class="arithmatex">\(R(x) = 5\ln(x) + 2x\)</span>. Find the marginal revenue function and compute the marginal revenue at <span class="arithmatex">\(x = 10\)</span> ads.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Taking the derivative using the rule <span class="arithmatex">\(\dfrac{d}{dx}\ln(x) = \dfrac{1}{x}\)</span>,</p>
+<div class="arithmatex">\[R'(x) = \dfrac{5}{x} + 2\]</div>
+<p>At <span class="arithmatex">\(x = 10\)</span> ads,</p>
+<div class="arithmatex">\[R'(10) = \dfrac{5}{10} + 2 = 0.5 + 2 = 2.5\]</div>
+<p>The marginal revenue at <span class="arithmatex">\(x = 10\)</span> ads is <span class="arithmatex">\(\$2{,}500\)</span>. This means that running one additional ad beyond 10 generates approximately <span class="arithmatex">\(\$2{,}500\)</span> in additional revenue.</p>
+</details>
+</div>
+<h2 id="64-product-and-quotient-rule">6.4 Product and Quotient Rule</h2>
+<div class="admonition example">
+<p class="admonition-title">Example 13</p>
+<p>Compute <span class="arithmatex">\(h'(x)\)</span>, where <span class="arithmatex">\(h(x) = (x^2-3x+2)(x+1)\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>This function is not simply the sum or difference of polynomials, it is a product. To take the derivative we can first multiply out</p>
+<div class="arithmatex">\[h(x) = x^3+x^2-3x^2-3x+2x+2 = x^3-2x^2-x+2\]</div>
+<p>then take the derivative</p>
+<div class="arithmatex">\[h'(x) = 3x^2-4x-1\]</div>
+</details>
+</div>
+<p>The above method works, but might become taxing if the product involves more complicated polynomials. The following rule is therefore useful, </p>
+<div class="admonition note">
+<p class="admonition-title">Product Rule</p>
+<p>Let <span class="arithmatex">\(y = f(x)g(x)\)</span>, then <span class="arithmatex">\(y' = f'(x)g(x) + f(x)g'(x)\)</span>. </p>
+</div>
+<p>Note that the product rule does <em>not</em> just tell us to take the derivative of each term! This would give us the wrong answer. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 14</p>
+<p>Use the product rule to compute the derivative of the function <span class="arithmatex">\(y = (x^2+3)(2x+4)\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(f(x) = x^2+3\)</span> and <span class="arithmatex">\(g(x) = 2x+4\)</span>. Then using the formula we get,</p>
+<div class="arithmatex">\[y' = 2x(2x+4)+(x^2+3)(2) = 4x^2 + 8x + 2x^2+6 = 6x^2+8x+6\]</div>
+</details>
+</div>
+<p>The product rule works for the product of any two functions, not just polynomials.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 15</p>
+<p>Find the derivative of <span class="arithmatex">\(h(x) = e^x\ln(x)\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The two functions are <span class="arithmatex">\(e^x\)</span> and <span class="arithmatex">\(\ln(x)\)</span>. Using the product rule we get,</p>
+<div class="arithmatex">\[\frac{dh}{dx} = e^x\ln(x) + e^x\frac{1}{x}\]</div>
+</details>
+</div>
+<p>The product rule also works for the product of more than two functions, following a similar pattern.</p>
+<div class="admonition note">
+<p class="admonition-title">Product Rule for Three Functions</p>
+<p>Let <span class="arithmatex">\(y = f(x)g(x)h(x)\)</span>, then <span class="arithmatex">\(y'(x) = f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)\)</span>.</p>
+</div>
+<p>We also have a rule for when a function looks like a quotient. </p>
+<div class="admonition note">
+<p class="admonition-title">Quotient Rule</p>
+<p>Suppose <span class="arithmatex">\(y = f(x)/g(x)\)</span>, then </p>
+<div class="arithmatex">\[y' = \frac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}\]</div>
+</div>
+<p>The order of terms in the numerator is important. I use the little rhyme, "Lo d-Hi minus Hi d-Lo over Lo-Lo," to help me remember the expression. When using the quotient rule, it is helpful to simplify a quotient expression as much as possible <em>before</em> using the quotient rule. Expressions get long and complicated quick when using the rule. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 16</p>
+<p>Find the derivative of the function, </p>
+<div class="arithmatex">\[y = \frac{x-1}{x^2-1}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>First let's simplify the functions, </p>
+<div class="arithmatex">\[y = \frac{x-1}{(x-1)(x+1)} = \frac{1}{x+1}\]</div>
+<p>Now differentiate, </p>
+<div class="arithmatex">\[y' = \frac{(x+1)(0) - 1 (1)}{(x+1)^2} = -\frac{1}{(x+1)^2}\]</div>
+</details>
+</div>
+<p>When presenting solutions you are expected to do simple simplifications, such as constant multiplication, but you do not need to do anything beyond that. Notice above I left the denominator factored--and you should too! </p>
+<h3 id="641-marginal-average-cost-and-revenue">6.4.1 Marginal Average Cost and Revenue</h3>
+<p>The <strong>average cost</strong> of producing <span class="arithmatex">\(x\)</span> units is, </p>
+<div class="arithmatex">\[AC(x) = \frac{C(x)}{x}\]</div>
+<p>The <strong>marginal average cost</strong>, <span class="arithmatex">\(AC'(x)\)</span>, is the approximate change in average cost by producing an additional unit. Note that this is different from marginal cost. In marginal average cost, fixed costs are averaged over the number of units, this is not true of marginal cost. For example, consider an item with cost function, </p>
+<div class="arithmatex">\[C(x) = 5x + 100\]</div>
+<p>Recall that the variable cost is $5 and the fixed cost is $100. In this case the marginal cost is the same for all items, also $5. Since the average cost disperses the fixed cost accross each item, the marginal average cost will be negative (we will see this below!). </p>
+<div class="admonition example">
+<p class="admonition-title">Example 17</p>
+<p>A company's average cost of producing <span class="arithmatex">\(x\)</span> units is given by </p>
+<div class="arithmatex">\[AC(x) = \frac{C(x)}{x} = \frac{5x+100}{x}\]</div>
+<p>Find the marginal average cost <span class="arithmatex">\(AC'(x)\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>You might want to straight away apply the quotient rule but let's simplify first, </p>
+<div class="arithmatex">\[AC(x) = 5 + \frac{100}{x} = 5 + 100x^{-1}\]</div>
+<p>Now we can take the derivative without the quotient rule, </p>
+<div class="arithmatex">\[AC'(x) = -100x^{-2} = -\frac{100}{x^2}\]</div>
+<p>We see that for any value of <span class="arithmatex">\(x\)</span> the marginal average cost is negative. Meaning producing more items makes the average cost decrease. </p>
+</details>
+</div>
+<p>In a similar vein we can compute the <strong>average revenue</strong>,</p>
+<div class="arithmatex">\[AR(x) = \frac{R(x)}{x}\]</div>
+<p>and <strong>marginal average revenue</strong>, <span class="arithmatex">\(AR'(x)\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 18</p>
+<p>A company's total revenue from selling <span class="arithmatex">\(x\)</span> units is given by <span class="arithmatex">\(R(x) = 80x - 2x^2\)</span>. The average revenue is defined as</p>
+<div class="arithmatex">\[AR(x) = \frac{R(x)}{x} = \frac{80x - 2x^2}{x}\]</div>
+<p>Find the marginal average revenue <span class="arithmatex">\(AR'(x)\)</span> and interpret its meaning.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Since we can simplify the average revenue first, no quotient rule is needed. </p>
+<div class="arithmatex">\[AR(x) = 80 - 2x\]</div>
+<p>Taking the derivative,</p>
+<div class="arithmatex">\[AR'(x) = -2\]</div>
+<p>The marginal average revenue is constant at <span class="arithmatex">\(-2\)</span>. This means that for every additional unit produced, the average revenue decreases by <span class="arithmatex">\(\$2\)</span>. </p>
+<p>Why might average revenue decrease with more items sold? In order to sell more items a company may need to decrease the price or spend more money on advertising. </p>
+</details>
+</div>
+<h2 id="65-chain-rule">6.5 Chain Rule</h2>
+<p>The last derivative rule we need is the chain rule. The chain rule helps when we have a composition of functions, <span class="arithmatex">\(y = f(g(x))\)</span>. We need to be able to confindently identify and decompose compositions in order to properly use the chain rule, so let's see some examples. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 19</p>
+<p>All of the function listed have the form <span class="arithmatex">\(y = f(g(x))\)</span>. Decompose the following composition of functions into their parts, <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>. </p>
+<p>a) <span class="arithmatex">\(y = (x+3)^4\)</span></p>
+<p>b) <span class="arithmatex">\(y = \ln(x^2+1)\)</span></p>
+<p>c) <span class="arithmatex">\(y = e^{3x+2}\)</span></p>
+<p>d) <span class="arithmatex">\(y = \frac{1}{x^2-3x+2}\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) To solve these problems, it helps to think of the order of algebra you would perform if you plugged a value in for <span class="arithmatex">\(x\)</span>. In this example, I would first add 3, so the inner function is <span class="arithmatex">\(g(x) = x+3\)</span>, then I would raise that to the power of 4, so the outer function is <span class="arithmatex">\(f(u) = u^4\)</span>/ Here we use the <em>dummy variable</em> <span class="arithmatex">\(u\)</span> to remind ourselves that we are plugging a different function in for <span class="arithmatex">\(u\)</span>. </p>
+<p>b) Here the inner functionis <span class="arithmatex">\(g(x) = x^2+1\)</span> and the outer function is <span class="arithmatex">\(f(u) = \ln u\)</span>. </p>
+<p>c) It can be tricky to identify the composition when dealing with exponentials. First thing we must do here is compute <span class="arithmatex">\(3x+2\)</span>, so <span class="arithmatex">\(g(x) = 3x+2\)</span>. The outer function is the <span class="arithmatex">\(f(u) = e^u\)</span>.</p>
+<p>d) Another way to write the function is as <span class="arithmatex">\(y = (x^2-3x+2)^{-1}\)</span>, now the composition should be clear. We have <span class="arithmatex">\(g(x) = x^2 - 3x + 2\)</span> and <span class="arithmatex">\(f(u) = u^{-1}\)</span>. </p>
+</details>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Chain Rule</p>
+<p>Let <span class="arithmatex">\(y = f(g(x))\)</span>, then <span class="arithmatex">\(y' = f'(g(x))\cdot g'(x)\)</span>. </p>
+<p>Alternatively, let <span class="arithmatex">\(y = f(u)\)</span> and <span class="arithmatex">\(u = g(x)\)</span>. Then</p>
+<div class="arithmatex">\[\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 20</p>
+<p>Find the derivative of the function <span class="arithmatex">\(y = (x^2-3x)^6\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The inner function is, <span class="arithmatex">\(u = x^2-3x\)</span> so, </p>
+<div class="arithmatex">\[\frac{du}{dx} = 2x-3\]</div>
+<p>and the outer function is, <span class="arithmatex">\(y = u^6\)</span> so </p>
+<div class="arithmatex">\[\frac{dy}{du} = 6u^5\]</div>
+<p>Thus </p>
+<div class="arithmatex">\[\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = 6 (x^2-3x)^5 \cdot (2x-3)\]</div>
+<p>It is important to use parentheses correctly when expressing derivatives using the chain rule. </p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 21</p>
+<p>Determine the derivative of the function <span class="arithmatex">\(y = e^{x^2-1}\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>We have <span class="arithmatex">\(u = x^2-1\)</span>, therefore</p>
+<div class="arithmatex">\[\frac{du}{dx} = 2x\]</div>
+<p>and <span class="arithmatex">\(y = e^u\)</span>, so </p>
+<div class="arithmatex">\[\frac{dy}{du} = e^u\]</div>
+<p>Combining gives, </p>
+<div class="arithmatex">\[y' = 2xe^{x^2-1}\]</div>
+</details>
+</div>
+<h2 id="66-more-complicated-derivatives">6.6 More Complicated Derivatives</h2>
+<p>You may face situations where computing the derivative involves applying multiple rules. In order to solve the problems, you should first identify the order the rules should be applied in--work from outside to inside. Carefully write down the steps to make sure you do not miss anything. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 22</p>
+<p>Compute the derivative of the function </p>
+<div class="arithmatex">\[y = \left(\frac{3x}{x+1}\right)^4\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We first apply the <strong>chain rule</strong>, where the outer function is </p>
+<div class="arithmatex">\[y = u^4\]</div>
+<p>and the inner function is </p>
+<div class="arithmatex">\[u = \frac{3x}{x+1}\]</div>
+<p>To compute the derivative of the inner function, we need the <strong>quotient rule</strong></p>
+<div class="arithmatex">\[\frac{du}{dx} = \frac{3(x+1)-3x}{(x+1)^2} = \frac{3}{(x+1)^2}\]</div>
+<p>Now finishing the chain rule gives, </p>
+<div class="arithmatex">\[y' = 4\left(\frac{3x}{x+1})^3 \cdot \frac{3}{(x+1)^2}\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 23</p>
+<p>Find </p>
+<div class="arithmatex">\[\frac{d}{dx}\left(x^3 \cdot \ln (2x+1)\right)\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We first use the <strong>product rule</strong>, where the pieces are <span class="arithmatex">\(x^3\)</span> and <span class="arithmatex">\(\ln(2x+1)\)</span>. For the second term we need to apply the <strong>chain rule</strong>. We get, </p>
+<div class="arithmatex">\[3x^2\ln(2x+1) + x^3 \cdot \frac{1}{2x+1} \cdot 2\]</div>
+</details>
+</div>
+<h2 id="exercises">Exercises</h2>
+<h3 id="61-exercises">6.1 Exercises</h3>
+<p>Compute the derivative of each function in terms of <span class="arithmatex">\(f'(x)\)</span>, <span class="arithmatex">\(g'(x)\)</span>, and <span class="arithmatex">\(h'(x)\)</span>. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 1.</strong></p>
+<p><span class="arithmatex">\(y = f(x) + g(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 2.</strong></p>
+<p><span class="arithmatex">\(p(x) = 3f(x) + h(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 3.</strong></p>
+<p><span class="arithmatex">\(q(x) = 2g(x) - h(x) + 3f(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 4.</strong></p>
+<p><span class="arithmatex">\(y = g(x) + 4h(x) + 10\)</span></p>
+</li>
+</ul>
+</div>
+<p>Suppose <span class="arithmatex">\(f'(3) = 3\)</span>, <span class="arithmatex">\(g'(3) = 1\)</span>, and <span class="arithmatex">\(h'(3) = 0\)</span>. Compute the derivatives of the following functions, evaluated at <span class="arithmatex">\(x = 3\)</span>. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 5.</strong></p>
+<p><span class="arithmatex">\(r(x) = 3f(x) + 2g(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 6.</strong></p>
+<p><span class="arithmatex">\(p(x) = 3f(x)\)</span> </p>
+</li>
+<li>
+<p><strong>Problem 7.</strong></p>
+<p><span class="arithmatex">\(t(x) = f(x) - 2g(x) + h(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 8.</strong></p>
+<p><span class="arithmatex">\(q(x) = 4f(x) + 10h(x)\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 9.</strong> Suppose <span class="arithmatex">\(f'(1) = 2\)</span> and <span class="arithmatex">\(g'(1) = 3\)</span>. Find a constant <span class="arithmatex">\(c\)</span> such that <span class="arithmatex">\(y = cf(x) + g(x)\)</span> satisfies <span class="arithmatex">\(y'(1) = 11\)</span>.</p>
+<p><strong>Problem 10.</strong> Suppose <span class="arithmatex">\(f'(2) = 4\)</span> and <span class="arithmatex">\(g'(2) = -1\)</span>. Find constants <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> such that <span class="arithmatex">\(y = af(x) + bg(x)\)</span> satisfies <span class="arithmatex">\(y'(2) = 10\)</span>.</p>
+<h3 id="62-exercises">6.2 Exercises</h3>
+<p>For each of the following functions, compute its derivative</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 11.</strong></p>
+<p><span class="arithmatex">\(y = x^4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 12.</strong></p>
+<p><span class="arithmatex">\(y = x^{14}\)</span> </p>
+</li>
+<li>
+<p><strong>Problem 13.</strong></p>
+<p><span class="arithmatex">\(g(x) = x^{3/2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 14.</strong></p>
+<p><span class="arithmatex">\(f(x) = \frac{1}{x^3}\)</span></p>
+</li>
+</ul>
+</div>
+<p>For each of the following functions, determine its derivative. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 15.</strong></p>
+<p><span class="arithmatex">\(f(x) = 3x^4 - 2x^3 + x - 7\)</span></p>
+</li>
+<li>
+<p><strong>Problem 16.</strong></p>
+<p><span class="arithmatex">\(y = 5\sqrt{x} + \dfrac{3}{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 17.</strong></p>
+<p><span class="arithmatex">\(g(x) = \dfrac{x^4}{4} - \dfrac{x^3}{3} + 2x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 18.</strong></p>
+<p><span class="arithmatex">\(y = 4x^3 - \dfrac{2}{x^2} + \sqrt{x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 19.</strong></p>
+<p><span class="arithmatex">\(h(x) = 3x^{-4} + 2x^{1/3} - 5x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 20.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{2}{x^3} - \dfrac{1}{\sqrt{x}} + 6x^2\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 21.</strong> A ball is dropped from a bridge and its height above the water in meters after <span class="arithmatex">\(t\)</span> seconds is given by <span class="arithmatex">\(h(t) = 80 - 4.9t^2\)</span>. Find <span class="arithmatex">\(h'(t)\)</span> and determine how fast the ball is falling at <span class="arithmatex">\(t = 3\)</span> seconds.</p>
+<p><strong>Problem 22.</strong> A company's total cost of producing <span class="arithmatex">\(x\)</span> units is given by <span class="arithmatex">\(C(x) = 0.01x^3 - 0.6x^2 + 15x + 100\)</span> dollars. Find the marginal cost function and compute the marginal cost at <span class="arithmatex">\(x = 20\)</span> units.</p>
+<p><strong>Problem 23.</strong> The population of a bacteria culture after <span class="arithmatex">\(t\)</span> hours is modeled by <span class="arithmatex">\(P(t) = 500t^2 - \dfrac{t^3}{3}\)</span>. Find <span class="arithmatex">\(P'(t)\)</span> and determine the rate of growth at <span class="arithmatex">\(t = 6\)</span> hours.</p>
+<p><strong>Problem 24.</strong> The demand for a product is given by <span class="arithmatex">\(D(p) = \dfrac{800}{\sqrt{p}}\)</span>, where <span class="arithmatex">\(p\)</span> is the price in dollars. Find <span class="arithmatex">\(D'(p)\)</span> and compute the rate of change of demand when the price is <span class="arithmatex">\(\$4\)</span>.</p>
+<h3 id="63-exercises">6.3 Exercises</h3>
+<p>For each of the following functions, compute its derivative</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 25.</strong></p>
+<p><span class="arithmatex">\(y = e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 26.</strong></p>
+<p><span class="arithmatex">\(y = 3^x\)</span> </p>
+</li>
+<li>
+<p><strong>Problem 27.</strong></p>
+<p><span class="arithmatex">\(g(x) = 12^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 28.</strong></p>
+<p><span class="arithmatex">\(f(x) = 2^x\)</span></p>
+</li>
+</ul>
+</div>
+<p>For each of the following functions, compute its derivative</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 29.</strong></p>
+<p><span class="arithmatex">\(f(x) = \ln(x) + x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 30.</strong></p>
+<p><span class="arithmatex">\(h(x) = 2^x - x^3\)</span> </p>
+</li>
+<li>
+<p><strong>Problem 31.</strong></p>
+<p><span class="arithmatex">\(y = \frac{4}{x^3} - x^2 + 3e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 32.</strong></p>
+<p><span class="arithmatex">\(q(x) = 4\cdot 3^x - \sqrt{2x}\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 33.</strong> The value in dollars of a piece of artwork after <span class="arithmatex">\(t\)</span> years is modeled by <span class="arithmatex">\(V(t) = 5000e^t\)</span>. Find <span class="arithmatex">\(V'(t)\)</span> and determine the rate of appreciation at <span class="arithmatex">\(t = 2\)</span> years.</p>
+<p><strong>Problem 34.</strong> The monthly profit in thousands of dollars from selling <span class="arithmatex">\(x\)</span> units of a product is modeled by <span class="arithmatex">\(P(x) = 8\ln(x) - 3x + 50\)</span>. Find the marginal profit function and compute the marginal profit at <span class="arithmatex">\(x = 4\)</span> units.</p>
+<h3 id="64-exercises">6.4 Exercises</h3>
+<p>Find the derivatives of the following functions, </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 35.</strong></p>
+<p><span class="arithmatex">\(y = xe^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 36.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{e^x}{1+e^x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 37.</strong></p>
+<p><span class="arithmatex">\(g(t) = t^3(1+2t^2)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 38.</strong></p>
+<p><span class="arithmatex">\(h(x) = x^2 \ln(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 39.</strong></p>
+<p><span class="arithmatex">\(y = \dfrac{x^2 + 1}{x^3 - 2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 40.</strong></p>
+<p><span class="arithmatex">\(y = (x^2 + 3)(x^3 - 5x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 41.</strong></p>
+<p><span class="arithmatex">\(g(x) = \dfrac{\ln(x)}{x^2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 42.</strong></p>
+<p><span class="arithmatex">\(h(x) = \dfrac{x^3 + 1}{e^x}\)</span></p>
+</li>
+</ul>
+</div>
+<p><strong>Problem 43.</strong> A company's total cost of producing <span class="arithmatex">\(x\)</span> units is <span class="arithmatex">\(C(x) = x^3 - 4x^2 + 20x + 100\)</span>. Compute the marginal average cost.</p>
+<p><strong>Problem 44.</strong> A company's total revenue from selling <span class="arithmatex">\(x\)</span> units is <span class="arithmatex">\(R(x) = 120x - 3x^2\)</span>. Compute the marginal average revenue.</p>
+<p><strong>Problem 45.</strong> A company's total cost of producing <span class="arithmatex">\(x\)</span> units is <span class="arithmatex">\(C(x) = 2x^2 + \sqrt{x} + 80\)</span>. Compute the marginal average cost.</p>
+<p><strong>Problem 46.</strong> A company's total revenue from selling <span class="arithmatex">\(x\)</span> units is <span class="arithmatex">\(R(x) = 200x - x^3\)</span>. Compute the marginal average revenue. At what production level is the marginal average revenue equal to zero?</p>
+<h3 id="65-exercises">6.5 Exercises</h3>
+<p>Find the following derivatives using the chain rule,</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 47.</strong></p>
+<p><span class="arithmatex">\(y=(x^2+3x-1)^4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 48.</strong></p>
+<p><span class="arithmatex">\(f(x) = \ln(3x+7)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 49.</strong></p>
+<p><span class="arithmatex">\(y = (4x^2 - 10x)^6\)</span></p>
+</li>
+<li>
+<p><strong>Problem 50.</strong></p>
+<p><span class="arithmatex">\(h(t) = e^{3t^2+2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 51.</strong></p>
+<p><span class="arithmatex">\(y = e^{1/x^2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 52.</strong></p>
+<p><span class="arithmatex">\(y = \ln(e^x+x)\)</span></p>
+</li>
+</ul>
+</div>
+<h3 id="66-exercises">6.6 Exercises</h3>
+<p>Compute the derivative of each function.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 53.</strong></p>
+<p><span class="arithmatex">\(y = x^2 e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 54.</strong></p>
+<p><span class="arithmatex">\(y = e^x + \ln(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 55.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{x^3 + 1}{x^2 - 1}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 56.</strong></p>
+<p><span class="arithmatex">\(y = (2x^3 - 1)(x^2 + 5)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 57.</strong></p>
+<p><span class="arithmatex">\(h(x) = \dfrac{\ln(x)}{x^3}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 58.</strong></p>
+<p><span class="arithmatex">\(f(t) = \dfrac{t^2 + 3t}{e^t}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 59.</strong></p>
+<p><span class="arithmatex">\(p(x) = \ln(x) \cdot e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 60.</strong></p>
+<p><span class="arithmatex">\(y = \dfrac{x^4 - 2x^2 + 1}{x^2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 61.</strong></p>
+<p><span class="arithmatex">\(c(t) = t^3e^{t^2}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 62.</strong></p>
+<p><span class="arithmatex">\(g(x) = \dfrac{e^{3x}}{x^2 + 1}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 63.</strong></p>
+<p><span class="arithmatex">\(y = x^2 \ln(x^2 + 1)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 64.</strong></p>
+<p><span class="arithmatex">\(f(x) = \dfrac{\ln(x^3)}{e^{2x}}\)</span></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This work is licensed under a  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
