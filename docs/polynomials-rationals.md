@@ -531,11 +531,11 @@ Determine the degree and the tail behavior of the following polynomials.
 
 - **Problem 22.**
 
-    $y = 3x^6 - x^4 + 2x - 8$
+    $y = (x-1)(x+3)^3$
 
 - **Problem 23.**
 
-    $y = -4x^3 + x^2 + 9$
+    $y = -2(x+1)(x-4)(x-3)^2$
 
 </div>
 
@@ -611,4 +611,4 @@ Determine whether the following rational functions have any vertical asymptotes,
 
 **Problem 37.** A new product launches with 500 total sales in its first month. Beginning in month 2, the company runs an advertising campaign that generates 80 new sales per month at a cost of \$200 per month, while fixed operating costs are \$1000 per month. Write a function for the average cost per sale after $t$ months of the campaign. Find the horizontal asymptote and interpret its meaning.
 
-**Problem 38.** A polluted lake contains 1000 gallons of water with 40 pounds of pollutant. A river feeds into the lake at 10 gallons per minute carrying 0.5 pounds of pollutant per gallon, while a drain removes 10 gallons per minute of the mixed water. Write a function for the concentration of pollutant (pounds per gallon) after $t$ minutes. Find the horizontal asymptote and interpret its meaning.
+**Problem 38.** A polluted lake contains 1000 gallons of water with 40 pounds of pollutant. A river feeds into the lake at 10 gallons per minute carrying 0.5 pounds of pollutant per gallon. Write a function for the concentration of pollutant (pounds per gallon) after $t$ minutes. Find the horizontal asymptote and interpret its meaning.

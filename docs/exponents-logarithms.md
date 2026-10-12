@@ -346,7 +346,7 @@ Logarithms are useful when solving for unknowns in exponential equations.
 
 ### 4.1 Exercises
 
-Simplify the following expressions using the properties of exponents. The simplified form should have no negative exponents. 
+Simplify the following expressions using the properties of exponents. The simplified form should have no negative exponents and each variable should appear only once in the expression. 
 
 <div class="grid cards" markdown>
 
@@ -441,7 +441,7 @@ Determine whether the following statements are true or false. Briefly justify yo
 
 - **Problem 21.**
 
-    As $x \to \infty$, $e^x > x^5$ for all $x$.
+    As $x \to \infty$, $e^x > x^5$.
 
 - **Problem 22.**
 
