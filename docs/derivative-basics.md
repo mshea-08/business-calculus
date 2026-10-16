@@ -203,7 +203,7 @@ Polynomial, exponential, and logarithmic functions are continuous for all values
 As we choose points closer and closer to our point of interest, the secant line approaches the tangent line at the point. 
 
 <center>
-<iframe src="/secant_slider.html" width="400" height="400" frameborder="0" scrolling="no"></iframe>
+<iframe src="secant_slider.html" width="400" height="400" frameborder="0" scrolling="no"></iframe>
 </center>
 
 The slope of the tangent line is known as the **instantaneous rate of change** or the **derivative** of $f$ at $a$. The derivative is defined explicitly as a limit. We use the notation $f'(a)$ to denote the derivative of $f$ at $a$. Note that this is just a number. 
