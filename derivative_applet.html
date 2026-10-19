@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: white; overflow: hidden; font-family: sans-serif; }
+    #container { display: flex; width: 100%; height: 100vh; }
+    #left  { width: 50%; height: 100%; }
+    #right { width: 50%; height: 100%; border-left: 1px solid #ccc; }
+    #label-left  { position: absolute; top: 8px; left: 25%; font-size: 14px; color: #2255cc; font-weight: bold; }
+    #label-right { position: absolute; top: 8px; left: 75%; margin-left: 10px; font-size: 14px; color: #229944; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="left"  class="jxgbox"></div>
+    <div id="right" class="jxgbox"></div>
+  </div>
+  <div id="label-left">f(x) = x²</div>
+  <div id="label-right">f'(x) = 2x</div>
+
+  <script>
+    var f  = function(x) { return x * x; };
+    var df = function(x) { return 2 * x; };
+
+    // ── LEFT BOARD ────────────────────────────────────────────────
+    var left = JXG.JSXGraph.initBoard('left', {
+      boundingbox: [-4, 10, 4, -4],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: false,
+      resize: { enabled: true, throttle: 200 }
+    });
+
+    left.create('functiongraph', [f], { strokeColor: '#2255cc', strokeWidth: 2.5 });
+
+    var pt = left.create('point', [0, f(0)], {
+      size: 6, color: '#cc2222', name: '', fixed: false
+    });
+
+    pt.on('drag', function() {
+      pt.setPosition(JXG.COORDS_BY_USER, [pt.X(), f(pt.X())]);
+      right.update();
+    });
+
+    var tA = left.create('point', [
+      function() { return pt.X() - 1; },
+      function() { return f(pt.X()) - df(pt.X()); }
+    ], { visible: false, fixed: true });
+
+    var tB = left.create('point', [
+      function() { return pt.X() + 1; },
+      function() { return f(pt.X()) + df(pt.X()); }
+    ], { visible: false, fixed: true });
+
+    left.create('line', [tA, tB], {
+      strokeColor: '#cc2222', strokeWidth: 1.8
+    });
+
+    // Slope label near the red dot
+    left.create('text', [
+      function() { return pt.X() + 0.2; },
+      function() { return f(pt.X()) + 0.6; },
+      function() { return 'slope = ' + df(pt.X()).toFixed(2); }
+    ], { fontSize: 12, color: '#cc2222' });
+
+    // ── RIGHT BOARD ───────────────────────────────────────────────
+    var right = JXG.JSXGraph.initBoard('right', {
+      boundingbox: [-4, 10, 4, -4],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: false,
+      resize: { enabled: true, throttle: 200 }
+    });
+
+    right.create('functiongraph', [df], { strokeColor: '#229944', strokeWidth: 2.5 });
+
+    var dpt = right.create('point', [
+      function() { return pt.X(); },
+      function() { return df(pt.X()); }
+    ], { size: 6, color: '#cc2222', name: '', fixed: true });
+
+    // Dotted vertical line to y-axis
+    right.create('segment', [
+      function() { return [0, df(pt.X())]; },
+      function() { return [pt.X(), df(pt.X())]; }
+    ], { strokeColor: '#cc2222', strokeWidth: 1.2, dash: 2 });
+
+    // Dotted vertical drop to x-axis
+    right.create('segment', [
+      function() { return [pt.X(), 0]; },
+      function() { return [pt.X(), df(pt.X())]; }
+    ], { strokeColor: '#cc2222', strokeWidth: 1.2, dash: 2 });
+
+    // Small dot on y-axis
+    right.create('point', [
+      0,
+      function() { return df(pt.X()); }
+    ], { size: 4, color: '#cc2222', name: '', fixed: true });
+
+    // Label on y-axis
+    right.create('text', [
+      0.15,
+      function() { return df(pt.X()) + 0.5; },
+      function() { return "f'(" + pt.X().toFixed(2) + ') = ' + df(pt.X()).toFixed(2); }
+    ], { fontSize: 12, color: '#cc2222' });
+
+  </script>
+</body>
+</html>

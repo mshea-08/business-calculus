@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: white; overflow: hidden; }
+    #box { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="box" class="jxgbox"></div>
+  <script>
+    var f = function(x) { return 0.5*(x+1)*(x+1) - 3; };
+    var brd = JXG.JSXGraph.initBoard('box', {
+      boundingbox: [-5, 5, 5, -5],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: false,
+      resize: {enabled: true, throttle: 200}
+    });
+    var g = brd.create('functiongraph', [f]);
+    var p1 = brd.create('glider', [-3, -1, g], {size: 5, name: "(a, f(a))", label: {fontSize: 12}});
+    var s = brd.create('slider', [[1,-3.5],[3,-3.5],[0.001, 1.8, 2]], {name: "h"});
+    var p2 = brd.create('point', [
+      function() { return p1.X() + s.Value(); },
+      function() { return f(p1.X() + s.Value()); }
+    ], {
+      face: '[]', size: 2,
+      name: function() { return (s.Value() < 0.1) ? "" : "(a+h, f(a+h))"; },
+      label: {fontSize: 12}
+    });
+    var line = brd.create('line', [p1, p2], {strokeColor: '#ff0000'});
+  </script>
+</body>
+</html>
