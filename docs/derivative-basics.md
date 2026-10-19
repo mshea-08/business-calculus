@@ -30,14 +30,42 @@ As the second point gets closer to $(2,0.4)$, the slope of the secant line more 
 <iframe src="https://www.desmos.com/calculator/h5oagssj9e?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
+!!! example "Example 1"
+    Consider the function $f(x) = e^x$ approximate the slope of the function near $x = 1$ by computing the slope of the secant line through the points $x = 1$ and $x = 1.5$.
+
+    ??? success "Solution"
+        We have $f(1) = e^1 \approx 2.718$ and $f(1.5) = e^{1.5} \approx 4.482$, so the slope is, 
+
+        $$m = \frac{4.482-2.718}{1.5-1} = \frac{1.764}{0.5} = 3.528.$$
+
+
+!!! example "Example 2"
+    Sketch the tangent line to the function $y = \log x$ at the point $x = 1$. 
+
+    <center>
+    <iframe src="https://www.desmos.com/calculator/wqedqkw9pp?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+    </center>
+
+    ??? success "Solution"
+
+        Remember the tangent line should just touch the function at the point $(1,0)$. We have, 
+
+        <center>
+        <iframe src="https://www.desmos.com/calculator/7coatbsezq?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </center>
+
+    
+
 ## 5.2 Limits and Continuity
+
+!!! warning "Piecewise Functions"
+    It will be a good idea to review *piecewise functions* before this section. I don't have this written into these notes (yet) but <a href="https://tutorial.math.lamar.edu/classes/alg/GraphFunctions.aspx">Paul's Notes</a> is a great resource.
 
 A **limit** is a way for us to mathematically what it means to get closer and closer to a point without truly be equal to it. We write, 
 
 $$\lim_{x \to a} f(x)$$
 
-to mean: What happens to the function $f(x)$ as $x$ gets arbitrarily close to, *but not equal to*, $a$? 
-It's important to know that taking a limit is *not the same as* computing the value of the function at that point. In general,
+to mean: What happens to the function $f(x)$ as $x$ gets arbitrarily close to, *but not equal to*, $a$? It's important to know that taking a limit is *not the same as* computing the value of the function at that point. In general,
 
 $$\lim_{x\to a} f(x) \neq f(a).$$
 
@@ -55,7 +83,10 @@ So as $x \to 1$, the function gets close to the $y$-value $2$. Graphically this 
 <iframe src="https://www.desmos.com/calculator/pie3tby7gr?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
-We use the open hole to signify that the function $f(x)$ does not exist when $x=1$, but it does exist for values arbitrarily close, e.g. for $x=0.9999999987$. Note that Desmos does not identify these **removable discontinuities** when you graph the function. 
+We use the open hole to signify that the function $f(x)$ does not exist when $x=1$, but it does exist for values arbitrarily close, e.g. for $x=0.99$, $f(0.99) = 1.99$ which is *nearly* 2. 
+
+!!! warning "Desmos and Holes"
+    Note that Desmos does not identify these **removable discontinuities** when you graph the function. 
 
 Graphically, a limit tells us what happens to the $y$-value of the graph as we approach the $x$-value along the curve of the function. For a limit to exist, the value must be the same regardless of what direction on the line we approach the point from. This allows us to compute limits from the graph of the function.
 
@@ -67,7 +98,7 @@ Consider the above graph of a function, $f$. Based on the graph, $f(1) = 0$, but
 
 $$\lim_{x\to 1} f(x) = 1.$$
 
-!!! example "Example 1"
+!!! example "Example 3"
     Below is a graph of the function $f(x)$. Compute 
 
     a) $\lim_{x\to 2} f(x)$
@@ -96,7 +127,7 @@ $$\lim_{x\to 1} f(x) = 1.$$
 
 If we can graph the function easily, then the graph serves as an excellent tool for computing limits. An alternative method for computing limits is to use a table of values. This method usually requires a calculator. 
 
-!!! example "Example 2"
+!!! example "Example 4"
     Use a table of values to estimate $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$.
 
     ??? success "Solution"
@@ -110,7 +141,7 @@ If we can graph the function easily, then the graph serves as an excellent tool 
 
         $$\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 4$$
 
-!!! example "Example 3"
+!!! example "Example 5"
     Use a table of values to estimate $\displaystyle\lim_{x \to 0} \frac{e^x - 1}{x}$.
 
     ??? success "Solution"
@@ -130,7 +161,7 @@ $$\lim_{x \to 2} 2x - 1 = 2(2) - 1 = 3.$$
 
 Since $f(x) = 2x-1$ is just a line, we know it is well-behaved in the context given above. When direct substitution fails, e.g. when the function is undefined at the point, we need to use algebraic techniques to help simplify the expression. The examples below cover a few common algebraic methods. 
 
-!!! example "Example 4"
+!!! example "Example 6"
     Compute $\displaystyle\lim_{x \to 3} \frac{x^2 - x - 6}{x - 3}$.
 
     ??? success "Solution"
@@ -142,7 +173,7 @@ Since $f(x) = 2x-1$ is just a line, we know it is well-behaved in the context gi
 
         $$= \lim_{x \to 3} (x + 2) = 5$$
 
-!!! example "Example 5"
+!!! example "Example 7"
     Compute $\displaystyle\lim_{x \to 3} \frac{\frac{1}{x} - \frac{1}{3}}{x - 3}$.
 
     ??? success "Solution"
@@ -158,7 +189,7 @@ Since $f(x) = 2x-1$ is just a line, we know it is well-behaved in the context gi
 
         $$= \lim_{x \to 3} \frac{-(x-3)}{3x(x-3)} = \lim_{x \to 3} \frac{-1}{3x} = \frac{-1}{3(3)} = -\frac{1}{9}$$
 
-!!! example "Example 6"
+!!! example "Example 8"
     Compute $\displaystyle\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}$.
 
     ??? success "Solution"
@@ -186,7 +217,7 @@ Below is a depiction of a **jump discontinuity**,
 
 A jump discontinuity occurs when the function approaches different values to the right and left of the point. In the above, when we approach $x=0$ from the left the $y$-value apporach $0$, but if we appraoch from the right the $y$-value approaches 1. 
 
-!!! example "Example 7"
+!!! example "Example 9"
     Determine the points of discontinuity in the graph below, 
 
     <center>
@@ -216,7 +247,7 @@ $$\frac{f(a+h) - f(a)}{h}$$
 
 is just the slope of the secant line depicted in the applet above. Taking the limit as $h \to 0$ thus gives us the slope of the tangent line. 
 
-!!! example "Example 8"
+!!! example "Example 10"
     Compute the derivative of the function $f(x) = x^2$ at $x = 1$. 
 
     ??? success "Solution"
@@ -230,7 +261,7 @@ is just the slope of the secant line depicted in the applet above. Taking the li
 
 Once we can compute the derivative at a point, we are able to compute the tangent line. 
 
-!!! example "Example 9"
+!!! example "Example 11"
     Compute the line tangent to the function $f(x) = x^2$ at $x = 1$. 
 
     ??? success "Solution"
@@ -238,7 +269,7 @@ Once we can compute the derivative at a point, we are able to compute the tangen
 
         $$y - 1 = 2(x-1).$$
 
-!!! example "Example 10"
+!!! example "Example 12"
     Compute the line tangent to the function $g(x) = 1-x^2$ at $x = 3$.
 
     ??? success "Solution"
@@ -264,7 +295,7 @@ Once we can compute the derivative at a point, we are able to compute the tangen
 
         $$y + 8 = -6(x - 3)$$
 
-!!! example "Example 11"
+!!! example "Example 13"
     Compute the line tangent to the function $f(x) = \sqrt{x}$ at $x = 4$.
 
     ??? success "Solution"
@@ -388,7 +419,7 @@ For a function $y=f(x)$ the notation $f'(x)$, $y'$, $\frac{df}{dx}$, or $\frac{d
 If we graph a function and its derivative side by side, the points on the graph correspond. The $y$-value on the graph of the derivative tells us the slope on the original graph. The following applet illustrates this for the function $f(x) = x^2$. 
 
 <center>
-<iframe src="/derivative_applet.html" width="800" height="400" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://mshea-08.github.io/business-calculus/derivative_applet.html" width="800" height="400" frameborder="0" scrolling="no"></iframe>
 </center>
 
 !!! example "Example 15"
@@ -423,17 +454,56 @@ If we graph a function and its derivative side by side, the points on the graph 
 
 **Problem 2.** Find the equation of the secant line to $f(x) = x^3 - 4x$ through the points where $x = -1$ and $x = 2$.
 
-**Problem 3.** Match the slopes to the labeled points on the function: (i) 2, (ii) 0, (iii) -4, (iv) 6.
+**Problem 3.** Find the equation of the secant line to $f(x) = \dfrac{1}{x}$ through the points where $x = 1$ and $x = 4$.
+
+**Problem 4.** Find the equation of the secant line to $f(x) = \sqrt{x}$ through the points where $x = 1$ and $x = 9$.
+
+**Problem 5.** Match the slopes to the labeled points on the function: (i) 2, (ii) 0, (iii) -4, (iv) 6.
 
 <center>
 <iframe src="https://www.desmos.com/calculator/vp1bauwdyv?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
-**Problem 4.** On the above graph sketch the tangent line at point C. 
+**Problem 6.** On the above graph sketch the tangent line at point C. 
+
+**Problem 7.** Match the slopes to the labeled points on the function: (i) 0, (ii) 8, (iii) -1, (iv) 3.
+
+<center>
+<iframe src="https://www.desmos.com/calculator/tbaadl1mxq?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+**Problem 8.** On the above graph sketch the tangent line at point A. 
 
 ### 5.2 Exercises
 
-For problems 5-8, use the following graph of $f(x)$ to determine whether the following statement about limits are true or false. Justify your answer. If the are false, state the correct answer. 
+For problems 9-12, use the following graph of $f(x)$ to determine whether the following statements about limits are true or false. Justify your answer. If they are false, state the correct answer. 
+
+
+<center>
+<iframe src="https://www.desmos.com/calculator/lhcuoniooc?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<div class="grid cards" markdown>
+
+- **Problem 9.**
+
+    $$\lim_{x\to 0} f(x) = -1$$
+
+- **Problem 10.**
+
+    $$\lim_{x \to 1} f(x) = 1$$
+
+- **Problem 11.**
+
+    $$\lim_{x\to 2} f(x) = 1$$
+
+- **Problem 12.**
+
+    $$\lim_{x\to -2} f(x) = 3$$
+
+</div>
+
+For problems 13-16, use the following graph of $f(x)$ to determine whether the following statements about limits are true or false. Justify your answer. If they are false, state the correct answer. 
 
 <center>
 <iframe src="https://www.desmos.com/calculator/uh1smja6em?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
@@ -441,21 +511,47 @@ For problems 5-8, use the following graph of $f(x)$ to determine whether the fol
 
 <div class="grid cards" markdown>
 
-- **Problem 5.**
+- **Problem 13.**
 
     $$\lim_{x\to 2} f(x) = -1$$
 
-- **Problem 6.**
+- **Problem 14.**
 
     $$\lim_{x \to 1} f(x) \text{ does not exist}$$
 
-- **Problem 7.**
+- **Problem 15.**
 
     $$\lim_{x\to -1} f(x) = -1$$
 
-- **Problem 8.**
+- **Problem 16.**
 
     $$\lim_{x\to -2} f(x) = -2$$
+
+</div>
+
+For problems 17-20, use the following graph of $f(x)$ to determine whether the following statements about limits are true or false. Justify your answer. If they are false, state the correct answer. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/j0pmvcnwo9?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<div class="grid cards" markdown>
+
+- **Problem 17.**
+
+    $$\lim_{x\to -1} f(x) = 2$$
+
+- **Problem 18.**
+
+    $$\lim_{x \to 2} f(x) = 1$$
+
+- **Problem 19.**
+
+    $$\lim_{x\to 0} f(x) \text{ does not exist}$$
+
+- **Problem 20.**
+
+    $$\lim_{x\to -3} f(x) = 0$$
 
 </div>
 
@@ -463,19 +559,19 @@ Use a table of values to compute the following limits.
 
 <div class="grid cards" markdown>
 
-- **Problem 9.**
+- **Problem 21.**
 
     $\displaystyle\lim_{x \to 1} \frac{x^3 - 1}{x - 1}$
 
-- **Problem 10.**
+- **Problem 22.**
 
     $\displaystyle\lim_{x \to 0} \frac{e^{2x} - 1}{x}$
 
-- **Problem 11.**
+- **Problem 23.**
 
     $\displaystyle\lim_{x \to 2} \frac{x^3 - 8}{x - 2}$
 
-- **Problem 12.**
+- **Problem 24.**
 
     $\displaystyle\lim_{x \to 0} \frac{(1+x)^3 - 1}{x}$
 
@@ -485,47 +581,47 @@ Compute the following limits algebraically.
 
 <div class="grid cards" markdown>
 
-- **Problem 13.**
+- **Problem 25.**
 
     $\displaystyle\lim_{x \to 1} 2x^2 - 3x + 1$
 
-- **Problem 14.**
+- **Problem 26.**
 
     $\displaystyle\lim_{x \to 0} \frac{x^2 - x}{x}$
 
-- **Problem 15.**
+- **Problem 27.**
 
     $\displaystyle\lim_{x \to 3} \frac{x^2-6x+9}{x-3}$
 
-- **Problem 16.**
+- **Problem 28.**
 
     $\displaystyle\lim_{x \to 2} \frac{\sqrt{x+2}-2}{x-2}$
 
-- **Problem 17.**
+- **Problem 29.**
 
     $\displaystyle\lim_{x \to -2} \frac{x^2 + 5x + 6}{x + 2}$
 
-- **Problem 18.**
+- **Problem 30.**
 
     $\displaystyle\lim_{x \to 0} \frac{\frac{1}{x+2} - \frac{1}{2}}{x}$
 
-- **Problem 19.**
+- **Problem 31.**
 
     $\displaystyle\lim_{x \to 5} \frac{\sqrt{x-1}-2}{x-5}$
 
-- **Problem 20.**
+- **Problem 32.**
 
     $\displaystyle\lim_{x \to 4} \frac{x^2 - 3x - 4}{x - 4}$
 
 </div>
 
-**Problem 21.** The graph of $f(x)$ is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).
+**Problem 33.** The graph of $f(x)$ is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).
 
 <center>
 <iframe src="https://www.desmos.com/calculator/0ri41th2cs?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
-**Problem 22.** The graph of $f(x)$ is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).
+**Problem 34.** The graph of $f(x)$ is given below. State all points of discontinuity and determine their type (removable, vertical asymptote, or jump).
 
 <center>
 <iframe src="https://www.desmos.com/calculator/nvyopbnsm3?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
@@ -540,9 +636,9 @@ x & x \geq 0 \\
 
 It helps to remember that the absolute value of any number is always positive. 
 
-**Problem 23.** Sketch the function $f(x) = |x|/x$ by using a table of values. State any points of discontinuity. 
+**Problem 35.** Sketch the function $f(x) = |x|/x$ by using a table of values. State any points of discontinuity. 
 
-**Problem 24.** Determine whether the following statements are true or false. Briefly justify your answer:
+**Problem 36.** Determine whether the following statements are true or false. Briefly justify your answer:
 
 a) Polynomials are continuous for all values of $x$. 
 
@@ -558,27 +654,27 @@ Compute the derivative of each function at the given point using the limit defin
 
 <div class="grid cards" markdown>
 
-- **Problem 25.**
+- **Problem 37.**
 
     $f(x) = x^2 - 3x$, at $x = 2$
 
-- **Problem 26.**
+- **Problem 38.**
 
     $f(x) = 4x^2 + 1$, at $x = 1$
 
-- **Problem 27.**
+- **Problem 39.**
 
     $f(x) = x^3$, at $x = 2$
 
-- **Problem 28.**
+- **Problem 40.**
 
     $f(x) = \dfrac{1}{x}$, at $x = 2$
 
-- **Problem 29.**
+- **Problem 41.**
 
     $f(x) = \sqrt{x+1}$, at $x = 3$
 
-- **Problem 30.**
+- **Problem 42.**
 
     $f(x) = \frac{1}{x-1}$, at $x = -1$
 
@@ -588,31 +684,31 @@ Find the equation of the tangent line to each function at the given point.
 
 <div class="grid cards" markdown>
 
-- **Problem 31.**
+- **Problem 43.**
 
     $f(x) = x^2 + 1$, at $x = 2$
 
-- **Problem 32.**
+- **Problem 44.**
 
     $f(x) = 3x^2 - x$, at $x = 1$
 
-- **Problem 33.**
+- **Problem 45.**
 
     $f(x) = \sqrt{x}$, at $x = 9$
 
-- **Problem 34.**
+- **Problem 46.**
 
     $f(x) = \dfrac{1}{x}$, at $x = 3$
 
 </div>
 
-**Problem 35.** The position of a car along a straight road is given by $s(t) = t^2 + 5t$ feet, where $t$ is in seconds. Find the instantaneous velocity at $t = 3$ seconds. 
+**Problem 47.** The position of a car along a straight road is given by $s(t) = t^2 + 5t$ feet, where $t$ is in seconds. Find the instantaneous velocity at $t = 3$ seconds. 
 
-**Problem 36.** A company's total cost of producing $x$ units is $C(x) = 3x^2 + 20x + 100$ dollars. Find the marginal cost at $x = 4$ units and interpret your answer.
+**Problem 48.** A company's total cost of producing $x$ units is $C(x) = 3x^2 + 20x + 100$ dollars. Find the marginal cost at $x = 4$ units and interpret your answer.
 
-**Problem 37.** The revenue from selling $x$ units is given by $R(x) = 80x - 2x^2$ dollars. Find the marginal revenue at $x = 15$ units and interpret your answer.
+**Problem 49.** The revenue from selling $x$ units is given by $R(x) = 80x - 2x^2$ dollars. Find the marginal revenue at $x = 15$ units and interpret your answer.
 
-**Problem 38.** A ball is dropped from a height of $200$ feet and its height after $t$ seconds is given by $h(t) = 200 - 16t^2$ feet. Find the instantaneous velocity of the ball at $t = 2$ seconds.
+**Problem 50.** A ball is dropped from a height of $200$ feet and its height after $t$ seconds is given by $h(t) = 200 - 16t^2$ feet. Find the instantaneous velocity of the ball at $t = 2$ seconds.
 
 ### 5.4 Exercises
 
@@ -620,29 +716,29 @@ Compute the derivative of the following functions using the limit definition
 
 <div class="grid cards" markdown>
 
-- **Problem 39.**
+- **Problem 51.**
 
     $f(x) = x^2 + 2x$
 
-- **Problem 40.**
+- **Problem 52.**
 
     $y = \sqrt{x}$
 
-- **Problem 41.**
+- **Problem 53.**
 
     $f(x) = \frac{1}{x}$
 
-- **Problem 42.**
+- **Problem 54.**
 
     $g(x) = x^3$
 
 </div>
 
-**Problem 43.** A javelin is thrown into the air and its height in meters after $t$ seconds is modeled by the function $h(t) = −4.9t^2+18t+2$. Take the derivative of the height function to compute the equation for the vertical velocity of the javelin. 
+**Problem 55.** A javelin is thrown into the air and its height in meters after $t$ seconds is modeled by the function $h(t) = −4.9t^2+18t+2$. Take the derivative of the height function to compute the equation for the vertical velocity of the javelin. 
 
-**Problem 44.** A company's monthly revenue in thousands of dollars after spending $t$ thousand dollars on advertising is modeled by $R(t) = -2t^2 + 24t + 50$. Take the derivative of the revenue function to find the equation for the marginal revenue with respect to advertising spend.
+**Problem 56.** A company's monthly revenue in thousands of dollars after spending $t$ thousand dollars on advertising is modeled by $R(t) = -2t^2 + 24t + 50$. Take the derivative of the revenue function to find the equation for the marginal revenue with respect to advertising spend.
 
-**Problem 45.** Match the graph of the function to the correct derivative.
+**Problem 57.** Match the graph of the function to the correct derivative.
 
 | Function | | Derivative | |
 |---|---|---|---|
