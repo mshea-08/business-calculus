@@ -637,15 +637,39 @@ Find the derivatives of the following functions,
 
     $h(x) = \dfrac{x^3 + 1}{e^x}$
 
+- **Problem 43.**
+
+    $f(x) = 4x^5 - 3x^2 + \dfrac{7}{x}$
+
+- **Problem 44.**
+
+    $y = \sqrt{x}\, e^x$
+
+- **Problem 45.**
+
+    $g(t) = \dfrac{\sqrt{t}}{\ln(t)}$
+
+- **Problem 46.**
+
+    $y = \dfrac{e^x - 1}{e^x + 1}$
+
+- **Problem 47.**
+
+    $f(x) = (x^4 - 2x)\ln(x)$
+
+- **Problem 48.**
+
+    $y = \dfrac{xe^x}{x + 1}$
+
 </div>
 
-**Problem 43.** A company's total cost of producing $x$ units is $C(x) = x^3 - 4x^2 + 20x + 100$. Compute the marginal average cost.
+**Problem 49.** A company's total cost of producing $x$ units is $C(x) = x^3 - 4x^2 + 20x + 100$. Compute the marginal average cost.
 
-**Problem 44.** A company's total revenue from selling $x$ units is $R(x) = 120x - 3x^2$. Compute the marginal average revenue.
+**Problem 50.** A company's total revenue from selling $x$ units is $R(x) = 120x - 3x^2$. Compute the marginal average revenue.
 
-**Problem 45.** A company's total cost of producing $x$ units is $C(x) = 2x^2 + \sqrt{x} + 80$. Compute the marginal average cost.
+**Problem 51.** A company's total cost of producing $x$ units is $C(x) = 2x^2 + \sqrt{x} + 80$. Compute the marginal average cost.
 
-**Problem 46.** A company's total revenue from selling $x$ units is $R(x) = 200x - x^3$. Compute the marginal average revenue. At what production level is the marginal average revenue equal to zero?
+**Problem 52.** A company's total revenue from selling $x$ units is $R(x) = 200x - x^3$. Compute the marginal average revenue. At what production level is the marginal average revenue equal to zero?
 
 ### 6.5 Exercises 
 
@@ -653,27 +677,27 @@ Find the following derivatives using the chain rule,
 
 <div class="grid cards" markdown>
 
-- **Problem 47.**
+- **Problem 53.**
 
     $y=(x^2+3x-1)^4$
 
-- **Problem 48.**
+- **Problem 54.**
 
     $f(x) = \ln(3x+7)$
 
-- **Problem 49.**
+- **Problem 55.**
 
     $y = (4x^2 - 10x)^6$
 
-- **Problem 50.**
+- **Problem 56.**
 
     $h(t) = e^{3t^2+2}$
 
-- **Problem 51.**
+- **Problem 57.**
 
     $y = e^{1/x^2}$
 
-- **Problem 52.**
+- **Problem 58.**
 
     $y = \ln(e^x+x)$
 
@@ -685,51 +709,51 @@ Compute the derivative of each function.
 
 <div class="grid cards" markdown>
 
-- **Problem 53.**
+- **Problem 59.**
 
     $y = x^2 e^x$
 
-- **Problem 54.**
+- **Problem 60.**
 
     $y = e^x + \ln(x)$
 
-- **Problem 55.**
+- **Problem 61.**
 
     $f(x) = \dfrac{x^3 + 1}{x^2 - 1}$
 
-- **Problem 56.**
+- **Problem 62.**
 
     $y = (2x^3 - 1)(x^2 + 5)$
 
-- **Problem 57.**
+- **Problem 63.**
 
     $h(x) = \dfrac{\ln(x)}{x^3}$
 
-- **Problem 58.**
+- **Problem 64.**
 
     $f(t) = \dfrac{t^2 + 3t}{e^t}$
 
-- **Problem 59.**
+- **Problem 65.**
 
     $p(x) = \ln(x) \cdot e^x$
 
-- **Problem 60.**
+- **Problem 66.**
 
     $y = \dfrac{x^4 - 2x^2 + 1}{x^2}$
 
-- **Problem 61.**
+- **Problem 67.**
 
     $c(t) = t^3e^{t^2}$
 
-- **Problem 62.**
+- **Problem 68.**
 
     $g(x) = \dfrac{e^{3x}}{x^2 + 1}$
 
-- **Problem 63.**
+- **Problem 69.**
 
     $y = x^2 \ln(x^2 + 1)$
 
-- **Problem 64.**
+- **Problem 70.**
 
     $f(x) = \dfrac{\ln(x^3)}{e^{2x}}$
 
