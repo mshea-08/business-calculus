@@ -759,3 +759,11 @@ Compute the derivative of each function.
 
 </div>
 
+**Problem 71.** A companies demand function is given by $p = 100/\sqrt{x+4}$ where $x$ is the quantity and $p$ is the selling price. Write revenue as a function of units sold. Compute the marginal revenue $R'(x)$, then compute $R'(12)$ and interpret it's meaning. 
+
+**Problem 72.** A factory’s cost of producing x units is $C(x) = \sqrt(4x^2 + 900)$ thousand dollars. The factory is increasing production over time, with x(t) = 50 + 10t units, where t is in months. Compute the rate the cost is changing per month, $\frac{dC}{dt}$. How fast is the cost changing when $t = 2$?
+
+**Problem 73.** A factory produces 500 units a week at a total cost of $20,000. The accountant reports that the marginal cost at this production level is $35 per unit. No cost formula is available. Find the marginal average cost when $x=500$. Explain it's meaning in the context of the problem. 
+
+**Problem 74.** A streaming service has 2 million subscribers paying $12 a month. To fund new content, it raises the fee by 15 cents each month. Because of the price increases and competition, it loses about 40,000 subscribers each month. Monthly revenue is $(\text{number of subscribers}) \times (\text{monthly fee})$. How fast is monthly revenue changing?
+
