@@ -107,14 +107,276 @@ Implicitly, the domain is all allowed inputs to the function. For the function $
 !!! note "Global Versus Local"
     Note that a global maximum is also a local maximum, but the reverse is not necessarily true. 
 
-Similarly, a **local minimum** is a point that is lower than all immediate neighbors and a **global minimum** is the lowest point across the entire domain. We use the term **extrema** to denote both maxima and minima. 
+Similarly, a **local minimum** is a point that is lower than all immediate neighbors and a **global minimum** is the lowest point across the entire domain. The function below has a local minimum at $x = 4/3$, the function has no global minimum. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/fgfxf1gt5c?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+The function $y = x^4$ is an example of a function with a global minimum. It has a global minimum at $x = 0$. We use the term **extrema** to denote both maxima and minima. 
 
 !!! example "Example 4"
     Assume the entire domain of the function is shown in the graph below. Denote all local and global extrema.
-    
+
+    <iframe src="https://www.desmos.com/calculator/vs5gxswcsd?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+    ??? success "Solution"
+        There maximum are at $x=-4,\, 0, \, 4$ where the latter is a *global* max. There are also two local min at $x=-2,\, 2$. 
+
+### 7.2.1 Critical Points
+
+A **critical point** is any point on the graph where the derivative is equal to 0 (or does not exist, but we will only focus on the 0 case).
+
+!!! example "Example 5"
+    Compute all the *critical points* of the function $y = \frac{1}{3}x^3 + \frac{1}{2}x^2 - 6x + 1$.
+
+    ??? success "Solution"
+        Let's take the derivative of $y$. 
+
+        $$y' = x^2 + x - 6$$
+
+        Now compute when $y' = 0$,
+
+        $$0 = x^2 + x - 6 = (x-2)(x+3)$$
+
+        So the critical points are $x = 2$ and $x = -3$. 
+
+*All* extrema are critical points **but not all critical points are extrema**. In Example 5, we can check from plotting the function that both $x=2$ and $x=-3$ are in fact extrema. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/gmutmhdtqf?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+This isn't always the case though. The function $y = x^3$ has a critical point at $x=0$ but not an extrema. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/67ccqzriej?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+Without graphing, how can we check whether or not a critical point is also an extrema? There are a couple options we can try. 
+
+**Option 1: Second Derivative Test.** If our function is smooth, we can compute the second derivative of the function at the same point and use the concavity to determine whether we have a max or a min. 
+
+* If $f'(x) = 0$ and $f''(x) > 0$ (concave up), then $x$ is a minimum. 
+* If $f'(x) = 0$ and $f''(x) < 0$ (concave down), then $x$ is a maximum.
+* If $f'(x) = 0$ and $f''(x) = 0$, then the second derivative test is **inconclusive**.
+
+The second derivative test is often the fasted option, but doesn't always work. 
+
+!!! example "Example 6"
+    Use the second derivative test to determine whether $x=2$ and $x=-3$ are maximum or minimum of the function $y = \frac{1}{3}x^3 + \frac{1}{2}x^2 - 6x + 1$.
+
+    ??? success "Solution"
+        In example 5 we found the first derivative was, 
+
+        $$y' = x^2 + x - 6$$
+
+        Now let's compute the second derivative,
+
+        $$y'' = 2x+1$$
+
+        At $x = 2$, $y'' = 2(2)+1 = 5$, so $x=2$ is a minimum. At $x=-3$, $y''=2(-3)+1 = -5$, so $x=-3$ is a maximum. 
+
+The second derivative test will not tell us the difference between local and global maximum. To do that, we must actually compute the $y$-value of the points. The second derivative test will not help us show $x=0$ is a minimum of the function $y=x^4$. 
+
+**Option 2: First Derivative Test.** The goal of the first derivative test is to check the *sign* of the derivative before and after the critical point.
+
+Suppose $x=a$ is a critical point of $f(x)$. If the derivative of $f$ switches from positive to negative at the critical point $x=a$, then $a$ is a maximum. If the derivative of $f$ switches from negative to positive at $x=a$, then $a$ is a minimum. If the derivative does not switch signs around the point $x=a$, then $x=a$ is not an extrema of the function $f$. 
+
+!!! example "Example 7"
+    Show that $x=0$ is a critical point, but not an extremum of the function $f(x) = x^3$. 
+
+    ??? success "Solution"
+        The derivative of $f(x) = x^3$ is $f'(x) = 3x^2$. To find the critical points, we want to know all values of $x$ that satisfy, 
+
+        $$0 = x^2$$
+
+        The only $x$ that solves this is $x=0$. For $x < 0$, $f'(x) > 0$. Additionally for $x > 0$, $f'(x) > 0$. This means the derivative is both positive before and after $x=0$, so it is *not* an extremum of the function.
+
 
 ## 7.3 Applied Optimization
 
-## 7.4 Implicit Differentiation and Related Rates
+Often times is applications are goal is to maximize or minimize *something*. In these cases, it will be valuable to utilize the appropriate derivative when possible. We have already introduced concepts like marginal cost, revenue, and profit, so now let's use them as tools for finding maximum and minimum. 
+
+!!! example "Example 8"
+    A concert promoter has found that if she sells tickets for $50 each, she can sell 1200 tickets, but for each $5 she raises the price, 50 less people attend. What *price* should she sell the tickets at to maximize her revenue?
+
+    ??? success "Solution"
+        The goal is to **maximize** revenue. So the first step is to express revenue as a function. Revenue, $R = pq$ where $p$ is the price per ticket and $q$ is the quantity sold. Since we want the *price* that maximizes revenue, let's write $q$ as a function of $p$. 
+
+        The relationship between $q$ and $p$ is linear and given by the phrasing: "if she sells tickets for $50 each, she can sell 1200 tickets, but for each $5 she raises the price, 50 less people attend." Let's write a table of values from this:
+
+        | price | quantity |
+        | --- | --- |
+        | 50 | 1200 |
+        | 55 | 1150 |
+        | 60 | 1100 |
+        | 65 | 1050 |
+
+        We can use two of the points to compute the slope,
+
+        $$m = \frac{1100 - 1200}{60-50} = -10.$$
+
+        Using point slope form we get, 
+
+        $$q - 1200 = -10(p-50)$$
+
+        and simplifying gives, 
+
+        $$q = 1700 - 10p.$$
+
+        Now we can write revenue as, $R = p(1700-10p) = 1700p - 10p^2$. Computing the derivative gives, 
+
+        $$R' = 1700 - 20p$$
+
+        and we solve for when $R' = 0$ to get $p = 85$. We should check this is indeed a maximum and not a minimum. To do this, let's check the second derivative:
+
+        $$R'' = -20 < 0$$
+
+        so it is, in fact, a maximum. 
+
+        Therefore, the revenue is maximized when the price per ticket is $85. A this price she will sell 850 tickets and total revenue will be $72,250.
+
+
+Recall that profit $P = R - C$. If we want to maximize profit we take the derivative, 
+
+$$P' = R' - C'$$
+
+and then find when it is equal to 0, 
+
+$$0 = R' - C' \implies R' = C'.$$
+
+This is where the expression "profit is maximized when marginal cost and marginal revenue are equal" comes from! Of course, we now know this is not entirely true. When marginal cost equals marginal revenue profit has a *critical point*, but we should be careful to investigate whether or not that is a maximum!
+
+!!! example "Example 9"
+    A company sells q ribbon winders per year at $p per ribbon winder. The demand function for ribbon winders is given by: $p = 300 − 0.02q$. The ribbon winders cost $30 apiece to manufacture, plus there are fixed costs of $9000 per year. Find the quantity where profit is maximized.
+
+    ??? success "Solution"
+        Revenue is $R = q(300-0.02q)$ and cost is $C = 30q + 9000$. Thus profit is,
+
+        $$P = 300q - 0.02q^2 - 30q - 9000 = 270q - 0.02q^2 - 9000.$$
+
+        Taking the derivative gives
+
+        $$P' = 270 - 0.04q$$
+
+        and setting $P'=0$ gives $q = 6750$. This is indeed a maximum, because the second derivative $P'' = -0.04$ is always negative. 
+
 
 ## Exercises
+
+### 7.1 Exercises
+
+Compute the second derivatives of the following functions.
+
+<div class="grid cards" markdown>
+
+- **Problem 1.**
+
+    $y = e^x$
+
+- **Problem 2.**
+
+    $y = 3x+4$ 
+
+- **Problem 3.**
+
+    $g(x) = x^2 - 10x + 1$
+
+- **Problem 4.**
+
+    $f(x) = x^3 + \frac{1}{2}x^2 - 3x + 1$
+
+- **Problem 5.**
+
+    $y = \frac{x}{x+1}$
+
+- **Problem 6.**
+
+    $y = x\ln(x)$
+
+- **Problem 7.**
+
+    $y = e^{1-2x}$
+
+- **Problem 8.**
+
+    $y = \sqrt{x^2+1}$
+
+</div>
+
+Use the second derivative to determine when the function is concave up versus concave down. 
+
+<div class="grid cards" markdown>
+
+- **Problem 9.**
+
+    $y = x^3 - 6x^2 + 4$
+
+- **Problem 10.**
+
+    $y = x^4 - 6x^2$
+
+- **Problem 11.**
+
+    $y = xe^x$
+
+- **Problem 12.**
+
+    $y = \ln(x^2+1)$
+
+</div>
+
+### 7.2 Exercises 
+
+Compute all critical points of the following functions. 
+
+<div class="grid cards" markdown>
+
+- **Problem 13.**
+
+    $y = x^3 - 3x$
+
+- **Problem 14.**
+
+    $y = x^4 - 8x^2$
+
+- **Problem 15.**
+
+    $y = 2x^3 - 3x^2 - 12x$
+
+- **Problem 16.**
+
+    $y = x^2 e^x$
+
+- **Problem 17.**
+
+    $y = \dfrac{x}{x^2+1}$
+
+- **Problem 18.**
+
+    $y = x + \dfrac{4}{x}$
+
+</div>
+
+Determine the critical points of the following functions, then classify each critical point as a maximum, minimum, or neither by using the first and second derivative tests. 
+
+<div class="grid cards" markdown>
+
+- **Problem 19.**
+
+    $y = x^3 - 12x$
+
+- **Problem 20.**
+
+    $y = x^4 - 4x^3$
+
+- **Problem 21.**
+
+    $y = 3x^4 - 4x^3 - 12x^2$
+
+- **Problem 22.**
+
+    $y = \dfrac{x^2}{x-1}$
+
+</div>
