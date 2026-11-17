@@ -1,0 +1,2063 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../linear-functions/">
+      
+      
+        <link rel="next" href="../polynomials-rationals/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>2. Matrices - Linear Models and Differential Calculus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-matrices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-header__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Models and Differential Calculus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Matrices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-nav__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Models and Differential Calculus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Linear Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-basic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Basic Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-systems-as-matrix-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Systems as Matrix Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-gaussian-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Gaussian Elimination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-inverse-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Inverse Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-markov-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Markov Processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomials-rationals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponents-logarithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exponents and Logarithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-matrices">2. Matrices</h1>
+<h2 id="21-basic-operations">2.1 Basic Operations</h2>
+<p>A <strong>matrix</strong> is a two-dimensional array of numbers. Whenever we discuss a matrix, we must denote it <strong>dimensions</strong> (or size). The dimensions of a matrix is the number of <strong>rows</strong> followed by the number of <strong>columns</strong>. For example, </p>
+<div class="arithmatex">\[A = \begin{bmatrix} 
+1 &amp; -3 &amp; 2 \\ 
+12 &amp; 6 &amp; -1 
+\end{bmatrix}\]</div>
+<p>is a <span class="arithmatex">\(2 \times 3\)</span> matrix, meaning there are <span class="arithmatex">\(2\)</span> rows and <span class="arithmatex">\(3\)</span> columns. Typically, uppercase letters are used to denote matrices. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>State the dimensions of the following matrices, </p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 3 \\
+2 &amp; -4 \\
+0 &amp; 0 \\
+1 &amp; 6
+\end{bmatrix}, \quad 
+B = \begin{bmatrix}
+1 &amp; 3 &amp; 0 &amp; 3\\
+2 &amp; -4 &amp; -1 &amp; 6\\
+0 &amp; 3 &amp; 3 &amp; 0
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>Matrix <span class="arithmatex">\(A\)</span> has dimensions <span class="arithmatex">\(4\times 2\)</span> and matrix <span class="arithmatex">\(B\)</span> has dimensions <span class="arithmatex">\(3\times 4\)</span>.</p>
+</details>
+</div>
+<p>A matrix is called <strong>square</strong> if it has the same number of rows as columns. The <strong>identity</strong> matrix is a square matrix where the entries along the main diagonal are all 1 and all other entries are 0. For example, </p>
+<div class="arithmatex">\[I = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 
+\end{bmatrix}\]</div>
+<p>is the <span class="arithmatex">\(3\times 3\)</span> identity matrix. It is common to use the notation <span class="arithmatex">\(I_n\)</span> to denote the <span class="arithmatex">\(n \times n\)</span> identity matrix. If the dimensions are clear given the context, this notation is typically shortened to <span class="arithmatex">\(I\)</span>. A matrix where either one of the dimensions is <span class="arithmatex">\(1\)</span>, e.g. <span class="arithmatex">\(1\times n\)</span> or <span class="arithmatex">\(n \times 1\)</span>, is referred to as a <strong>vector</strong>. For example, </p>
+<div class="arithmatex">\[v = \begin{bmatrix}
+1 \\
+3 \\
+0 \\
+-1
+\end{bmatrix}\]</div>
+<p>is a <span class="arithmatex">\(4 \times 1\)</span> vector. We often use lowercase letters <span class="arithmatex">\(v\)</span>, <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(w\)</span> to denote vectors. The above is referred to as a <strong>column vector</strong> since it is a matrix with a single column. Alternatively, </p>
+<div class="arithmatex">\[u = \begin{bmatrix}
+0 &amp; -1 &amp; 1 
+\end{bmatrix}\]</div>
+<p>is referred to as a <strong>row vector</strong> since it is a matrix with a single row. </p>
+<p>We can add and subtract matrices if they have the same dimensions. We add and subtract matrices <em>entrywise</em>. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>Compute <span class="arithmatex">\(A+B\)</span>, where </p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 3 \\
+2 &amp; -4 \\
+0 &amp; 0 \\
+1 &amp; 6
+\end{bmatrix}, \quad
+B = \begin{bmatrix}
+2 &amp; 2 \\
+0 &amp; 10 \\
+5 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}.\]</div>
+<details class="success">
+<summary>Solution</summary>
+<div class="arithmatex">\[A+B=\begin{bmatrix}
+1 &amp; 3 \\
+2 &amp; -4 \\
+0 &amp; 0 \\
+1 &amp; 6
+\end{bmatrix} +
+\begin{bmatrix}
+2 &amp; 2 \\
+0 &amp; 10 \\
+5 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix} =
+\begin{bmatrix}
+1+2 &amp; 3+2 \\
+2+0 &amp; -4+10 \\
+0+5 &amp; 0+1 \\
+1+1 &amp; 6+1 
+\end{bmatrix} =
+\begin{bmatrix}
+3 &amp; 5 \\
+2 &amp; 6 \\
+5 &amp; 1 \\
+2 &amp; 7 
+\end{bmatrix}\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<p>Find, if possible: a) <span class="arithmatex">\(A + B\)</span>, b) <span class="arithmatex">\(A - B\)</span>, c) <span class="arithmatex">\(A + C\)</span>, d) <span class="arithmatex">\(B - C\)</span>, e) <span class="arithmatex">\(C + D\)</span>.</p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 3 \\
+-2 &amp; 4
+\end{bmatrix} \quad
+B = \begin{bmatrix}
+0 &amp; -1 \\
+5 &amp; 2
+\end{bmatrix} \quad
+C = \begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+3 &amp; -1 &amp; 4
+\end{bmatrix} \quad
+D = \begin{bmatrix}
+2 &amp; 1 \\
+0 &amp; -3 \\
+4 &amp; 5
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>a) </p>
+<div class="arithmatex">\[\begin{bmatrix} 1+0 &amp; 3+(-1) \\ -2+5 &amp; 4+2 \end{bmatrix} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}\]</div>
+<p>b) </p>
+<div class="arithmatex">\[\begin{bmatrix} 1-0 &amp; 3-(-1) \\ -2-5 &amp; 4-2 \end{bmatrix} = \begin{bmatrix} 1 &amp; 4 \\ -7 &amp; 2 \end{bmatrix}\]</div>
+<p>c) Not possible. <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(2 \times 2\)</span> and <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(2 \times 3\)</span>. Matrices must have the same dimensions to add.</p>
+<p>d) Not possible. <span class="arithmatex">\(B\)</span> is <span class="arithmatex">\(2 \times 2\)</span> and <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(2 \times 3\)</span>. Matrices must have the same dimensions to subtract.</p>
+<p>e) Not possible. <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(2 \times 3\)</span> and <span class="arithmatex">\(D\)</span> is <span class="arithmatex">\(3 \times 2\)</span>. Matrices must have the same dimensions to add.</p>
+</details>
+</div>
+<p>Multiplying matrices is more complicated. There are two types of matrix multiplication we will define. The first is known as <strong>scalar multiplication</strong>. We can multiple a matrix by a single number (a scalar), by multiplying each entry by that value. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 4</p>
+<p>Compute <span class="arithmatex">\(2A\)</span> and <span class="arithmatex">\(-3B\)</span>, where</p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+3 &amp; -1 \\
+0 &amp; 4
+\end{bmatrix} \quad
+B = \begin{bmatrix}
+2 &amp; -1 &amp; 5 \\
+0 &amp; 3 &amp; -2
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>The notation <span class="arithmatex">\(2A\)</span> denotes scalar multiplication of <span class="arithmatex">\(A\)</span> by <span class="arithmatex">\(2\)</span>. This means we multiply each entry of <span class="arithmatex">\(A\)</span> by <span class="arithmatex">\(2\)</span>,</p>
+<div class="arithmatex">\[2A = \begin{bmatrix} 2(3) &amp; 2(-1) \\ 2(0) &amp; 2(4) \end{bmatrix} = \begin{bmatrix} 6 &amp; -2 \\ 0 &amp; 8 \end{bmatrix}\]</div>
+<p>To compute <span class="arithmatex">\(-3B\)</span> us the same method, </p>
+<div class="arithmatex">\[-3B = \begin{bmatrix} -3(2) &amp; -3(-1) &amp; -3(5) \\ -3(0) &amp; -3(3) &amp; -3(-2) \end{bmatrix} = \begin{bmatrix} -6 &amp; 3 &amp; -15 \\ 0 &amp; -9 &amp; 6 \end{bmatrix}\]</div>
+</details>
+</div>
+<p>Next, we need to know <strong>matrix multiplication</strong>, i.e. how to multiply two matrices together. It's easiest to start by explaining how to multiply a row vector by a column vector, which is allowed if they have the same number of entries. To multiply a row vector by a column vector, you pair up the entries in order, multiply each pair, and then add all those products together to get a single number.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 5</p>
+<p>Compute <span class="arithmatex">\(AB\)</span>, where </p>
+<div class="arithmatex">\[A = \begin{bmatrix} 
+2 &amp; 10 
+\end{bmatrix}, \quad
+B = \begin{bmatrix}
+4 \\
+-1
+\end{bmatrix}.\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We multiple the first entry of <span class="arithmatex">\(A\)</span> by the first entry in <span class="arithmatex">\(B\)</span> and the second entry in <span class="arithmatex">\(A\)</span> by the second entry in <span class="arithmatex">\(B\)</span>. We then add these together to get, </p>
+<div class="arithmatex">\[AB = \begin{bmatrix} 
+2 &amp; 10 
+\end{bmatrix}
+\begin{bmatrix}
+4 \\
+-1
+\end{bmatrix} = 
+\begin{bmatrix}
+2(4) + 10(-1)
+\end{bmatrix} = 
+\begin{bmatrix}
+8 - 10
+\end{bmatrix} = 
+\begin{bmatrix}
+-2
+\end{bmatrix} = -2.\]</div>
+<p>A <span class="arithmatex">\(1 \times 1\)</span> matrix is just a scalar. In order to perform this procedure, the row and column vector must have the same number of entries. </p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 6</p>
+<p>Compute </p>
+<div class="arithmatex">\[\begin{bmatrix} 
+1 &amp; 1 &amp; 3 &amp; -2 
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+-1 \\
+3 \\
+1
+\end{bmatrix}.\]</div>
+<details class="success">
+<summary>Solution</summary>
+<div class="arithmatex">\[\begin{bmatrix} 
+1 &amp; 1 &amp; 3 &amp; -2 
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+-1 \\
+3 \\
+1
+\end{bmatrix}=
+1(2) + 1(-1) + 3(3) + (-2)(1) = 2 -1 + 9 -2 = 8.\]</div>
+</details>
+</div>
+<p>When multiplying scalars, the order of multiplication doesn't matter. For example, <span class="arithmatex">\(5 \times 3 = 3 \times 5\)</span>. This is not the case when multiplying matrices! The order of multiplication matters in matrix multiplication. In other words, we say matrix multiplication is <strong>noncommutative</strong>. </p>
+<div class="admonition note">
+<p class="admonition-title">When is matrix multiplication allowed?</p>
+<p>We can multiply two matrices together only if the number of columns in the first matrix is equal to the number of rows in the second matrix. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 7</p>
+<p>Determine whether the following multiplication is allowed (do not solve): a) <span class="arithmatex">\(AB\)</span>, b) <span class="arithmatex">\(BC\)</span>, c) <span class="arithmatex">\(AC\)</span>. </p>
+<div class="arithmatex">\[A = \begin{bmatrix} 1 &amp; -2 &amp; 4 \\ 0 &amp; 3 &amp; 5 \end{bmatrix} \quad 
+B = \begin{bmatrix} 2 &amp; 1 \\ -1 &amp; 0 \\ 3 &amp; 6 \end{bmatrix} \quad 
+C = \begin{bmatrix} 7 &amp; -3 \\ 2 &amp; 8 \end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>a) <span class="arithmatex">\(AB\)</span> is allowed, since <span class="arithmatex">\(A\)</span> has 3 columns and <span class="arithmatex">\(B\)</span> has 3 rows. </p>
+<p>b) <span class="arithmatex">\(BC\)</span> is allowed, since <span class="arithmatex">\(B\)</span> has 2 columns and <span class="arithmatex">\(C\)</span> has 2 rows.</p>
+<p>c) <span class="arithmatex">\(AC\)</span> is not allowed, since <span class="arithmatex">\(A\)</span> has 3 columns and <span class="arithmatex">\(C\)</span> has 2 rows.</p>
+</details>
+</div>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be matrices such that <span class="arithmatex">\(AB\)</span> is computable. The first row of <span class="arithmatex">\(AB\)</span> is computed by taking the first row in <span class="arithmatex">\(A\)</span> and multiplying it by each column in <span class="arithmatex">\(B\)</span>. The second row of <span class="arithmatex">\(AB\)</span> is computed by taking the second row of <span class="arithmatex">\(A\)</span> and multiplying it by each column in <span class="arithmatex">\(B\)</span>. This process continues until we use all rows of <span class="arithmatex">\(A\)</span>. For example</p>
+<div class="arithmatex">\[\begin{bmatrix}
+a &amp; b \\
+c &amp; d 
+\end{bmatrix}
+\begin{bmatrix}
+e &amp; f \\
+g &amp; h
+\end{bmatrix} = 
+\begin{bmatrix}
+\begin{bmatrix} a &amp; b \end{bmatrix}\begin{bmatrix} e \\ g \end{bmatrix} &amp; 
+\begin{bmatrix} a &amp; b \end{bmatrix}\begin{bmatrix} f \\ h \end{bmatrix} \\
+\begin{bmatrix} c &amp; d \end{bmatrix}\begin{bmatrix} e \\ g \end{bmatrix} &amp;
+\begin{bmatrix} c &amp; d \end{bmatrix}\begin{bmatrix} f \\ h \end{bmatrix}
+\end{bmatrix} =
+\begin{bmatrix}
+ae+bg &amp; af+bh \\
+ce+dg &amp; cf+dh
+\end{bmatrix}.\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example 8</p>
+<p>Multiply, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 1 \\
+3 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+2 &amp; -1 \\
+1 &amp; 2
+\end{bmatrix}.\]</div>
+<details class="success">
+<summary>Solution</summary>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 1 \\
+3 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+2 &amp; -1 \\
+1 &amp; 2
+\end{bmatrix} = 
+\begin{bmatrix}
+1(2)+1(1) &amp; 1(-1)+1(2) \\
+3(1)+0(1) &amp; 3(-1)+0(2)
+\end{bmatrix} = 
+\begin{bmatrix}
+3 &amp; 1 \\
+3 &amp; -3 
+\end{bmatrix}.\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 9</p>
+<p>Let </p>
+<div class="arithmatex">\[A = 
+\begin{bmatrix}
+1 &amp; 4 &amp; 3 \\
+2 &amp; -1 &amp; -2
+\end{bmatrix}, \quad
+B = \begin{bmatrix}
+2 &amp; 2 &amp; -1\\
+0 &amp; 1 &amp; -4\\
+1 &amp; 0 &amp; 2
+\end{bmatrix}\]</div>
+<p>Compute <span class="arithmatex">\(AB\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Each entry is a row of <span class="arithmatex">\(A\)</span> times a column of <span class="arithmatex">\(B\)</span>:</p>
+<div class="arithmatex">\[AB = 
+\begin{bmatrix}
+(1)(2) + (4)(0) + (3)(1) &amp; (1)(2) + (4)(1) + (3)(0) &amp; (1)(-1) + (4)(-4) + (3)(2) \\
+(2)(2) + (-1)(0) + (-2)(1) &amp; (2)(2) + (-1)(1) + (-2)(0) &amp; (2)(-1) + (-1)(-4) + (-2)(2)
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[AB = 
+\begin{bmatrix}
+5 &amp; 6 &amp; -11 \\
+2 &amp; 3 &amp; -2
+\end{bmatrix}\]</div>
+</details>
+</div>
+<p>Notice in the above example that <span class="arithmatex">\(A\)</span> was <span class="arithmatex">\(2\times 3\)</span>, <span class="arithmatex">\(B\)</span> was <span class="arithmatex">\(3 \times 3\)</span>, and <span class="arithmatex">\(AB\)</span> was <span class="arithmatex">\(2\times 3\)</span>. The product <span class="arithmatex">\(AB\)</span> does not necessarily have the same dimensions as <span class="arithmatex">\(A\)</span> or <span class="arithmatex">\(B\)</span>. </p>
+<div class="admonition note">
+<p class="admonition-title">Matrix Multiplication Dimensions</p>
+<p>If <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(n \times m\)</span> and <span class="arithmatex">\(B\)</span> is <span class="arithmatex">\(m \times k\)</span>, then <span class="arithmatex">\(AB\)</span> will be <span class="arithmatex">\(n \times k\)</span>.  </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 10</p>
+<p>Find, if possible: a) EF, b) FE, c) FH, d) GH, e) HG. </p>
+<div class="arithmatex">\[E = \begin{bmatrix}
+1 &amp; 2 \\
+4 &amp; 2 \\
+3 &amp; 1 
+\end{bmatrix} \quad
+F = \begin{bmatrix}
+2 &amp; -1 \\
+3 &amp; 2 
+\end{bmatrix} \quad
+G = \begin{bmatrix}
+4 &amp; 1 
+\end{bmatrix} \quad
+H = \begin{bmatrix}
+-3 \\
+-1 
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>The sizes are: <span class="arithmatex">\(E\)</span> is <span class="arithmatex">\(3 \times 2\)</span>, <span class="arithmatex">\(F\)</span> is <span class="arithmatex">\(2 \times 2\)</span>, <span class="arithmatex">\(G\)</span> is <span class="arithmatex">\(1 \times 2\)</span>, and <span class="arithmatex">\(H\)</span> is <span class="arithmatex">\(2 \times 1\)</span>.</p>
+<p>a) </p>
+<div class="arithmatex">\[EF = 
+\begin{bmatrix}
+(1)(2) + (2)(3) &amp; (1)(-1) + (2)(2) \\
+(4)(2) + (2)(3) &amp; (4)(-1) + (2)(2) \\
+(3)(2) + (1)(3) &amp; (3)(-1) + (1)(2)
+\end{bmatrix}
+=
+\begin{bmatrix}
+8 &amp; 3 \\
+14 &amp; 0 \\
+9 &amp; -1
+\end{bmatrix}\]</div>
+<p>b) <span class="arithmatex">\(F\)</span> has 2 columns and <span class="arithmatex">\(E\)</span> has 3 rows, so <span class="arithmatex">\(FE\)</span> is <strong>not defined</strong>.</p>
+<p>c)</p>
+<div class="arithmatex">\[FH = 
+\begin{bmatrix}
+(2)(-3) + (-1)(-1) \\
+(3)(-3) + (2)(-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-5 \\
+-11
+\end{bmatrix}\]</div>
+<p>d)</p>
+<div class="arithmatex">\[GH = 
+(4)(-3) + (1)(-1)
+=
+-13\]</div>
+<p>e)</p>
+<div class="arithmatex">\[HG = 
+\begin{bmatrix}
+(-3)(4) &amp; (-3)(1) \\
+(-1)(4) &amp; (-1)(1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-12 &amp; -3 \\
+-4 &amp; -1
+\end{bmatrix}\]</div>
+</details>
+</div>
+<p>When combining matrix operations, we should respect the usual order of operations (PEMDAS).</p>
+<div class="admonition example">
+<p class="admonition-title">Example 11</p>
+<p>Given matrices <span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(S\)</span>, find <span class="arithmatex">\(R - 2ST\)</span>. </p>
+<div class="arithmatex">\[R = \begin{bmatrix}
+1 &amp; 0 &amp; 1\\
+2 &amp; 2 &amp; 4 \\
+1 &amp; 2 &amp; 3
+\end{bmatrix} \quad
+S = \begin{bmatrix}
+2 &amp; -1 &amp; -1\\
+0 &amp; 2 &amp; -2 \\
+1 &amp; 4 &amp; 2
+\end{bmatrix} \quad
+T = \begin{bmatrix}
+1 &amp; -1 &amp; 0 \\
+3 &amp; 1 &amp; 2 \\
+2 &amp; 2 &amp; -2
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>First compute the product <span class="arithmatex">\(ST\)</span>:</p>
+<div class="arithmatex">\[ST = 
+\begin{bmatrix}
+(2)(1) + (-1)(3) + (-1)(2) &amp; (2)(-1) + (-1)(1) + (-1)(2) &amp; (2)(0) + (-1)(2) + (-1)(-2) \\
+(0)(1) + (2)(3) + (-2)(2) &amp; (0)(-1) + (2)(1) + (-2)(2) &amp; (0)(0) + (2)(2) + (-2)(-2) \\
+(1)(1) + (4)(3) + (2)(2) &amp; (1)(-1) + (4)(1) + (2)(2) &amp; (1)(0) + (4)(2) + (2)(-2)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-3 &amp; -5 &amp; 0 \\
+2 &amp; -2 &amp; 8 \\
+17 &amp; 7 &amp; 4
+\end{bmatrix}\]</div>
+<p>Next, multiply by the scalar <span class="arithmatex">\(2\)</span>:</p>
+<div class="arithmatex">\[2ST = 
+\begin{bmatrix}
+-6 &amp; -10 &amp; 0 \\
+4 &amp; -4 &amp; 16 \\
+34 &amp; 14 &amp; 8
+\end{bmatrix}\]</div>
+<p>Finally, subtract from <span class="arithmatex">\(R\)</span>:</p>
+<div class="arithmatex">\[R - 2ST = 
+\begin{bmatrix}
+1 - (-6) &amp; 0 - (-10) &amp; 1 - 0 \\
+2 - 4 &amp; 2 - (-4) &amp; 4 - 16 \\
+1 - 34 &amp; 2 - 14 &amp; 3 - 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+7 &amp; 10 &amp; 1 \\
+-2 &amp; 6 &amp; -12 \\
+-33 &amp; -12 &amp; -5
+\end{bmatrix}\]</div>
+</details>
+</div>
+<h2 id="22-systems-as-matrix-equations">2.2 Systems as Matrix Equations</h2>
+<p>In the last chapter, we learned how to solve systems with two unknowns and two equations such as </p>
+<div class="arithmatex">\[x + 2y = 5\]</div>
+<div class="arithmatex">\[3x - 2y = -1\]</div>
+<p>We can represent systems like these as <strong>matrix equations</strong>. Using matrices will present an organized way to solve the system. This method will extend to systems with <span class="arithmatex">\(n\)</span> equations and <span class="arithmatex">\(n\)</span> variables. </p>
+<p>Let <span class="arithmatex">\(A\)</span> be the matrix, </p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; -2
+\end{bmatrix},\]</div>
+<p>and let <span class="arithmatex">\(X\)</span> be the vector</p>
+<div class="arithmatex">\[X = \begin{bmatrix}
+x \\
+y 
+\end{bmatrix}.\]</div>
+<p>Then notice that </p>
+<div class="arithmatex">\[AX = \begin{bmatrix}
+2x+y \\
+3x - 2y
+\end{bmatrix}\]</div>
+<p>which is eactly the left hand side of both out initial equations. If we then let</p>
+<div class="arithmatex">\[B = \begin{bmatrix}
+5 \\
+-1
+\end{bmatrix}\]</div>
+<p>the matrix equation <span class="arithmatex">\(AX = B\)</span> exactly encodes our original system of equations. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 12</p>
+<p>Write the system </p>
+<div class="arithmatex">\[2x + 3y = 4\]</div>
+<div class="arithmatex">\[-x+4y = -3\]</div>
+<p>as a matrix equation. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>We write, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+2 &amp; 3 \\
+-1 &amp; 4 
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+4 \\
+-3
+\end{bmatrix}.\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 13</p>
+<p>Write the system </p>
+<div class="arithmatex">\[y = 3x - 10\]</div>
+<div class="arithmatex">\[2y - 2x = 0\]</div>
+<p>as a matrix equation. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>First rewrite the first equation as <span class="arithmatex">\(y - 3x = -10\)</span>. Now we can write, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; -3 \\
+2 &amp; -2 
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+-10 \\
+0
+\end{bmatrix}.\]</div>
+</details>
+</div>
+<p>This idea extends to any number of equations and variables. We just need to choose the appropriate size matrix. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 12</p>
+<p>Write the system </p>
+<div class="arithmatex">\[x-y+4z= 1\]</div>
+<div class="arithmatex">\[2x + 3y - z=-2\]</div>
+<div class="arithmatex">\[3x - 4z = 3\]</div>
+<p>as a matrix equation. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Notice the third equation has no <span class="arithmatex">\(y\)</span> variable. That is okay, we make the coefficient <span class="arithmatex">\(0\)</span> in this case. </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; -1 &amp; 4\\
+2 &amp; 3 &amp; -1 \\
+3 &amp; 0 &amp; -4
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = 
+\begin{bmatrix}
+1 \\
+-2 \\
+3
+\end{bmatrix}.\]</div>
+</details>
+</div>
+<p>If we has a <em>scalar</em> equation <span class="arithmatex">\(ax = b\)</span>, solving for <span class="arithmatex">\(x\)</span> would be simple--just divide both sides by <span class="arithmatex">\(a\)</span>. We never defined division for matrices though and, in fact, the idea of division isn't exactly transferable. In the following section we will tackle methods for solving the matrix equation <span class="arithmatex">\(AX = B\)</span>.</p>
+<h2 id="23-gaussian-elimination">2.3 Gaussian Elimination</h2>
+<p>The next step is to actually solve the matrix equation. Here we introduce a procedure known as <strong>Gaussian elimination</strong>. Let's consider the initial example introduced in Section 2.2. This had the matrix form </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; -2
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y 
+\end{bmatrix} = 
+\begin{bmatrix}
+5 \\
+-1
+\end{bmatrix}\]</div>
+<p>From this we can write the <strong>augmented matrix</strong></p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; | &amp; 5\\
+3 &amp; -2 &amp; | &amp; -1
+\end{bmatrix}\]</div>
+<p>where we append <span class="arithmatex">\(B\)</span> to <span class="arithmatex">\(A\)</span>. We will be performing a series of operations which mirror the <em>elimination</em> method describe in Section 1.5. Our goal is to obtain all 0s below the <span class="arithmatex">\(A\)</span> diagonal. The allowed operations are the following:</p>
+<ul>
+<li>swap rows, </li>
+<li>multiple or divide a row by a constant,</li>
+<li>add or subtract a multiple of a row from another. </li>
+</ul>
+<p>In the example being worked, let's first multiple the top row by <span class="arithmatex">\(-3\)</span> then add it to the second row. This new expression will replace the second row,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; | &amp; 5\\
+3 + 1(-3) &amp; -2+2(-3) &amp; | &amp; -1+5(-3)
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 2 &amp; | &amp; 5\\
+0 &amp; -8 &amp; | &amp; -16
+\end{bmatrix}\]</div>
+<p>Notice that this created a 0 in the lower left entry! Next, let's divide the second row by -8,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; | &amp; 5\\
+0 &amp; 1 &amp; | &amp; 2
+\end{bmatrix}\]</div>
+<p>If we translate this back into a system of equations it is already much easier to solve, </p>
+<div class="arithmatex">\[ x + 2y = 5\]</div>
+<div class="arithmatex">\[y = 2\]</div>
+<p>The <span class="arithmatex">\(A\)</span> side of the augemented matrix is in <strong>row echelon form</strong> (REF). When a matrix is in REF, all entries below the diagonal are 0. This is enough for finding a solution, although some like to go even further, to <strong>reduced row echelon form</strong> (RREF). In RREF, we change all diagonal entries to 1 and all non-diagonal entries to 0 <em>if possible</em>. Note that there are some systems where we cannot completely eliminate the other terms. </p>
+<p>Let's put the augemented matrix into RREF. To do so, we need to multiply the second row by <span class="arithmatex">\(-2\)</span> and add it to the first row. This new expression will replace the first row,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; | &amp; 1\\
+0 &amp; 1 &amp; | &amp; 2
+\end{bmatrix}\]</div>
+<p>Now we can really just read off the system solution, <span class="arithmatex">\(x = 1\)</span> and <span class="arithmatex">\(y = 2\)</span>. Go ahead and check that this solves the system in its original form!</p>
+<div class="admonition example">
+<p class="admonition-title">Example 13</p>
+<p>Solve the following system using Gaussian elimination,</p>
+<div class="arithmatex">\[3x + 2y = 12\]</div>
+<div class="arithmatex">\[x - y = 1\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>Let's first write the augmented matrix,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+3 &amp; 2 &amp; | &amp; 12 \\
+1 &amp; -1 &amp; | &amp; 1
+\end{bmatrix}\]</div>
+<p>It is best to have a 1 in the upper left corner. Let's swap the first and second row,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; -1 &amp; | &amp; 1 \\
+3 &amp; 2 &amp; | &amp; 12
+\end{bmatrix}\]</div>
+<p>Now let's use the first row to make every other entry in the first column 0. Add <span class="arithmatex">\(-3\)</span> times the first row to the second,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; -1 &amp; | &amp; 1 \\
+0 &amp; 5 &amp; | &amp; 9
+\end{bmatrix}\]</div>
+<p>Divide the second row by <span class="arithmatex">\(5\)</span>,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; -1 &amp; | &amp; 1 \\
+0 &amp; 1 &amp; | &amp; \frac{9}{5}
+\end{bmatrix}\]</div>
+<p>Now use the 1 in the <span class="arithmatex">\((2,2)\)</span> position to eliminate the <span class="arithmatex">\(-1\)</span> above it. Add the second row to the first,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; | &amp; \frac{14}{5} \\
+0 &amp; 1 &amp; | &amp; \frac{9}{5}
+\end{bmatrix}\]</div>
+<p>Now we can read off the solution <span class="arithmatex">\(x = \dfrac{14}{5}\)</span> and <span class="arithmatex">\(y = \dfrac{9}{5}\)</span>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 14</p>
+<p>Solve the following system using Gaussian elimination,</p>
+<div class="arithmatex">\[2x+y+2z=10\]</div>
+<div class="arithmatex">\[x+2y+z=8\]</div>
+<div class="arithmatex">\[3x+y-z=2\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>Let's first write the augmented matrix, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+2 &amp; 1 &amp; 2 &amp; | &amp; 10 \\
+1 &amp; 2 &amp; 1 &amp; | &amp; 8 \\
+3 &amp; 1 &amp; -1 &amp; | &amp; 2
+\end{bmatrix}\]</div>
+<p>It is best to have a 1 in the upper left corner. We could divide the top row by 2, but that would introduce fractions. Instead, let's swap the first and second row. </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 8 \\
+2 &amp; 1 &amp; 2 &amp; | &amp; 10 \\
+3 &amp; 1 &amp; -1 &amp; | &amp; 2
+\end{bmatrix}\]</div>
+<p>Now let's use the first row to make every other entry in the first column 0. Start by adding <span class="arithmatex">\(-2\)</span> times the first row to the second,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 8 \\
+0 &amp; -3 &amp; 0 &amp; | &amp; -6 \\
+3 &amp; 1 &amp; -1 &amp; | &amp; 2
+\end{bmatrix}\]</div>
+<p>Then add <span class="arithmatex">\(-3\)</span> times the first row to the third row, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 8 \\
+0 &amp; -3 &amp; 0 &amp; | &amp; -6 \\
+0 &amp; -5 &amp; -4 &amp; | &amp; -22
+\end{bmatrix}\]</div>
+<p>Next let's divide the second row by <span class="arithmatex">\(-3\)</span>,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 8 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 2 \\
+0 &amp; -5 &amp; -4 &amp; | &amp; -22
+\end{bmatrix}\]</div>
+<p>Now we can use the 1 in the <span class="arithmatex">\((2,2)\)</span> position to make all the other entries in the second column 0. </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 4 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 2 \\
+0 &amp; -5 &amp; -4 &amp; | &amp; -22
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 4 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 2 \\
+0 &amp; 0 &amp; -4 &amp; | &amp; -12
+\end{bmatrix}\]</div>
+<p>Divide the third row by <span class="arithmatex">\(-4\)</span>, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; | &amp; 4 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 3
+\end{bmatrix}\]</div>
+<p>Lastly, eliminate the 1 in the <span class="arithmatex">\((1,3)\)</span> position by subtracting the third row from the first, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; 1 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; | &amp; 3
+\end{bmatrix}\]</div>
+<p>Now we can read off the solution <span class="arithmatex">\(x=1\)</span>, <span class="arithmatex">\(y=2\)</span>, and <span class="arithmatex">\(z=3\)</span>. </p>
+</details>
+</div>
+<p>Notice that we follow a predictable procedure, although the exact algebra needed will vary. We start by making the <span class="arithmatex">\((1,1)\)</span> position a 1. Next, use that 1 to make all other entries in column 1 equal to 0. Then, make the <span class="arithmatex">\((2,2)\)</span> entry a 1 and use that entry to make all the other entries in column 2 equal to 0. This procedure continues until we've addressed all rows. </p>
+<h2 id="24-inverse-matrices">2.4 Inverse Matrices</h2>
+<p>Let <span class="arithmatex">\(A\)</span> be a square matrix. The <strong>inverse</strong> of <span class="arithmatex">\(A\)</span>, denoted <span class="arithmatex">\(A^{-1}\)</span>, is the matrix satisfying</p>
+<div class="arithmatex">\[AA^{-1} = A^{-1}A = I,\]</div>
+<p>where <span class="arithmatex">\(I\)</span> is the identity matrix with the appropriate dimensions. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 15</p>
+<p>Verify that <span class="arithmatex">\(B\)</span> is the inverse of <span class="arithmatex">\(A\)</span>, where</p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+2 &amp; 1 \\
+5 &amp; 3
+\end{bmatrix} \quad
+B = \begin{bmatrix}
+3 &amp; -1 \\
+-5 &amp; 2
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We need to verify that <span class="arithmatex">\(AB = BA = I\)</span>. First compute <span class="arithmatex">\(AB\)</span>,</p>
+<div class="arithmatex">\[AB = \begin{bmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{bmatrix}\begin{bmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{bmatrix} = \begin{bmatrix} 2(3)+1(-5) &amp; 2(-1)+1(2) \\ 5(3)+3(-5) &amp; 5(-1)+3(2) \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\]</div>
+<p>Then compute <span class="arithmatex">\(BA\)</span>,</p>
+<div class="arithmatex">\[BA = \begin{bmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{bmatrix}\begin{bmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{bmatrix} = \begin{bmatrix} 3(2)+(-1)(5) &amp; 3(1)+(-1)(3) \\ -5(2)+2(5) &amp; -5(1)+2(3) \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\]</div>
+<p>Since <span class="arithmatex">\(AB = BA = I\)</span>, <span class="arithmatex">\(B\)</span> is the inverse of <span class="arithmatex">\(A\)</span>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 16</p>
+<p>Verify that <span class="arithmatex">\(B\)</span> is the inverse of <span class="arithmatex">\(A\)</span>, where</p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 2 &amp; 0 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} \quad
+B = \begin{bmatrix}
+1 &amp; -2 &amp; 6 \\
+0 &amp; 1 &amp; -3 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We need to verify that <span class="arithmatex">\(AB = BA = I\)</span>. First compute <span class="arithmatex">\(AB\)</span>,</p>
+<div class="arithmatex">\[AB = \begin{bmatrix} 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; -2 &amp; 6 \\ 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+<div class="arithmatex">\[= \begin{bmatrix} 1(1)+2(0)+0(0) &amp; 1(-2)+2(1)+0(0) &amp; 1(6)+2(-3)+0(1) \\ 0(1)+1(0)+3(0) &amp; 0(-2)+1(1)+3(0) &amp; 0(6)+1(-3)+3(1) \\ 0(1)+0(0)+1(0) &amp; 0(-2)+0(1)+1(0) &amp; 0(6)+0(-3)+1(1) \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+<p>Then compute <span class="arithmatex">\(BA\)</span>,</p>
+<div class="arithmatex">\[BA = \begin{bmatrix} 1 &amp; -2 &amp; 6 \\ 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+<div class="arithmatex">\[= \begin{bmatrix} 1(1)+(-2)(0)+6(0) &amp; 1(2)+(-2)(1)+6(0) &amp; 1(0)+(-2)(3)+6(1) \\ 0(1)+1(0)+(-3)(0) &amp; 0(2)+1(1)+(-3)(0) &amp; 0(0)+1(3)+(-3)(1) \\ 0(1)+0(0)+1(0) &amp; 0(2)+0(1)+1(0) &amp; 0(0)+0(3)+1(1) \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+<p>Since <span class="arithmatex">\(AB = BA = I\)</span>, <span class="arithmatex">\(B\)</span> is the inverse of <span class="arithmatex">\(A\)</span>.</p>
+</details>
+</div>
+<p>A matrix must be square in order to have an inverse, however not all square matrices are <strong>invertible</strong> (e.g. have an inverse). For example, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}\]</div>
+<p>does not have an inverse. Let's see this by multiplying by a generic matrix, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix} = 
+\begin{bmatrix}
+a &amp; b \\
+0 &amp; 0
+\end{bmatrix}.\]</div>
+<p>There is no matrix that we can multiply by to get a <span class="arithmatex">\(1\)</span> appearing in the <span class="arithmatex">\((2,2)\)</span> entry, therefore the matrix is not invertible.</p>
+<p>If we have the (matrix) system, </p>
+<div class="arithmatex">\[AX = B\]</div>
+<p>and <span class="arithmatex">\(A\)</span> is invertible, then we can solve by multiplying both sides <em>on the left</em> by <span class="arithmatex">\(A^{-1}\)</span>,</p>
+<div class="arithmatex">\[A^{-1}AX = A^{-1}B\]</div>
+<div class="arithmatex">\[X = A^{-1}B\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Matrix Multiplication is Noncommutative!</p>
+<p>Remember the order matters in matrix multiplication. Since I want <span class="arithmatex">\(A^{-1}\)</span> to be directly next to <span class="arithmatex">\(A\)</span>, I should multiply on the left. That means on the other side of the equation I should also multiply on the left!</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 17</p>
+<p>Solve the system, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+2 &amp; 1 \\
+5 &amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+1 \\
+4
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>Recall from Example 15 that the inverse of </p>
+<div class="arithmatex">\[\begin{bmatrix}
+2 &amp; 1 \\
+5 &amp; 3
+\end{bmatrix}\]</div>
+<p>is </p>
+<div class="arithmatex">\[\begin{bmatrix}
+3 &amp; -1 \\
+-5 &amp; 2
+\end{bmatrix}.\]</div>
+<p>So we can multiply, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+3 &amp; -1 \\
+-5 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+2 &amp; 1 \\
+5 &amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+3 &amp; -1 \\
+-5 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+4
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+-1 \\
+3
+\end{bmatrix}\]</div>
+</details>
+</div>
+<p>Given a matrix, how do we compute it's inverse? We can use Gaussian elimination. If <span class="arithmatex">\(A\)</span> is an <span class="arithmatex">\(n \times n\)</span> matrix, we write the augmented matrix, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+A &amp; | &amp; I_n
+\end{bmatrix}.\]</div>
+<p>Next, we use our valid row operations and simplify until the left hand side of the augmented matrix is simplified to <span class="arithmatex">\(I_n\)</span> (in other words, put it in RREF). If this is not possible, the matrix is not invertible. Once this is accomplished, the right hand we be <span class="arithmatex">\(A^{-1}\)</span>. Let's see this on the matrix used in Example 15 and Example 17,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+2 &amp; 1 &amp; | &amp; 1 &amp; 0 \\
+5 &amp; 3 &amp; | &amp; 0 &amp; 1 
+\end{bmatrix}\]</div>
+<p>Start by dividing the first row by <span class="arithmatex">\(2\)</span>, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 1/2 &amp; | &amp; 1/2 &amp; 0 \\
+5 &amp; 3 &amp; | &amp; 0 &amp; 1 
+\end{bmatrix}\]</div>
+<p>Next multiply the first row by <span class="arithmatex">\(-5\)</span> and add it to the second row, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 1/2 &amp; | &amp; 1/2 &amp; 0 \\
+0 &amp; 1/2 &amp; | &amp; -5/2 &amp; 1 
+\end{bmatrix}\]</div>
+<p>Next, subtract the second row from the first, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; | &amp; 3 &amp; -1 \\
+0 &amp; 1/2 &amp; | &amp; -5/2 &amp; 1 
+\end{bmatrix}\]</div>
+<p>Lastly, multiply the second row by <span class="arithmatex">\(2\)</span>,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; | &amp; 3 &amp; -1 \\
+0 &amp; 1 &amp; | &amp; -5 &amp; 2 
+\end{bmatrix}\]</div>
+<p>See that the right hand side above is the inverse of our original matrix. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 18</p>
+<p>Find the inverse of <span class="arithmatex">\(A\)</span>, where</p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+0 &amp; 1 &amp; 3 \\
+2 &amp; 3 &amp; 0
+\end{bmatrix}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>We form the augmented matrix <span class="arithmatex">\([A | I]\)</span>,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0 \\
+2 &amp; 3 &amp; 0 &amp; | &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}\]</div>
+<p>We already have a 1 in the upper left corner. Use the first row to eliminate the 2 in the <span class="arithmatex">\((3,1)\)</span> position by adding <span class="arithmatex">\(-2\)</span> times the first row to the third,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; -1 &amp; -2 &amp; | &amp; -2 &amp; 0 &amp; 1
+\end{bmatrix}\]</div>
+<p>Now use the 1 in the <span class="arithmatex">\((2,2)\)</span> position to eliminate the entries above and below it. Add <span class="arithmatex">\(-2\)</span> times the second row to the first,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; -5 &amp; | &amp; 1 &amp; -2 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; -1 &amp; -2 &amp; | &amp; -2 &amp; 0 &amp; 1
+\end{bmatrix}\]</div>
+<p>Then add the second row to the third,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; -5 &amp; | &amp; 1 &amp; -2 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; | &amp; -2 &amp; 1 &amp; 1
+\end{bmatrix}\]</div>
+<p>Now use the 1 in the <span class="arithmatex">\((3,3)\)</span> position to eliminate the entries above it. Add <span class="arithmatex">\(5\)</span> times the third row to the first,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; -9 &amp; 3 &amp; 5 \\
+0 &amp; 1 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; | &amp; -2 &amp; 1 &amp; 1
+\end{bmatrix}\]</div>
+<p>Then add <span class="arithmatex">\(-3\)</span> times the third row to the second,</p>
+<div class="arithmatex">\[\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; -9 &amp; 3 &amp; 5 \\
+0 &amp; 1 &amp; 0 &amp; | &amp; 6 &amp; -2 &amp; -3 \\
+0 &amp; 0 &amp; 1 &amp; | &amp; -2 &amp; 1 &amp; 1
+\end{bmatrix}\]</div>
+<p>We have reached reduced row echelon form, so we can read off the inverse,</p>
+<div class="arithmatex">\[A^{-1} = \begin{bmatrix}
+-9 &amp; 3 &amp; 5 \\
+6 &amp; -2 &amp; -3 \\
+-2 &amp; 1 &amp; 1
+\end{bmatrix}\]</div>
+</details>
+</div>
+<p>Depending on the size of the matrix, there are formulas one can use to deduce the inverse. Here we will only present the formula for the inverse of a <span class="arithmatex">\(2 \times 2\)</span> matrix. Given a matrix, </p>
+<div class="arithmatex">\[A = \begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}\]</div>
+<p>the inverse is, </p>
+<div class="arithmatex">\[ A^{-1} = \frac{1}{ad-bc} \begin{bmatrix}
+d &amp; -b \\
+-c &amp; a
+\end{bmatrix}\]</div>
+<p>provided <span class="arithmatex">\(ad - bc \neq 0\)</span>. If <span class="arithmatex">\(ad-bc = 0\)</span>, then the matrix has no inverse. </p>
+<h2 id="25-markov-processes">2.5 Markov Processes</h2>
+<p>A <strong>transition matrix</strong>, or stochastic matrix, is a square matrix satisfying the following properties:</p>
+<ul>
+<li>Every entry is between 0 and 1 (inclusive).</li>
+<li>The sum of the entries from any column is 1. </li>
+</ul>
+<p>Note that while the columns must sum to 1, the rows do not need to. For example, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+0.2 &amp; 0.5 \\
+0.8 &amp; 0.5
+\end{bmatrix}\]</div>
+<p>is a transition matrix. The entries of a transition matrix typically represent <strong>transition probabilities</strong>. The rows and columns represent <strong>states</strong> of the system. The matrix entry <span class="arithmatex">\((i,j)\)</span> (where <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> are states) represents the probability of transitioning from state <span class="arithmatex">\(j\)</span> to state <span class="arithmatex">\(i\)</span>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Transition Matrix Convention</p>
+<p>Some texts will use an alternate convention than the one presented here for transition matrices. Sometimes the convention used is that the <em>rows</em> sum to 1, not the columns. The difference in convention changes how algebra is performed, since order of multiplication matters for matrices. If you are using alternate sources, make sure the convention is the same as the one presented here!</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 19</p>
+<p>Consider a small community with two bike share stations. Residents who take a bike from a station may return the bike to either station. Of bikes located at station 1 at the beginning of the day, <span class="arithmatex">\(20\%\)</span> are at station 1 at the end of the day and <span class="arithmatex">\(80\%\)</span> are at station 2 at the end of the day. Of the bikes located at station 2, <span class="arithmatex">\(50\%\)</span> are at station 1 at the end of the day and <span class="arithmatex">\(50\%\)</span> are at station 2 at the end of the day. Write a transition matrix which represents this information. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>We let the matrix entry <span class="arithmatex">\((i,j)\)</span> represent the probability that a bike at station <span class="arithmatex">\(j\)</span> ends up at station <span class="arithmatex">\(i\)</span>. For example, the entry <span class="arithmatex">\((1,2)\)</span> should be the probability that a bike taken from station 2 ends up at station 1. We get the transition matrix, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+0.2 &amp; 0.5 \\
+0.8 &amp; 0.5
+\end{bmatrix}.\]</div>
+</details>
+</div>
+<p>A <strong>Markov process</strong> is a system that moves between states over time, where the probability of moving to the next state depends only on the current state. This is useful for modeling things like customer brand loyalty, market share, or population movement. The probabilities of moving from one state to the next are given by the transition matrix. The <strong>state vector</strong> <span class="arithmatex">\(v_n\)</span> gives the probability of being in each state at time step <span class="arithmatex">\(n\)</span>.</p>
+<p>To find the state at the next time step, we multiply,</p>
+<div class="arithmatex">\[v_{n+1} = Tv_n.\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example 20</p>
+<p>The movement of the bikes in Example 19 can be viewed as a Markov process. On a given day <span class="arithmatex">\(40\%\)</span> of the bikes are located at station 1. What proportion of bikes will be at station 1 at the end of the day?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The state vector is, </p>
+<div class="arithmatex">\[v_0 = \begin{bmatrix}
+0.4 \\
+0.6 \end{bmatrix}\]</div>
+<p>which represents station 1 having <span class="arithmatex">\(40\%\)</span> of the bikes and station 2 having the other <span class="arithmatex">\(60\%\)</span> of the bikes. To compute the next state, we multiply</p>
+<div class="arithmatex">\[v_1 = \begin{bmatrix}
+0.2 &amp; 0.5 \\
+0.8 &amp; 0.5
+\end{bmatrix}  
+\begin{bmatrix}
+0.4 \\
+0.6 \end{bmatrix} = 
+\begin{bmatrix}
+0.38 \\
+0.62
+\end{bmatrix}.\]</div>
+<p>So at the end of the day, station 1 will have <span class="arithmatex">\(38\%\)</span> of the bikes. </p>
+</details>
+</div>
+<p>A <strong>stationary</strong> or steady state vector <span class="arithmatex">\(v\)</span> satisfies <span class="arithmatex">\(Tv = v\)</span>, meaning the distribution no longer changes over time. To find it we solve,</p>
+<div class="arithmatex">\[(I-T)v = \mathbf{0}\]</div>
+<p>subject to the condition that the entries of <span class="arithmatex">\(v\)</span> sum to 1. The notation <span class="arithmatex">\(\mathbf{0}\)</span> is used to represent the column vector containing only 0s. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 21</p>
+<p>Find the stationary vector for the Markov process described in Example 19. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>We wish to solve, </p>
+<div class="arithmatex">\[\begin{bmatrix}
+0.8 &amp; -0.5 \\
+-0.8 &amp; 0.5
+\end{bmatrix}
+\begin{bmatrix}
+s_1 \\
+s_2 
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\
+0 
+\end{bmatrix}.\]</div>
+<p>Let's write this matrix expression as scalar equations, </p>
+<div class="arithmatex">\[ 0.8s_1 - 0.5s_2 = 0\]</div>
+<div class="arithmatex">\[-0.8s_1 + 0.5s_2 = 0\]</div>
+<p>Notice that these equations are essentially the same. This can be seen by multiplying the first by <span class="arithmatex">\(-1\)</span>, which turns it into the second equation. Solving the first equation we get, </p>
+<div class="arithmatex">\[s_1 = \frac{5}{8}s_2.\]</div>
+<p>This is where the second condition on the stationary vector comes in. We require that <span class="arithmatex">\(s_1+s_2 = 1\)</span>. Plugging the above in, </p>
+<div class="arithmatex">\[\frac{5}{8}s_2 + s_2 = 1\]</div>
+<div class="arithmatex">\[\frac{13}{8}s_2 = 1\]</div>
+<div class="arithmatex">\[s_2 = \frac{8}{13}\]</div>
+<p>and then </p>
+<div class="arithmatex">\[s_1 = \frac{5}{13}.\]</div>
+</details>
+</div>
+<p>If a Markov process has a <em>unique</em> stationary vector, then it has an important physical meaning. Regardless of the initial state of our Markov process, if we run the process for enough time it will tend towards the stationary state. So for our bike station problem. Regardless of how many bikes start at station 1 and 2 we expect that for large enough <span class="arithmatex">\(n\)</span></p>
+<div class="arithmatex">\[v_n \approx \begin{bmatrix}
+5/13 \\
+8/13
+\end{bmatrix} \approx 
+\begin{bmatrix}
+0.3846 \\
+0.6154
+\end{bmatrix}.\]</div>
+<p>Let's see this in action by considering two different settings: </p>
+<ul>
+<li>Case 1: all the bikes are initially at station 1. </li>
+<li>Case 2: all the bike are initially at station 2. </li>
+</ul>
+<p>For case 1, the initial state vector is </p>
+<div class="arithmatex">\[v_0 = \begin{bmatrix} 1 \\ 0\end{bmatrix}\]</div>
+<p>Let's compute the proportion of bikes at each station after 100 days, in other words we want to compute <span class="arithmatex">\(v_{100}\)</span>. We can do this by noticing a pattern and using technology. We start with, </p>
+<div class="arithmatex">\[v_1 = Tv_0\]</div>
+<p>where <span class="arithmatex">\(T\)</span> is the transition matrix. Repeating this pattern we get, </p>
+<div class="arithmatex">\[v_2 = Tv_1 = T T v_0 = T^2v_0,\]</div>
+<div class="arithmatex">\[v_3 = Tv_2 = T T^2 v_0 = T^3 v_0.\]</div>
+<p>Above we use exponent notation as short hand. </p>
+<div class="admonition warning">
+<p class="admonition-title">Powers of Matrices</p>
+<p>We use powers of matrices to denote repetative multiplication. When we write <span class="arithmatex">\(T^2\)</span> we <em>do not</em> mean the the entries of <span class="arithmatex">\(T\)</span> are squared, we mean to multiply <span class="arithmatex">\(TT\)</span>. </p>
+<p>E.g. let </p>
+<div class="arithmatex">\[A = \begin{bmatrix} 1 &amp; 2 \\ -1 &amp; 3 \end{bmatrix}\]</div>
+<p>then </p>
+<div class="arithmatex">\[A^2 = \begin{bmatrix} -1 &amp; 8 \\ -4 &amp; 7 \end{bmatrix}.\]</div>
+</div>
+<p>If we continue this pattern, we see that </p>
+<div class="arithmatex">\[v_{100} = T^{100}v_0\]</div>
+<p>Plugging this into a calculator gives, </p>
+<div class="arithmatex">\[v_{100} \approx 
+\begin{bmatrix}
+0.3846 \\
+0.6154
+\end{bmatrix}.\]</div>
+<p>We can take the same approach for case 2. This time let </p>
+<div class="arithmatex">\[u_0 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\]</div>
+<p>then </p>
+<div class="arithmatex">\[u_{100} = T^{100} u_0 \approx \begin{bmatrix}
+0.3846 \\
+0.6154
+\end{bmatrix}\]</div>
+<p>also! These examples illustrate that after a long period of time it didn't matter where the bikes started, eventually the proportion of bikes at each station will be the same. </p>
+<div class="admonition warning">
+<p class="admonition-title">Stationary Vector Existence and Uniqueness</p>
+<p>One should note that the existence and uniqueness of the stationary vector is not automatic and requires conditions we will not discuss in this course. If you are asked to compute the stationary vector, assume it exists. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 20</p>
+<p>Two coffee shops, Brew Co. and Daily Grind, compete for customers. Each month, Brew Co. retains 80% of its customers and loses 20% to Daily Grind. Daily Grind retains 70% of its customers and loses 30% to Brew Co. Currently, Brew Co. has 90% of the market and Daily Grind has 10%.</p>
+<p>a) Write the transition matrix.</p>
+<p>b) Find the market share after 1 and 2 months.</p>
+<p>c) Find the long-run steady state market share.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) The transition matrix is</p>
+<div class="arithmatex">\[T = \begin{bmatrix} 0.8 &amp; 0.3 \\ 0.2 &amp; 0.7 \end{bmatrix}\]</div>
+<p>where the first row/column corresponds to Brew Co. and the second to Daily Grind. Notice each column sums to 1.</p>
+<p>b) The initial state vector is <span class="arithmatex">\(\mathbf{s}_0 = \begin{bmatrix} 0.9 \\ 0.1 \end{bmatrix}\)</span>. After one month,</p>
+<div class="arithmatex">\[\mathbf{s}_1 = T\mathbf{s}_0 = \begin{bmatrix} 0.8 &amp; 0.3 \\ 0.2 &amp; 0.7 \end{bmatrix}\begin{bmatrix} 0.9 \\ 0.1 \end{bmatrix} = \begin{bmatrix} 0.8(0.9)+0.3(0.1) \\ 0.2(0.9)+0.7(0.1) \end{bmatrix} = \begin{bmatrix} 0.75 \\ 0.25 \end{bmatrix}\]</div>
+<p>After two months,</p>
+<div class="arithmatex">\[\mathbf{s}_2 = T\mathbf{s}_1 = \begin{bmatrix} 0.8 &amp; 0.3 \\ 0.2 &amp; 0.7 \end{bmatrix}\begin{bmatrix} 0.75 \\ 0.25 \end{bmatrix} = \begin{bmatrix} 0.8(0.75)+0.3(0.25) \\ 0.2(0.75)+0.7(0.25) \end{bmatrix} = \begin{bmatrix} 0.675 \\ 0.325 \end{bmatrix}\]</div>
+<p>Notice Brew Co.'s market share is declining from 90% toward an equilibrium.</p>
+<p>c) To find the steady state we solve <span class="arithmatex">\(T\mathbf{s} = \mathbf{s}\)</span>, or equivalently <span class="arithmatex">\((T-I)\mathbf{s} = \mathbf{0}\)</span>,</p>
+<div class="arithmatex">\[\begin{bmatrix} -0.2 &amp; 0.3 \\ 0.2 &amp; -0.3 \end{bmatrix}\begin{bmatrix} p \\ q \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\]</div>
+<p>The first equation gives <span class="arithmatex">\(-0.2p + 0.3q = 0\)</span>, so <span class="arithmatex">\(p = 1.5q\)</span>. Using the condition <span class="arithmatex">\(p + q = 1\)</span>,</p>
+<div class="arithmatex">\[1.5q + q = 1 \implies 2.5q = 1 \implies q = 0.4, \quad p = 0.6\]</div>
+<p>In the long run, Brew Co. will hold 60% of the market and Daily Grind will hold 40%, regardless of the starting distribution.</p>
+</details>
+</div>
+<h2 id="practice-problems">Practice Problems</h2>
+<h3 id="21-exercises">2.1 Exercises</h3>
+<p>State the dimensions of the following matrices.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 1.</strong></p>
+<div class="arithmatex">\[A = \begin{bmatrix} 1 &amp; 0 \\ -2 &amp; 3 \\ 4 &amp; 1 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 2.</strong></p>
+<div class="arithmatex">\[B = \begin{bmatrix} 3 &amp; -1 &amp; 2 &amp; 0 \\ 1 &amp; 4 &amp; -3 &amp; 5 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 3.</strong></p>
+<div class="arithmatex">\[C = \begin{bmatrix} 2 \\ -1 \\ 0 \\ 5 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 4.</strong></p>
+<div class="arithmatex">\[D = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p>Compute the following if possible or explain why it cannot be computed.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 5.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; -1 \\ 0 &amp; 3 \end{bmatrix} + \begin{bmatrix} 1 &amp; 4 \\ -2 &amp; 1 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 6.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 5 &amp; 0 \\ -1 &amp; 2 \end{bmatrix} - \begin{bmatrix} 3 &amp; -1 \\ 4 &amp; 2 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 7.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 2 &amp; 3 \end{bmatrix} + \begin{bmatrix} 1 &amp; 0 \\ -1 &amp; 2 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 8.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 2 \\ -3 &amp; 0 \\ 4 &amp; 1 \end{bmatrix} - \begin{bmatrix} 0 &amp; -1 \\ 2 &amp; 3 \\ -1 &amp; 4 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p>Compute the following.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 9.</strong></p>
+<div class="arithmatex">\[3\begin{bmatrix} 2 &amp; -1 \\ 0 &amp; 4 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 10.</strong></p>
+<div class="arithmatex">\[-2\begin{bmatrix} 1 &amp; 0 &amp; -3 \\ 2 &amp; 5 &amp; 1 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 11.</strong></p>
+<div class="arithmatex">\[4\begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 12.</strong></p>
+<div class="arithmatex">\[-1\begin{bmatrix} 2 &amp; -4 \\ -1 &amp; 3 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p>Determine whether the following matrix multiplications are allowed. If allowed, state the dimensions of the resulting matrix.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 13.</strong></p>
+<p><span class="arithmatex">\(AB\)</span>, where <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(3 \times 2\)</span> and <span class="arithmatex">\(B\)</span> is <span class="arithmatex">\(2 \times 4\)</span>.</p>
+</li>
+<li>
+<p><strong>Problem 14.</strong></p>
+<p><span class="arithmatex">\(BA\)</span>, where <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(3 \times 2\)</span> and <span class="arithmatex">\(B\)</span> is <span class="arithmatex">\(2 \times 4\)</span>.</p>
+</li>
+<li>
+<p><strong>Problem 15.</strong></p>
+<p><span class="arithmatex">\(CD\)</span>, where <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(2 \times 3\)</span> and <span class="arithmatex">\(D\)</span> is <span class="arithmatex">\(2 \times 3\)</span>.</p>
+</li>
+<li>
+<p><strong>Problem 16.</strong></p>
+<p><span class="arithmatex">\(DC\)</span>, where <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(2 \times 3\)</span> and <span class="arithmatex">\(D\)</span> is <span class="arithmatex">\(3 \times 2\)</span>.</p>
+</li>
+</ul>
+</div>
+<p>Compute the following matrix product (they are all possible).</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 17.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 18.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; -1 \\ 0 &amp; 3 \end{bmatrix}\begin{bmatrix} 1 &amp; 2 \\ -1 &amp; 4 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 19.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 0 &amp; 2 \\ 3 &amp; 1 &amp; -1 \end{bmatrix}\begin{bmatrix} 2 &amp; 1 \\ -1 &amp; 0 \\ 3 &amp; 2 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 20.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; -1 &amp; 4 \end{bmatrix}\begin{bmatrix} 1 &amp; 0 &amp; 2 \\ -1 &amp; 2 &amp; 1 \\ 3 &amp; 1 &amp; 0 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p><strong>Problem 21.</strong> Given </p>
+<div class="arithmatex">\[A = \begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{bmatrix}, \quad B = \begin{bmatrix} 3 &amp; 1 \\ -1 &amp; 2 \end{bmatrix}, \quad C = \begin{bmatrix} 0 &amp; -1 \\ 2 &amp; 1 \end{bmatrix}\]</div>
+<p>compute <span class="arithmatex">\(A + 2BC\)</span>.</p>
+<p><strong>Problem 22.</strong> Using the same matrices as Problem 21, compute <span class="arithmatex">\(3AB - C\)</span>.</p>
+<p>Determine whether the following statements are true or false. Justify your decision. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 23.</strong></p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be matrices with the same dimensions. Then <span class="arithmatex">\(A + B = B + A\)</span>.</p>
+</li>
+<li>
+<p><strong>Problem 24.</strong></p>
+<p>If <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(T\)</span> have the same dimensions, then <span class="arithmatex">\(ST\)</span> is computable. </p>
+</li>
+<li>
+<p><strong>Problem 25.</strong></p>
+<p>For square matrices <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(N\)</span>, <span class="arithmatex">\(MN = NM\)</span>. </p>
+</li>
+<li>
+<p><strong>Problem 26.</strong></p>
+<p>Let <span class="arithmatex">\(c\)</span> be a scalar and let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be matrices such that <span class="arithmatex">\(AB\)</span> is computable. Then <span class="arithmatex">\((cA)B = A(cB)\)</span>. </p>
+</li>
+</ul>
+</div>
+<h3 id="22-exercises">2.2 Exercises</h3>
+<p>Write each system as a matrix equation <span class="arithmatex">\(AX = B\)</span>. You do not need to solve. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 27.</strong></p>
+<div class="arithmatex">\[x + 3y = 7\]</div>
+<div class="arithmatex">\[2x - y = 1\]</div>
+</li>
+<li>
+<p><strong>Problem 28.</strong></p>
+<div class="arithmatex">\[4x - 2y = 0\]</div>
+<div class="arithmatex">\[x + 5y = 3\]</div>
+</li>
+<li>
+<p><strong>Problem 29.</strong></p>
+<div class="arithmatex">\[y = 2x + 1\]</div>
+<div class="arithmatex">\[3x + y = 10\]</div>
+</li>
+<li>
+<p><strong>Problem 30.</strong></p>
+<div class="arithmatex">\[2x - y = 4\]</div>
+<div class="arithmatex">\[y = x - 1\]</div>
+</li>
+</ul>
+</div>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 31.</strong></p>
+<div class="arithmatex">\[x + y + z = 6\]</div>
+<div class="arithmatex">\[2x - y + z = 3\]</div>
+<div class="arithmatex">\[x + 2y - z = 2\]</div>
+</li>
+<li>
+<p><strong>Problem 32.</strong></p>
+<div class="arithmatex">\[3x - y + 2z = 5\]</div>
+<div class="arithmatex">\[x + 4z = -1\]</div>
+<div class="arithmatex">\[2x + y - z = 0\]</div>
+</li>
+</ul>
+</div>
+<h3 id="23-exercises">2.3 Exercises</h3>
+<p>Solve each system using Gaussian elimination.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 33.</strong></p>
+<div class="arithmatex">\[x + 2y = 8\]</div>
+<div class="arithmatex">\[3x - y = 3\]</div>
+</li>
+<li>
+<p><strong>Problem 34.</strong></p>
+<div class="arithmatex">\[2x + y = 5\]</div>
+<div class="arithmatex">\[x - 3y = -1\]</div>
+</li>
+<li>
+<p><strong>Problem 35.</strong></p>
+<div class="arithmatex">\[4x + 2y = 10\]</div>
+<div class="arithmatex">\[-2x + y = 1\]</div>
+</li>
+<li>
+<p><strong>Problem 36.</strong></p>
+<div class="arithmatex">\[3x - 2y = 4\]</div>
+<div class="arithmatex">\[x + y = 3\]</div>
+</li>
+</ul>
+</div>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 37.</strong></p>
+<div class="arithmatex">\[x + y + z = 6\]</div>
+<div class="arithmatex">\[2x - y + z = 3\]</div>
+<div class="arithmatex">\[x + 2y - z = 2\]</div>
+</li>
+<li>
+<p><strong>Problem 38.</strong></p>
+<div class="arithmatex">\[x - y + 2z = 5\]</div>
+<div class="arithmatex">\[2x + y - z = 1\]</div>
+<div class="arithmatex">\[3x - 2y + z = 8\]</div>
+</li>
+</ul>
+</div>
+<h3 id="24-exercises">2.4 Exercises</h3>
+<p>Verify that <span class="arithmatex">\(B\)</span> is the inverse of <span class="arithmatex">\(A\)</span>.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 39.</strong></p>
+<div class="arithmatex">\[A = \begin{bmatrix} 4 &amp; 1 \\ 3 &amp; 1 \end{bmatrix}, \quad B = \begin{bmatrix} 1 &amp; -1 \\ -3 &amp; 4 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 40.</strong></p>
+<div class="arithmatex">\[A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 5 \end{bmatrix}, \quad B = \begin{bmatrix} -5 &amp; 2 \\ 3 &amp; -1 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p>Use the augmented matrix method to find the inverse of each matrix.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 41.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 3 \\ 2 &amp; 5 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 42.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 3 &amp; 1 \\ 4 &amp; 2 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 43.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 0 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 44.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 1 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p>Use the <span class="arithmatex">\(2 \times 2\)</span> inverse formula to find the inverse of each matrix, or state that it does not exist.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 45.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 5 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 46.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; -4 \\ -1 &amp; 2 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 47.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 6 &amp; 1 \\ 2 &amp; 0 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 48.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 3 &amp; 6 \\ 1 &amp; 2 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p><strong>Problem 49.</strong> Use the inverse found in Problem 39 to solve the system,</p>
+<div class="arithmatex">\[4x + y = 3\]</div>
+<div class="arithmatex">\[3x + y = 1\]</div>
+<p><strong>Problem 50.</strong> Use the inverse found in Problem 40 to solve the system,</p>
+<div class="arithmatex">\[x + 2y = 0\]</div>
+<div class="arithmatex">\[3x + 5y = -1\]</div>
+<h3 id="25-exercises">2.5 Exercises</h3>
+<p>Determine which of the following matrices are valid transition matrices.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 51.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 0.6 &amp; 0.3 \\ 0.4 &amp; 0.7 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 52.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 0.5 &amp; 0.6 \\ 0.5 &amp; 0.3 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 53.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 0.5 &amp; 0.2 &amp; 0.3 \\ 0.6 &amp; 0.5 &amp; 0.3 \\ -0.1 &amp; 0.3 &amp; 0.4 \end{bmatrix}\]</div>
+</li>
+<li>
+<p><strong>Problem 54.</strong></p>
+<div class="arithmatex">\[\begin{bmatrix} 0.4 &amp; 0.1 &amp; 0.3 \\ 0.4 &amp; 0.6 &amp; 0.3 \\ 0.2 &amp; 0.3 &amp; 0.4 \end{bmatrix}\]</div>
+</li>
+</ul>
+</div>
+<p><strong>Problem 55.</strong> A transition matrix is given by</p>
+<div class="arithmatex">\[T = \begin{bmatrix} 0.7 &amp; 0.4 \\ 0.3 &amp; 0.6 \end{bmatrix}\]</div>
+<p>and the current state vector is <span class="arithmatex">\(v_0 = \begin{bmatrix} 0.5 \\ 0.5 \end{bmatrix}\)</span>.</p>
+<p>a) Find <span class="arithmatex">\(v_1\)</span>.</p>
+<p>b) Find <span class="arithmatex">\(v_2\)</span>.</p>
+<p><strong>Problem 56.</strong> A transition matrix is given by</p>
+<div class="arithmatex">\[T = \begin{bmatrix} 0.9 &amp; 0.2 \\ 0.1 &amp; 0.8 \end{bmatrix}\]</div>
+<p>Find the stationary state.</p>
+<p><strong>Problem 57.</strong> Each year, <span class="arithmatex">\(5\%\)</span> of the rural population moves to the city, and <span class="arithmatex">\(3\%\)</span> of the city population moves to the rural area. Currently <span class="arithmatex">\(40\%\)</span> of the population is rural and <span class="arithmatex">\(60\%\)</span> lives in the city.</p>
+<p>a) Write a transition matrix for the process.</p>
+<p>b) Find the population distribution after 1 and 2 years.</p>
+<p>c) Find the long-run steady state distribution.</p>
+<p><strong>Problem 58.</strong> Two streaming services, StreamMax and ViewPlus, compete for subscribers. Each month, StreamMax retains <span class="arithmatex">\(75\%\)</span> of its subscribers and loses <span class="arithmatex">\(25\%\)</span> to ViewPlus. ViewPlus retains <span class="arithmatex">\(85\%\)</span> of its subscribers and loses <span class="arithmatex">\(15\%\)</span> to StreamMax. Currently StreamMax holds <span class="arithmatex">\(30\%\)</span> of the market and ViewPlus holds <span class="arithmatex">\(70\%\)</span>.</p>
+<p>a) Write the transition matrix.</p>
+<p>b) Find the market share after 1 and 2 months.</p>
+<p>c) Find the long-run steady state market share.</p>
+<p><strong>Problem 59.</strong> Customers have three grocery store options: FreshMart, ValueGrocer, and QuickShop. Each week, FreshMart keeps <span class="arithmatex">\(70\%\)</span> of its customers, loses <span class="arithmatex">\(20\%\)</span> to ValueGrocer, and <span class="arithmatex">\(10\%\)</span> to QuickShop. ValueGrocer keeps <span class="arithmatex">\(60\%\)</span> of its customers, loses <span class="arithmatex">\(25\%\)</span> to FreshMart, and <span class="arithmatex">\(15\%\)</span> to QuickShop. QuickShop keeps <span class="arithmatex">\(80\%\)</span> of its customers, loses <span class="arithmatex">\(10\%\)</span> to FreshMart, and <span class="arithmatex">\(10\%\)</span> to ValueGrocer. Currently the market shares of FreshMart, ValueGrocer, and QuickShop are <span class="arithmatex">\(50\%\)</span>, <span class="arithmatex">\(30\%\)</span>, and <span class="arithmatex">\(20\%\)</span> respectively.</p>
+<p>a) Write the transition matrix.</p>
+<p>b) Find the market share after 1 week.</p>
+<p>c) Find the long-run steady state market share.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This work is licensed under a  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
