@@ -262,6 +262,32 @@ This is where the expression "profit is maximized when marginal cost and margina
 
         and setting $P'=0$ gives $q = 6750$. This is indeed a maximum, because the second derivative $P'' = -0.04$ is always negative. 
 
+!!! example "Example 10"
+    A rectangular garden is to be constructed using a rock wall as one side of the garden and wire fencing for the other three sides. Given 100 ft of wire fencing, determine the dimensions that would create a garden of maximum area. What is the maximum area?
+
+    ??? success "Solution"
+        Let $x$ be the length of each side perpendicular to the rock wall and $y$ the length of the side parallel to it. The wall serves as the fourth side, so the 100 ft of fencing only has to cover the other three:
+
+        $$2x + y = 100 \quad\Longrightarrow\quad y = 100 - 2x$$
+
+        The area of the garden is length times width. Substituting for $y$ gives the area as a function of $x$ alone:
+
+        $$A(x) = x(100 - 2x) = 100x - 2x^2$$
+
+        Both sides must have positive length, so $x$ is restricted to $0 < x < 50$.
+
+        To find the maximum, take the derivative and set it equal to zero:
+
+        $$A'(x) = 100 - 4x = 0 \quad\Longrightarrow\quad x = 25$$
+
+        The second derivative, $A''(x) = -4$, is negative everywhere. That means the area curve opens downward, so $x = 25$ gives a maximum and not a minimum. The area also drops to zero at both ends of the interval, which confirms that this is the largest possible value.
+
+        Plugging $x = 25$ back into the fencing equation gives the side along the wall:
+
+        $$y = 100 - 2(25) = 50$$
+
+        So the garden should measure 25 ft by 50 ft, with the 50 ft side running parallel to the rock wall. 
+
 
 ## Exercises
 
@@ -380,3 +406,17 @@ Determine the critical points of the following functions, then classify each cri
     $y = \dfrac{x^2}{x-1}$
 
 </div>
+
+### 7.3 Exercises 
+
+**Problem 23.** Owners of a car rental company have determined that if they charge customers $p$ dollars per day to rent a car, where $50\leq p \leq 200$, the number of cars $n$ they rent per day can be modeled by the linear function $n(p) = 1000 - 5p$. If they charge $⁢50 per day or less, they will rent all their cars. If they charge $⁢200 per day or more, they will not rent any cars. Assuming the owners plan to charge customers between $50 per day and $⁢200 per day to rent a car, how much should they charge to maximize their revenue?
+
+**Problem 24.** A manufacturer of wireless headphones finds that to sell $x$ pairs per month, the price per pair must be $p(x) = 120 - 0.02x$ dollars. The monthly cost of producing $x$ pairs is $C(x) = 2000 + 40x$ dollars. How many pairs should the manufacturer produce each month to maximize profit, and what price should it charge per pair?
+
+**Problem 25.** The concentration of a drug in a patient's bloodstream $t$ hours after it is injected is modeled by $C(t) = \dfrac{5t}{t^2 + 4}$ milligrams per liter, where $t \geq 0$. At what time is the concentration highest? What is the maximum concentration?
+
+**Problem 26.** A property manager runs an apartment complex with 80 units. When the rent is $\$1200$ per month, every unit is occupied. Each $\$25$ increase in monthly rent leaves one more unit vacant. Each occupied unit costs $\$100$ per month in maintenance. What monthly rent should the manager charge to maximize profit, and how many units will be occupied at that rent?
+
+**Problem 27.** A cargo boat makes a 200-mile trip at a constant speed of $v$ miles per hour. Fuel costs $\dfrac{v^2}{50}$ dollars per hour, and the crew is paid a combined $\$32$ per hour. At what speed should the boat travel to minimize the total cost of the trip? What is the minimum cost?
+
+**Problem 28.** A farmer can harvest 120 bushels of apples today and sell them for $\$4$ per bushel. For each week the farmer waits, the crop grows by 10 bushels, but the price drops by $\$0.20$ per bushel. How many weeks should the farmer wait to maximize revenue? What is the maximum revenue?
