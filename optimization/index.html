@@ -1,0 +1,1011 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../derivative-rules/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>7. Optimization - Linear Models and Differential Calculus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraph.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optimization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-header__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Models and Differential Calculus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Optimization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Models and Differential Calculus" class="md-nav__button md-logo" aria-label="Linear Models and Differential Calculus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Models and Differential Calculus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Linear Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomials-rationals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Polynomials and Rationals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponents-logarithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exponents and Logarithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Derivative Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derivative-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Derivative Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-second-derivative-and-concavity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Second Derivative and Concavity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-maxima-and-minima-of-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Maxima and Minima of Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Maxima and Minima of Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-critical-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 Critical Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-applied-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Applied Optimization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="optimization">Optimization</h1>
+<h2 id="71-second-derivative-and-concavity">7.1 Second Derivative and Concavity</h2>
+<p>When we take the derivative of a function, we get back a new function. That means we can repeat the process as many times as we want, resulting in what we call <strong>higher order derivatives</strong>. To denote higher order derivative we can use additional primes. For example, the second derivative of the function <span class="arithmatex">\(y=f(x)\)</span> can be denoted by <span class="arithmatex">\(f''(x)\)</span> or <span class="arithmatex">\(y''\)</span>. For much higher order derivatives it is inconvenient to put a bunch of primes, so the order is put in as a superscript in parentheses. For example, the 8-th derivative of <span class="arithmatex">\(f(x)\)</span> can be denoted as <span class="arithmatex">\(f^{(8)}(x)\)</span>. Parentheses indicate that we mean a derivative <em>not</em> a power of the function. In Liebniz notation, the second derivative of <span class="arithmatex">\(y=f(x)\)</span> is denoted as </p>
+<div class="arithmatex">\[\frac{d^2y}{dx^2} \text{ or } \frac{d^2f}{dx^2}.\]</div>
+<p>Higher derivatives follow the same pattern. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>Find the second derivative of <span class="arithmatex">\(y = xe^x\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>Let's take the first derivative using the product rule, </p>
+<div class="arithmatex">\[y' = e^x + xe^x\]</div>
+<p>Now we differentiate again to find the second derivative. We again should use the product rule on the second term,</p>
+<div class="arithmatex">\[y'' = e^x + e^x + xe^x = 2e^x + xe^x\]</div>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>Find the second derivative of the function </p>
+<div class="arithmatex">\[f(x) = \frac{1}{x^2-1}\]</div>
+<details class="success">
+<summary>Solution</summary>
+<p>Taking the first derivative using the quotient rule gives, </p>
+<div class="arithmatex">\[f'(x) = \frac{-2x}{(x^2-1)^2}\]</div>
+<p>To take the second derivative we need the quotient and the chain rule (for the derivative of the denominator). Note that, </p>
+<div class="arithmatex">\[\frac{d}{dx}(-2x) = -2\]</div>
+<p>and</p>
+<div class="arithmatex">\[\frac{d}{dx}((x^2-1)^2) = 2(x^2-1)\cdot 2x = 4x(x^2-1).\]</div>
+<p>So we get,</p>
+<div class="arithmatex">\[f''(x) = \frac{(x^2-1)^2\cdot(-2) - (-2x)\cdot4x(x^2-1)}{(x^2-1)^4} = \frac{-2(x^2-1)^2+8x^2(x^2-1)}{(x^2-1)^4}.\]</div>
+</details>
+</div>
+<p>We learned back in Chapter 5 that the (first) derivative represents the slope of the function. The second derivative tells us about the <strong>concavity</strong> of the function. A graph is <strong>concave up</strong> if the graph bends upwards to make a "cup" shape. The following graphs are all concave up on the visible domain. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/5avn9vmdrd?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/xuppwinoja?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>A graph is <strong>concave down</strong> if it bends downward to make a "hill" shape. The following graphs are all concave up on the visible domain. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/0uuzgj1ggk?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/yxmig1qqdh?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The idea of concavity is nicely explained by looking at graphs, but we should also present a more precise mathematical definition using the second derivative:</p>
+<ul>
+<li>The function <span class="arithmatex">\(y=f(x)\)</span> is concave up at the point <span class="arithmatex">\(x=a\)</span> if <span class="arithmatex">\(f''(a) &gt; 0\)</span>. </li>
+<li>The function <span class="arithmatex">\(y=f(x)\)</span> is concave down at the point <span class="arithmatex">\(x=a\)</span> if <span class="arithmatex">\(f''(a) &lt; 0\)</span>. </li>
+</ul>
+<p>If <span class="arithmatex">\(f''(a) = 0\)</span> or <span class="arithmatex">\(f''(x)\)</span> is undefined, then it is neither concave down or concave up. Locally it looks like a straight line (horizontal or vertical). If <span class="arithmatex">\(f''(x)\)</span> switches signs at <span class="arithmatex">\(x=a\)</span>, then we call <span class="arithmatex">\(a\)</span> an <strong>inflection point</strong>. For example, <span class="arithmatex">\(x=0\)</span> is an inflection point of the function <span class="arithmatex">\(y = x^3\)</span>. Another way to visualize concavity is to draw a small segment of the tangent line. If it lies below the curve, the curve is concave up. If it lies above the curve, the curve is concave down. Slide the point around below to see how the concavity switches at <span class="arithmatex">\(x=0\)</span>. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/hccssnusfo?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>For <span class="arithmatex">\(x\)</span> to be an inflection point either <span class="arithmatex">\(f''(x) = 0\)</span> or <span class="arithmatex">\(f''(x)\)</span> is undefined. Note that if <span class="arithmatex">\(f(x)\)</span> is also underfined we do not call <span class="arithmatex">\(x\)</span> an inflection point. For example, the function <span class="arithmatex">\(f(x) = 1/x\)</span> does not have an inflection point at <span class="arithmatex">\(x=0\)</span>, since it does not exists.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<p>For which of the following functions <span class="arithmatex">\(y=f(x)\)</span> does the graph have an inflection point at <span class="arithmatex">\(x = 0\)</span>? a) <span class="arithmatex">\(f(x) = e^x\)</span>, b) <span class="arithmatex">\(f(x) = x^4\)</span>, c) <span class="arithmatex">\(f(x) = x^{1/3}\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>a) For a point to be an inflection point either <span class="arithmatex">\(f''(x) = 0\)</span> or <span class="arithmatex">\(f''(x)\)</span> is undefined. Since <span class="arithmatex">\(f''(0) = e^0 = 1\)</span>, there is no inflection point at <span class="arithmatex">\(x=0\)</span>. </p>
+<p>b) Since <span class="arithmatex">\(y''=12x^2\)</span>, it is true that <span class="arithmatex">\(f''(0) = 0\)</span> however there is no change of sign as <span class="arithmatex">\(f''(x) &gt; 0\)</span> for all other values of <span class="arithmatex">\(x\)</span>. Therefore, <span class="arithmatex">\(x=0\)</span> is not an inflection point. If we look at the graph, we see a "flattening out" of the function, however the concavity never is down. </p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/vqsgwhrg18?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+<p>c) The second derivative is, <span class="arithmatex">\(f''(x) = -\frac{2}{9}x^{-5/3}\)</span>. It is true that <span class="arithmatex">\(f''(0)\)</span> is undefined, so let's check the sign of the second derivative before and after this point. If <span class="arithmatex">\(x = 1\)</span>, then <span class="arithmatex">\(f''(1) = -2/9 &lt; 0\)</span>. If <span class="arithmatex">\(x = -1\)</span>, then <span class="arithmatex">\(f''(1) = 2/9 &gt; 0\)</span> (the cube root of a negative number is negative). Therefore, <span class="arithmatex">\(x=0\)</span> is an inflection point of <span class="arithmatex">\(y=x^{1/3}\)</span>. </p>
+<p><center>
+<iframe src="https://www.desmos.com/calculator/3mnz3p0io6?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center></p>
+</details>
+</div>
+<h2 id="72-maxima-and-minima-of-functions">7.2 Maxima and Minima of Functions</h2>
+<p>A functions has a <strong>local maximum</strong> at a point, if that point is higher than all immediate neighbors. For example, The function <span class="arithmatex">\(y = x^3-2x^2\)</span> has a local maximum at <span class="arithmatex">\(x=0\)</span>. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/fgfxf1gt5c?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>Notice that the graph has a "peak" when <span class="arithmatex">\(x=0\)</span>, although there are other parts of the graph that sit above the point <span class="arithmatex">\((0,0)\)</span>, for example the point <span class="arithmatex">\((3,9)\)</span> is on the graph (but out of the picture). We call a point a <strong>global maximum</strong> if it is higher than all other points in the domain. For example, the point <span class="arithmatex">\((0,1)\)</span> is a global maximum of the functions <span class="arithmatex">\(y = 1-x^2\)</span>. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/nrjhpijmnj?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>Implicitly, the domain is all allowed inputs to the function. For the function <span class="arithmatex">\(y=1-x^2\)</span>, this is all real numbers. For the function <span class="arithmatex">\(y=1/x\)</span> this is all real numbers except zero. We might ask for the global maximum over a <em>specified</em> domain, e.g. <span class="arithmatex">\(0 \leq x \leq 1\)</span>. This is often the case in applied settings, which we will investigate later. </p>
+<div class="admonition note">
+<p class="admonition-title">Global Versus Local</p>
+<p>Note that a global maximum is also a local maximum, but the reverse is not necessarily true. </p>
+</div>
+<p>Similarly, a <strong>local minimum</strong> is a point that is lower than all immediate neighbors and a <strong>global minimum</strong> is the lowest point across the entire domain. The function below has a local minimum at <span class="arithmatex">\(x = 4/3\)</span>, the function has no global minimum. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/fgfxf1gt5c?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>The function <span class="arithmatex">\(y = x^4\)</span> is an example of a function with a global minimum. It has a global minimum at <span class="arithmatex">\(x = 0\)</span>. We use the term <strong>extrema</strong> to denote both maxima and minima. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 4</p>
+<p>Assume the entire domain of the function is shown in the graph below. Denote all local and global extrema.</p>
+<p><iframe src="https://www.desmos.com/calculator/vs5gxswcsd?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<details class="success">
+<summary>Solution</summary>
+<p>There maximum are at <span class="arithmatex">\(x=-4,\, 0, \, 4\)</span> where the latter is a <em>global</em> max. There are also two local min at <span class="arithmatex">\(x=-2,\, 2\)</span>. </p>
+</details>
+</div>
+<h3 id="721-critical-points">7.2.1 Critical Points</h3>
+<p>A <strong>critical point</strong> is any point on the graph where the derivative is equal to 0 (or does not exist, but we will only focus on the 0 case).</p>
+<div class="admonition example">
+<p class="admonition-title">Example 5</p>
+<p>Compute all the <em>critical points</em> of the function <span class="arithmatex">\(y = \frac{1}{3}x^3 + \frac{1}{2}x^2 - 6x + 1\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Let's take the derivative of <span class="arithmatex">\(y\)</span>. </p>
+<div class="arithmatex">\[y' = x^2 + x - 6\]</div>
+<p>Now compute when <span class="arithmatex">\(y' = 0\)</span>,</p>
+<div class="arithmatex">\[0 = x^2 + x - 6 = (x-2)(x+3)\]</div>
+<p>So the critical points are <span class="arithmatex">\(x = 2\)</span> and <span class="arithmatex">\(x = -3\)</span>. </p>
+</details>
+</div>
+<p><em>All</em> extrema are critical points <strong>but not all critical points are extrema</strong>. In Example 5, we can check from plotting the function that both <span class="arithmatex">\(x=2\)</span> and <span class="arithmatex">\(x=-3\)</span> are in fact extrema. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/gmutmhdtqf?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>This isn't always the case though. The function <span class="arithmatex">\(y = x^3\)</span> has a critical point at <span class="arithmatex">\(x=0\)</span> but not an extrema. </p>
+<center>
+<iframe src="https://www.desmos.com/calculator/67ccqzriej?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<p>Without graphing, how can we check whether or not a critical point is also an extrema? There are a couple options we can try. </p>
+<p><strong>Option 1: Second Derivative Test.</strong> If our function is smooth, we can compute the second derivative of the function at the same point and use the concavity to determine whether we have a max or a min. </p>
+<ul>
+<li>If <span class="arithmatex">\(f'(x) = 0\)</span> and <span class="arithmatex">\(f''(x) &gt; 0\)</span> (concave up), then <span class="arithmatex">\(x\)</span> is a minimum. </li>
+<li>If <span class="arithmatex">\(f'(x) = 0\)</span> and <span class="arithmatex">\(f''(x) &lt; 0\)</span> (concave down), then <span class="arithmatex">\(x\)</span> is a maximum.</li>
+<li>If <span class="arithmatex">\(f'(x) = 0\)</span> and <span class="arithmatex">\(f''(x) = 0\)</span>, then the second derivative test is <strong>inconclusive</strong>.</li>
+</ul>
+<p>The second derivative test is often the fasted option, but doesn't always work. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 6</p>
+<p>Use the second derivative test to determine whether <span class="arithmatex">\(x=2\)</span> and <span class="arithmatex">\(x=-3\)</span> are maximum or minimum of the function <span class="arithmatex">\(y = \frac{1}{3}x^3 + \frac{1}{2}x^2 - 6x + 1\)</span>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>In example 5 we found the first derivative was, </p>
+<div class="arithmatex">\[y' = x^2 + x - 6\]</div>
+<p>Now let's compute the second derivative,</p>
+<div class="arithmatex">\[y'' = 2x+1\]</div>
+<p>At <span class="arithmatex">\(x = 2\)</span>, <span class="arithmatex">\(y'' = 2(2)+1 = 5\)</span>, so <span class="arithmatex">\(x=2\)</span> is a minimum. At <span class="arithmatex">\(x=-3\)</span>, <span class="arithmatex">\(y''=2(-3)+1 = -5\)</span>, so <span class="arithmatex">\(x=-3\)</span> is a maximum. </p>
+</details>
+</div>
+<p>The second derivative test will not tell us the difference between local and global maximum. To do that, we must actually compute the <span class="arithmatex">\(y\)</span>-value of the points. The second derivative test will not help us show <span class="arithmatex">\(x=0\)</span> is a minimum of the function <span class="arithmatex">\(y=x^4\)</span>. </p>
+<p><strong>Option 2: First Derivative Test.</strong> The goal of the first derivative test is to check the <em>sign</em> of the derivative before and after the critical point.</p>
+<p>Suppose <span class="arithmatex">\(x=a\)</span> is a critical point of <span class="arithmatex">\(f(x)\)</span>. If the derivative of <span class="arithmatex">\(f\)</span> switches from positive to negative at the critical point <span class="arithmatex">\(x=a\)</span>, then <span class="arithmatex">\(a\)</span> is a maximum. If the derivative of <span class="arithmatex">\(f\)</span> switches from negative to positive at <span class="arithmatex">\(x=a\)</span>, then <span class="arithmatex">\(a\)</span> is a minimum. If the derivative does not switch signs around the point <span class="arithmatex">\(x=a\)</span>, then <span class="arithmatex">\(x=a\)</span> is not an extrema of the function <span class="arithmatex">\(f\)</span>. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 7</p>
+<p>Show that <span class="arithmatex">\(x=0\)</span> is a critical point, but not an extremum of the function <span class="arithmatex">\(f(x) = x^3\)</span>. </p>
+<details class="success">
+<summary>Solution</summary>
+<p>The derivative of <span class="arithmatex">\(f(x) = x^3\)</span> is <span class="arithmatex">\(f'(x) = 3x^2\)</span>. To find the critical points, we want to know all values of <span class="arithmatex">\(x\)</span> that satisfy, </p>
+<div class="arithmatex">\[0 = x^2\]</div>
+<p>The only <span class="arithmatex">\(x\)</span> that solves this is <span class="arithmatex">\(x=0\)</span>. For <span class="arithmatex">\(x &lt; 0\)</span>, <span class="arithmatex">\(f'(x) &gt; 0\)</span>. Additionally for <span class="arithmatex">\(x &gt; 0\)</span>, <span class="arithmatex">\(f'(x) &gt; 0\)</span>. This means the derivative is both positive before and after <span class="arithmatex">\(x=0\)</span>, so it is <em>not</em> an extremum of the function.</p>
+</details>
+</div>
+<h2 id="73-applied-optimization">7.3 Applied Optimization</h2>
+<p>Often times is applications are goal is to maximize or minimize <em>something</em>. In these cases, it will be valuable to utilize the appropriate derivative when possible. We have already introduced concepts like marginal cost, revenue, and profit, so now let's use them as tools for finding maximum and minimum. </p>
+<div class="admonition example">
+<p class="admonition-title">Example 8</p>
+<p>A concert promoter has found that if she sells tickets for $50 each, she can sell 1200 tickets, but for each $5 she raises the price, 50 less people attend. What <em>price</em> should she sell the tickets at to maximize her revenue?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The goal is to <strong>maximize</strong> revenue. So the first step is to express revenue as a function. Revenue, <span class="arithmatex">\(R = pq\)</span> where <span class="arithmatex">\(p\)</span> is the price per ticket and <span class="arithmatex">\(q\)</span> is the quantity sold. Since we want the <em>price</em> that maximizes revenue, let's write <span class="arithmatex">\(q\)</span> as a function of <span class="arithmatex">\(p\)</span>. </p>
+<p>The relationship between <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(p\)</span> is linear and given by the phrasing: "if she sells tickets for $50 each, she can sell 1200 tickets, but for each $5 she raises the price, 50 less people attend." Let's write a table of values from this:</p>
+<table>
+<thead>
+<tr>
+<th>price</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>55</td>
+<td>1150</td>
+</tr>
+<tr>
+<td>60</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>65</td>
+<td>1050</td>
+</tr>
+</tbody>
+</table>
+<p>We can use two of the points to compute the slope,</p>
+<div class="arithmatex">\[m = \frac{1100 - 1200}{60-50} = -10.\]</div>
+<p>Using point slope form we get, </p>
+<div class="arithmatex">\[q - 1200 = -10(p-50)\]</div>
+<p>and simplifying gives, </p>
+<div class="arithmatex">\[q = 1700 - 10p.\]</div>
+<p>Now we can write revenue as, <span class="arithmatex">\(R = p(1700-10p) = 1700p - 10p^2\)</span>. Computing the derivative gives, </p>
+<div class="arithmatex">\[R' = 1700 - 20p\]</div>
+<p>and we solve for when <span class="arithmatex">\(R' = 0\)</span> to get <span class="arithmatex">\(p = 85\)</span>. We should check this is indeed a maximum and not a minimum. To do this, let's check the second derivative:</p>
+<div class="arithmatex">\[R'' = -20 &lt; 0\]</div>
+<p>so it is, in fact, a maximum. </p>
+<p>Therefore, the revenue is maximized when the price per ticket is $85. A this price she will sell 850 tickets and total revenue will be $72,250.</p>
+</details>
+</div>
+<p>Recall that profit <span class="arithmatex">\(P = R - C\)</span>. If we want to maximize profit we take the derivative, </p>
+<div class="arithmatex">\[P' = R' - C'\]</div>
+<p>and then find when it is equal to 0, </p>
+<div class="arithmatex">\[0 = R' - C' \implies R' = C'.\]</div>
+<p>This is where the expression "profit is maximized when marginal cost and marginal revenue are equal" comes from! Of course, we now know this is not entirely true. When marginal cost equals marginal revenue profit has a <em>critical point</em>, but we should be careful to investigate whether or not that is a maximum!</p>
+<div class="admonition example">
+<p class="admonition-title">Example 9</p>
+<p>A company sells q ribbon winders per year at $p per ribbon winder. The demand function for ribbon winders is given by: <span class="arithmatex">\(p = 300 − 0.02q\)</span>. The ribbon winders cost $30 apiece to manufacture, plus there are fixed costs of $9000 per year. Find the quantity where profit is maximized.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Revenue is <span class="arithmatex">\(R = q(300-0.02q)\)</span> and cost is <span class="arithmatex">\(C = 30q + 9000\)</span>. Thus profit is,</p>
+<div class="arithmatex">\[P = 300q - 0.02q^2 - 30q - 9000 = 270q - 0.02q^2 - 9000.\]</div>
+<p>Taking the derivative gives</p>
+<div class="arithmatex">\[P' = 270 - 0.04q\]</div>
+<p>and setting <span class="arithmatex">\(P'=0\)</span> gives <span class="arithmatex">\(q = 6750\)</span>. This is indeed a maximum, because the second derivative <span class="arithmatex">\(P'' = -0.04\)</span> is always negative. </p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 10</p>
+<p>A rectangular garden is to be constructed using a rock wall as one side of the garden and wire fencing for the other three sides. Given 100 ft of wire fencing, determine the dimensions that would create a garden of maximum area. What is the maximum area?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be the length of each side perpendicular to the rock wall and <span class="arithmatex">\(y\)</span> the length of the side parallel to it. The wall serves as the fourth side, so the 100 ft of fencing only has to cover the other three:</p>
+<div class="arithmatex">\[2x + y = 100 \quad\Longrightarrow\quad y = 100 - 2x\]</div>
+<p>The area of the garden is length times width. Substituting for <span class="arithmatex">\(y\)</span> gives the area as a function of <span class="arithmatex">\(x\)</span> alone:</p>
+<div class="arithmatex">\[A(x) = x(100 - 2x) = 100x - 2x^2\]</div>
+<p>Both sides must have positive length, so <span class="arithmatex">\(x\)</span> is restricted to <span class="arithmatex">\(0 &lt; x &lt; 50\)</span>.</p>
+<p>To find the maximum, take the derivative and set it equal to zero:</p>
+<div class="arithmatex">\[A'(x) = 100 - 4x = 0 \quad\Longrightarrow\quad x = 25\]</div>
+<p>The second derivative, <span class="arithmatex">\(A''(x) = -4\)</span>, is negative everywhere. That means the area curve opens downward, so <span class="arithmatex">\(x = 25\)</span> gives a maximum and not a minimum. The area also drops to zero at both ends of the interval, which confirms that this is the largest possible value.</p>
+<p>Plugging <span class="arithmatex">\(x = 25\)</span> back into the fencing equation gives the side along the wall:</p>
+<div class="arithmatex">\[y = 100 - 2(25) = 50\]</div>
+<p>So the garden should measure 25 ft by 50 ft, with the 50 ft side running parallel to the rock wall. </p>
+</details>
+</div>
+<h2 id="exercises">Exercises</h2>
+<h3 id="71-exercises">7.1 Exercises</h3>
+<p>Compute the second derivatives of the following functions.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 1.</strong></p>
+<p><span class="arithmatex">\(y = e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 2.</strong></p>
+<p><span class="arithmatex">\(y = 3x+4\)</span> </p>
+</li>
+<li>
+<p><strong>Problem 3.</strong></p>
+<p><span class="arithmatex">\(g(x) = x^2 - 10x + 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 4.</strong></p>
+<p><span class="arithmatex">\(f(x) = x^3 + \frac{1}{2}x^2 - 3x + 1\)</span></p>
+</li>
+<li>
+<p><strong>Problem 5.</strong></p>
+<p><span class="arithmatex">\(y = \frac{x}{x+1}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 6.</strong></p>
+<p><span class="arithmatex">\(y = x\ln(x)\)</span></p>
+</li>
+<li>
+<p><strong>Problem 7.</strong></p>
+<p><span class="arithmatex">\(y = e^{1-2x}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 8.</strong></p>
+<p><span class="arithmatex">\(y = \sqrt{x^2+1}\)</span></p>
+</li>
+</ul>
+</div>
+<p>Use the second derivative to determine when the function is concave up versus concave down. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 9.</strong></p>
+<p><span class="arithmatex">\(y = x^3 - 6x^2 + 4\)</span></p>
+</li>
+<li>
+<p><strong>Problem 10.</strong></p>
+<p><span class="arithmatex">\(y = x^4 - 6x^2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 11.</strong></p>
+<p><span class="arithmatex">\(y = xe^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 12.</strong></p>
+<p><span class="arithmatex">\(y = \ln(x^2+1)\)</span></p>
+</li>
+</ul>
+</div>
+<h3 id="72-exercises">7.2 Exercises</h3>
+<p>Compute all critical points of the following functions. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 13.</strong></p>
+<p><span class="arithmatex">\(y = x^3 - 3x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 14.</strong></p>
+<p><span class="arithmatex">\(y = x^4 - 8x^2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 15.</strong></p>
+<p><span class="arithmatex">\(y = 2x^3 - 3x^2 - 12x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 16.</strong></p>
+<p><span class="arithmatex">\(y = x^2 e^x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 17.</strong></p>
+<p><span class="arithmatex">\(y = \dfrac{x}{x^2+1}\)</span></p>
+</li>
+<li>
+<p><strong>Problem 18.</strong></p>
+<p><span class="arithmatex">\(y = x + \dfrac{4}{x}\)</span></p>
+</li>
+</ul>
+</div>
+<p>Determine the critical points of the following functions, then classify each critical point as a maximum, minimum, or neither by using the first and second derivative tests. </p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Problem 19.</strong></p>
+<p><span class="arithmatex">\(y = x^3 - 12x\)</span></p>
+</li>
+<li>
+<p><strong>Problem 20.</strong></p>
+<p><span class="arithmatex">\(y = x^4 - 4x^3\)</span></p>
+</li>
+<li>
+<p><strong>Problem 21.</strong></p>
+<p><span class="arithmatex">\(y = 3x^4 - 4x^3 - 12x^2\)</span></p>
+</li>
+<li>
+<p><strong>Problem 22.</strong></p>
+<p><span class="arithmatex">\(y = \dfrac{x^2}{x-1}\)</span></p>
+</li>
+</ul>
+</div>
+<h3 id="73-exercises">7.3 Exercises</h3>
+<p><strong>Problem 23.</strong> Owners of a car rental company have determined that if they charge customers <span class="arithmatex">\(p\)</span> dollars per day to rent a car, where <span class="arithmatex">\(50\leq p \leq 200\)</span>, the number of cars <span class="arithmatex">\(n\)</span> they rent per day can be modeled by the linear function <span class="arithmatex">\(n(p) = 1000 - 5p\)</span>. If they charge $⁢50 per day or less, they will rent all their cars. If they charge $⁢200 per day or more, they will not rent any cars. Assuming the owners plan to charge customers between $50 per day and $⁢200 per day to rent a car, how much should they charge to maximize their revenue?</p>
+<p><strong>Problem 24.</strong> A manufacturer of wireless headphones finds that to sell <span class="arithmatex">\(x\)</span> pairs per month, the price per pair must be <span class="arithmatex">\(p(x) = 120 - 0.02x\)</span> dollars. The monthly cost of producing <span class="arithmatex">\(x\)</span> pairs is <span class="arithmatex">\(C(x) = 2000 + 40x\)</span> dollars. How many pairs should the manufacturer produce each month to maximize profit, and what price should it charge per pair?</p>
+<p><strong>Problem 25.</strong> The concentration of a drug in a patient's bloodstream <span class="arithmatex">\(t\)</span> hours after it is injected is modeled by <span class="arithmatex">\(C(t) = \dfrac{5t}{t^2 + 4}\)</span> milligrams per liter, where <span class="arithmatex">\(t \geq 0\)</span>. At what time is the concentration highest? What is the maximum concentration?</p>
+<p><strong>Problem 26.</strong> A property manager runs an apartment complex with 80 units. When the rent is <span class="arithmatex">\(\$1200\)</span> per month, every unit is occupied. Each <span class="arithmatex">\(\$25\)</span> increase in monthly rent leaves one more unit vacant. Each occupied unit costs <span class="arithmatex">\(\$100\)</span> per month in maintenance. What monthly rent should the manager charge to maximize profit, and how many units will be occupied at that rent?</p>
+<p><strong>Problem 27.</strong> A cargo boat makes a 200-mile trip at a constant speed of <span class="arithmatex">\(v\)</span> miles per hour. Fuel costs <span class="arithmatex">\(\dfrac{v^2}{50}\)</span> dollars per hour, and the crew is paid a combined <span class="arithmatex">\(\$32\)</span> per hour. At what speed should the boat travel to minimize the total cost of the trip? What is the minimum cost?</p>
+<p><strong>Problem 28.</strong> A farmer can harvest 120 bushels of apples today and sell them for <span class="arithmatex">\(\$4\)</span> per bushel. For each week the farmer waits, the crop grows by 10 bushels, but the price drops by <span class="arithmatex">\(\$0.20\)</span> per bushel. How many weeks should the farmer wait to maximize revenue? What is the maximum revenue?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This work is licensed under a  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.12.2/distrib/jsxgraphcore.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
